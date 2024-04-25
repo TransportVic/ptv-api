@@ -4,6 +4,7 @@ import { expect } from 'chai'
 import nock from 'nock'
 import stubDepartureData from './mock-data/metro-departures.json' assert { type: 'json' }
 import stubRailDepartureData from './mock-data/metro-departures-rrb.json' assert { type: 'json' }
+import stubCCLDepartureData from './mock-data/metro-departures-ccl.json' assert { type: 'json' }
 import MetroRun from '../lib/metro/metro-run.mjs'
 
 describe('The MetroDepartures class', () => {
@@ -68,6 +69,16 @@ describe('The MetroDepartures class', () => {
       await metro.fetch({ gtfs: true, maxResults: 1 })
 
       expect(metro[0].runData.isRailBus).to.be.true
+    })
+
+    it('Should detect city circle trains and add the route data accordingly', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubCCLDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].routeData.routeName).to.equal('City Circle')
     })
   })
 })
