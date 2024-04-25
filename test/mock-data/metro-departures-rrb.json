@@ -1,0 +1,152 @@
+{
+  "departures": [
+    {
+      "stop_id": 1032,
+      "route_id": 1,
+      "run_id": 4336,
+      "run_ref": "4336",
+      "direction_id": 0,
+      "disruption_ids": [ 309274, 307065 ],
+      "scheduled_departure_utc": "2024-04-28T14:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_130",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1032,
+      "route_id": 1,
+      "run_id": 4819,
+      "run_ref": "4819",
+      "direction_id": 1,
+      "disruption_ids": [ 309274, 307065 ],
+      "scheduled_departure_utc": "2024-04-28T14:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_126",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1032,
+      "route_id": 2,
+      "run_id": 10961,
+      "run_ref": "10961",
+      "direction_id": 3,
+      "disruption_ids": [ 309269, 307065 ],
+      "scheduled_departure_utc": "2024-04-28T14:09:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_112",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1032,
+      "route_id": 9,
+      "run_id": 37025,
+      "run_ref": "37025",
+      "direction_id": 8,
+      "disruption_ids": [ 309269, 308558, 307065, 297881 ],
+      "scheduled_departure_utc": "2024-04-28T14:09:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_153",
+      "departure_sequence": 0
+    }
+  ],
+  "stops": {},
+  "routes": {
+    "1": {
+      "route_type": 0,
+      "route_id": 1,
+      "route_name": "Alamein",
+      "route_number": "",
+      "route_gtfs_id": "2-ALM",
+      "geopath": []
+    },
+    "2": {
+      "route_type": 0,
+      "route_id": 2,
+      "route_name": "Belgrave",
+      "route_number": "",
+      "route_gtfs_id": "2-BEL",
+      "geopath": []
+    },
+    "9": {
+      "route_type": 0,
+      "route_id": 9,
+      "route_name": "Lilydale",
+      "route_number": "",
+      "route_gtfs_id": "2-LIL",
+      "geopath": []
+    }
+  },
+  "runs": {
+    "4336": {
+      "run_id": 4336,
+      "run_ref": "4336",
+      "route_id": 1,
+      "route_type": 0,
+      "final_stop_id": 1002,
+      "destination_name": "Alamein",
+      "status": "scheduled",
+      "direction_id": 0,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": []
+    },
+    "4819": {
+      "run_id": 4819,
+      "run_ref": "4819",
+      "route_id": 1,
+      "route_type": 0,
+      "final_stop_id": 1030,
+      "destination_name": "Burnley",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 3,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": []
+    },
+    "10961": {
+      "run_id": 10961,
+      "run_ref": "10961",
+      "route_id": 2,
+      "route_type": 0,
+      "final_stop_id": 1026,
+      "destination_name": "Box Hill",
+      "status": "scheduled",
+      "direction_id": 3,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": []
+    },
+    "37025": {
+      "run_id": 37025,
+      "run_ref": "37025",
+      "route_id": 9,
+      "route_type": 0,
+      "final_stop_id": 1026,
+      "destination_name": "Box Hill",
+      "status": "scheduled",
+      "direction_id": 8,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": []
+    }
+  },
+  "directions": {},
+  "disruptions": {},
+  "status": { "version": "3.0", "health": 1 }
+}
