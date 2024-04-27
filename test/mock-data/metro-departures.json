@@ -126,7 +126,26 @@
       "geopath": []
     }
   },
-  "directions": {},
+  "directions": {
+    "1": {
+      "direction_id": 1,
+      "direction_name": "City (Flinders Street)",
+      "route_id": 11,
+      "route_type": 0
+    },
+    "4": {
+      "direction_id": 4,
+      "direction_name": "Cranbourne",
+      "route_id": 4,
+      "route_type": 0
+    },
+    "10": {
+      "direction_id": 10,
+      "direction_name": "Pakenham",
+      "route_id": 11,
+      "route_type": 0
+    }
+  },
   "disruptions": {},
   "status": { "version": "3.0", "health": 1 }
 }

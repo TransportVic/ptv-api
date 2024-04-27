@@ -1,17 +1,26 @@
-import PTVAPI from './lib/ptv-api.mjs'
+import { PTVAPIInterface } from '../lib/ptv-api-interface.mjs'
+import PTVAPI from '../lib/ptv-api.mjs'
+import config from './config.json' assert { type: 'json' }
 
-let ptvAPI = new PTVAPI("1234", "5678")
-ptvAPI.gtfs.link()
+let ptvAPI = new PTVAPI(new PTVAPIInterface(config.devID, config.key))
+// ptvAPI.gtfs.link()
 
-let mooroolbark = 19877
-let departures = await ptvAPI.metro.getDepartures(mooroolbark, {
-  maxDepartures: 10,
-  date: new Date()
-})
+async function main() {
+  let mooroolbark = 19877
+  let departures = await ptvAPI.metro.getDepartures(mooroolbark, {
+    gtfs: true,
+    maxResults: 3,
+    date: new Date()
+  })
 
-let nextTrain = departures[0]
-console.log(nextTrain) // 14:50 Flinders Street from Mooroolbark Platform 1
-console.log(typeof nextTrain) // MetroDeparture
+  console.log(departures)
 
-let stoppingPattern = await nextTrain.getStoppingPattern()
-console.log()
+  let nextTrain = departures[0]
+  console.log(nextTrain) // 14:50 Flinders Street from Mooroolbark Platform 1
+  console.log(typeof nextTrain) // MetroDeparture
+
+  // let stoppingPattern = await nextTrain.getStoppingPattern()
+  // console.log()
+}
+
+main()

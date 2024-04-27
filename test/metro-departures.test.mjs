@@ -3,7 +3,7 @@ import { StubAPI } from './stub-api.mjs'
 import { expect } from 'chai'
 import nock from 'nock'
 import stubDepartureData from './mock-data/metro-departures.json' assert { type: 'json' }
-import stubRailDepartureData from './mock-data/metro-departures-rrb.json' assert { type: 'json' }
+import stubRRBDepartureData from './mock-data/metro-departures-rrb.json' assert { type: 'json' }
 import stubCCLDepartureData from './mock-data/metro-departures-ccl.json' assert { type: 'json' }
 import MetroRun from '../lib/metro/metro-run.mjs'
 
@@ -17,7 +17,7 @@ describe('The MetroDepartures class', () => {
       await metro.fetch({ gtfs: true, maxResults: 1 })
 
       expect(stubAPI.getCalls()[0]).to.deep.equal({
-        path: '/v3/departures/route_type/0/stop/19810?gtfs=true&max_results=1&expand=run&expand=route',
+        path: '/v3/departures/route_type/0/stop/19810?gtfs=true&max_results=1&expand=run&expand=route&expand=direction',
         requestOptions: {}
       })
     })
@@ -45,7 +45,7 @@ describe('The MetroDepartures class', () => {
 
     it('Should calculate the TDN if specified', async () => {
       let stubAPI = new StubAPI('1', '2')
-      stubAPI.setResponses([ stubDepartureData, stubRailDepartureData ])
+      stubAPI.setResponses([ stubDepartureData, stubRRBDepartureData ])
       let metro = new MetroDepartures(stubAPI, 19810)
 
       await metro.fetch({ gtfs: true, maxResults: 1 })
@@ -57,13 +57,12 @@ describe('The MetroDepartures class', () => {
       
       let metroRail = new MetroDepartures(stubAPI, 19810)
       await metroRail.fetch({ gtfs: true, maxResults: 1 })
-
       expect(metroRail[0].runData.tdn).to.equal(null) // Rail bus
     })
 
     it('Should detect rail buses', async () => {
       let stubAPI = new StubAPI('1', '2')
-      stubAPI.setResponses([ stubRailDepartureData ])
+      stubAPI.setResponses([ stubRRBDepartureData ])
       let metro = new MetroDepartures(stubAPI, 19810)
 
       await metro.fetch({ gtfs: true, maxResults: 1 })
@@ -79,6 +78,39 @@ describe('The MetroDepartures class', () => {
       await metro.fetch({ gtfs: true, maxResults: 1 })
 
       expect(metro[0].routeData.routeName).to.equal('City Circle')
+    })
+
+    it('Should calculate the rail direction for regular trains', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].direction.railDirection).to.equal('Down')
+      expect(metro[1].direction.railDirection).to.equal('Up')
+    })
+
+    it('Should calculate the rail direction for city circle trains as Down all the time', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubCCLDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].direction.railDirection).to.equal('Down')
+    })
+
+    it('Should calculate the rail direction for rail buses as well without relying on any TDN', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubRRBDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].direction.railDirection).to.equal('Down')
+      expect(metro[1].direction.railDirection).to.equal('Up')
+      expect(metro[2].direction.railDirection).to.equal('Down')
     })
   })
 })

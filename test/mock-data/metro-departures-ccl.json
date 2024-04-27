@@ -3,8 +3,8 @@
     {
       "stop_id": 1181,
       "route_id": 99,
-      "run_id": 956000,
-      "run_ref": "956000",
+      "run_id": 948801,
+      "run_ref": "948801",
       "direction_id": 1,
       "disruption_ids": [ ],
       "scheduled_departure_utc": "2024-04-30T03:30:00Z",
@@ -18,15 +18,15 @@
   "stops": {},
   "routes": {},
   "runs": {
-    "956000": {
-      "run_id": 956000,
-      "run_ref": "956000",
+    "948801": {
+      "run_id": 948801,
+      "run_ref": "948801",
       "route_id": 99,
       "route_type": 0,
       "final_stop_id": 1071,
       "destination_name": "Flinders Street",
       "status": "scheduled",
-      "direction_id": 4,
+      "direction_id": 1,
       "run_sequence": 0,
       "express_stop_count": 0,
       "vehicle_position": {
@@ -52,7 +52,14 @@
       "geopath": []
     }
   },
-  "directions": {},
+  "directions": {
+    "1": {
+      "direction_id": 1,
+      "direction_name": "City (Flinders Street)",
+      "route_id": 11,
+      "route_type": 0
+    }
+  },
   "disruptions": {},
   "status": { "version": "3.0", "health": 1 }
 }

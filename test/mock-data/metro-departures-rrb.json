@@ -146,7 +146,32 @@
       "geopath": []
     }
   },
-  "directions": {},
+  "directions": {
+    "0": {
+      "direction_id": 0,
+      "direction_name": "Alamein",
+      "route_id": 1,
+      "route_type": 0
+    },
+    "1": {
+      "direction_id": 1,
+      "direction_name": "City (Flinders Street)",
+      "route_id": 9,
+      "route_type": 0
+    },
+    "3": {
+      "direction_id": 3,
+      "direction_name": "Belgrave",
+      "route_id": 2,
+      "route_type": 0
+    },
+    "8": {
+      "direction_id": 8,
+      "direction_name": "Lilydale",
+      "route_id": 9,
+      "route_type": 0
+    }
+  },
   "disruptions": {},
   "status": { "version": "3.0", "health": 1 }
 }
