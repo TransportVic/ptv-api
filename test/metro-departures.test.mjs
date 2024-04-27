@@ -112,5 +112,17 @@ describe('The MetroDepartures class', () => {
       expect(metro[1].direction.railDirection).to.equal('Up')
       expect(metro[2].direction.railDirection).to.equal('Down')
     })
+
+    it('Should provide the route data', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].routeData.routeName).to.equal('Cranbourne')
+      expect(metro[0].routeData.gtfsRouteID).to.equal('2-CRB')
+      expect(metro[0].routeData.routeNumber).to.null
+    })
   })
 })
