@@ -1,0 +1,8 @@
+{
+  "burnley": ["Alamein", "Belgrave", "Glen Waverley", "Lilydale"],
+  "caulfield": ["Frankston", "Cranbourne", "Pakenham", "Sandringham"],
+  "dandenong": ["Cranbourne", "Pakenham"],
+  "northern": ["Craigieburn", "Sunbury", "Upfield", "Showgrounds/Flemington", "Werribee", "Williamstown"],
+  "cliftonHill": ["Mernda", "Hurstbridge"],
+  "generic": ["City Circle", "Stony Point"]
+}

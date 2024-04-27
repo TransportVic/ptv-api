@@ -1,0 +1,5 @@
+{
+  "underground": ["Parliament", "Flagstaff", "Melbourne Central"],
+  "loop": ["Southern Cross", "Parliament", "Flagstaff", "Melbourne Central"],
+  "all": ["Southern Cross", "Parliament", "Flagstaff", "Melbourne Central", "Flinders Street"]
+}
