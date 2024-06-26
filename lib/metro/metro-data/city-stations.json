@@ -1,5 +1,13 @@
 {
   "underground": ["Parliament", "Flagstaff", "Melbourne Central"],
   "loop": ["Southern Cross", "Parliament", "Flagstaff", "Melbourne Central"],
-  "all": ["Southern Cross", "Parliament", "Flagstaff", "Melbourne Central", "Flinders Street"]
+  "all": ["Southern Cross", "Parliament", "Flagstaff", "Melbourne Central", "Flinders Street"],
+
+  "undergroundGTFSIDs": ["19843", "19841", "19842"],
+  "loopGTFSIDs": ["22180", "19843", "19841", "19842"],
+  "allGTFSIDs": ["22180", "19843", "19841", "19842", "19854"],
+
+  "undergroundStopIDs": ["1155", "1068", "1120"],
+  "loopStopIDs": ["1181", "1155", "1068", "1120"],
+  "allStopIDs": ["1181", "1155", "1068", "1120", "1071"]
 }

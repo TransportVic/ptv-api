@@ -6,6 +6,7 @@ import stubDepartureData from './mock-data/metro-departures.json' assert { type:
 import stubRRBDepartureData from './mock-data/metro-departures-rrb.json' assert { type: 'json' }
 import stubCCLDepartureData from './mock-data/metro-departures-ccl.json' assert { type: 'json' }
 import stubCLPTestDepartureData from './mock-data/metro-departures-via-clp-test.json' assert { type: 'json' }
+import stubPARDepartureData from './mock-data/city-loop-departures.json' assert { type: 'json' }
 import MetroRun from '../lib/metro/metro-run.mjs'
 
 describe('The MetroDepartures class', () => {
@@ -102,8 +103,8 @@ describe('The MetroDepartures class', () => {
 
       await metro.fetch({ gtfs: true, maxResults: 1 })
 
-      expect(metro[0].direction.railDirection).to.equal('Down')
-      expect(metro[1].direction.railDirection).to.equal('Up')
+      expect(metro[0].runData.direction.railDirection).to.equal('Down')
+      expect(metro[1].runData.direction.railDirection).to.equal('Up')
     })
 
     it('Should be calculated for city circle trains as Down all the time', async () => {
@@ -113,7 +114,7 @@ describe('The MetroDepartures class', () => {
 
       await metro.fetch({ gtfs: true, maxResults: 1 })
 
-      expect(metro[0].direction.railDirection).to.equal('Down')
+      expect(metro[0].runData.direction.railDirection).to.equal('Down')
     })
 
     it('Should be calculated for rail buses as well without relying on any TDN', async () => {
@@ -123,9 +124,9 @@ describe('The MetroDepartures class', () => {
 
       await metro.fetch({ gtfs: true, maxResults: 1 })
 
-      expect(metro[0].direction.railDirection).to.equal('Down')
-      expect(metro[1].direction.railDirection).to.equal('Up')
-      expect(metro[2].direction.railDirection).to.equal('Down')
+      expect(metro[0].runData.direction.railDirection).to.equal('Down')
+      expect(metro[1].runData.direction.railDirection).to.equal('Up')
+      expect(metro[2].runData.direction.railDirection).to.equal('Down')
     })  
   })
 
@@ -183,7 +184,7 @@ describe('The MetroDepartures class', () => {
 
       await metro.fetch({ gtfs: true, maxResults: 1 })
 
-      expect(metro[0].runData.formedBy).to.equal('4001')
+      expect(metro[0].runData.formedBy.tdn).to.equal('4001')
     })
 
     it('Should convert the feeder into the forming', async () => {
@@ -193,7 +194,7 @@ describe('The MetroDepartures class', () => {
 
       await metro.fetch({ gtfs: true, maxResults: 1 })
 
-      expect(metro[0].runData.forming).to.equal('4000')
+      expect(metro[0].runData.forming.tdn).to.equal('4000')
     })
 
     it('Should not use values where the run_ref is equal to 0', async () => {
@@ -204,6 +205,47 @@ describe('The MetroDepartures class', () => {
       await metro.fetch({ gtfs: true, maxResults: 1 })
 
       expect(metro[1].runData.formedBy).to.be.null
+    })
+  })
+
+  describe('Departures from the city loop', () => {
+    it('Should identify Down non-loop trains in the loop', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubPARDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 22180)
+
+      await metro.fetch({ gtfs: true, maxResults: 2 })
+      expect(metro[0].useFormedByData).to.be.true
+    })
+
+    it('Should modify the TDN to use the formed by data, and alter the destination to Flinders Street', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubPARDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 22180)
+
+      await metro.fetch({ gtfs: true, maxResults: 2 })
+      expect(metro[0].runData.tdn).to.equal('6606')
+      expect(metro[0].runData.destination).to.equal('Flinders Street')
+      expect(metro[0].runData.viaCityLoop).to.be.true
+      expect(metro[0].runData.direction.railDirection).to.equal('Up')
+    })
+
+    it('Should modify the forming to become to orignal TDN', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubPARDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 22180)
+
+      await metro.fetch({ gtfs: true, maxResults: 2 })
+      expect(metro[0].runData.forming.tdn).to.equal('5009')
+    })
+
+    it('Should remove the formed by as this is no longer available', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubPARDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 22180)
+
+      await metro.fetch({ gtfs: true, maxResults: 2 })
+      expect(metro[0].runData.formedBy).to.be.null
     })
   })
 })
