@@ -3,8 +3,8 @@
     {
       "stop_id": 1181,
       "route_id": 99,
-      "run_id": 948801,
-      "run_ref": "948801",
+      "run_id": 948803,
+      "run_ref": "948803",
       "direction_id": 1,
       "disruption_ids": [ ],
       "scheduled_departure_utc": "2024-04-30T03:30:00Z",
@@ -18,9 +18,9 @@
   "stops": {},
   "routes": {},
   "runs": {
-    "948801": {
-      "run_id": 948801,
-      "run_ref": "948801",
+    "948803": {
+      "run_id": 948803,
+      "run_ref": "948803",
       "route_id": 99,
       "route_type": 0,
       "final_stop_id": 1071,
@@ -52,12 +52,17 @@
       "geopath": [],
       "interchange": {
         "feeder": {
-          "run_ref": "953631",
-          "route_id": 15,
-          "stop_id": 1198,
+          "run_ref": "948805",
+          "route_id": 99,
+          "stop_id": 1071,
           "advertised": false
         },
-        "distributor": null
+        "distributor": {
+          "run_ref": "948801",
+          "route_id": 99,
+          "stop_id": 1071,
+          "advertised": false
+        }
       }
     }
   },

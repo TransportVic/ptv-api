@@ -247,5 +247,14 @@ describe('The MetroDepartures class', () => {
       await metro.fetch({ gtfs: true, maxResults: 2 })
       expect(metro[0].runData.formedBy).to.be.null
     })
+
+    it('Should not modify city circle trains', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubCCLDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 22180)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+      expect(metro[0].useFormedByData).to.be.false
+    })
   })
 })
