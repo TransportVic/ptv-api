@@ -124,7 +124,8 @@
       "express_stop_count": 0,
       "vehicle_position": null,
       "vehicle_descriptor": null,
-      "geopath": []
+      "geopath": [],
+      "interchange": null
     },
     "952217": {
       "run_id": 952217,
@@ -157,7 +158,16 @@
         "supplier": "CIS - Metro Trains Melbourne",
         "length": "160"
       },
-      "geopath": []
+      "geopath": [],
+      "interchange": {
+        "feeder": {
+          "run_ref": "953631",
+          "route_id": 15,
+          "stop_id": 1198,
+          "advertised": false
+        },
+        "distributor": null
+      }
     },
     "952622": {
       "run_id": 952622,
@@ -172,7 +182,16 @@
       "express_stop_count": 3,
       "vehicle_position": null,
       "vehicle_descriptor": null,
-      "geopath": []
+      "geopath": [],
+      "interchange": {
+        "feeder": {
+          "run_ref": "953631",
+          "route_id": 15,
+          "stop_id": 1198,
+          "advertised": false
+        },
+        "distributor": null
+      }
     },
     "951836": {
       "run_id": 951836,
@@ -187,7 +206,16 @@
       "express_stop_count": 3,
       "vehicle_position": null,
       "vehicle_descriptor": null,
-      "geopath": []
+      "geopath": [],
+      "interchange": {
+        "feeder": {
+          "run_ref": "953631",
+          "route_id": 15,
+          "stop_id": 1198,
+          "advertised": false
+        },
+        "distributor": null
+      }
     },
     "954048": {
       "run_id": 954048,
@@ -202,7 +230,16 @@
       "express_stop_count": 3,
       "vehicle_position": null,
       "vehicle_descriptor": null,
-      "geopath": []
+      "geopath": [],
+      "interchange": {
+        "feeder": {
+          "run_ref": "953631",
+          "route_id": 15,
+          "stop_id": 1198,
+          "advertised": false
+        },
+        "distributor": null
+      }
     }
   },
   "directions": {
