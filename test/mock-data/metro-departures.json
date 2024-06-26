@@ -147,9 +147,9 @@
           "advertised": false
         },
         "distributor":  {
-          "run_ref": "952003",
-          "route_id": 15,
-          "stop_id": 1198,
+          "run_ref": "0",
+          "route_id": 0,
+          "stop_id": 0,
           "advertised": false
         }
       }

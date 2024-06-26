@@ -81,41 +81,6 @@ describe('The MetroDepartures class', () => {
       expect(metro[0].routeData.routeName).to.equal('City Circle')
     })
 
-    describe('The calculation of rail direction', () => {
-      it('Should be calculated for regular trains', async () => {
-        let stubAPI = new StubAPI('1', '2')
-        stubAPI.setResponses([ stubDepartureData ])
-        let metro = new MetroDepartures(stubAPI, 19810)
-  
-        await metro.fetch({ gtfs: true, maxResults: 1 })
-  
-        expect(metro[0].direction.railDirection).to.equal('Down')
-        expect(metro[1].direction.railDirection).to.equal('Up')
-      })
-  
-      it('Should be calculated for city circle trains as Down all the time', async () => {
-        let stubAPI = new StubAPI('1', '2')
-        stubAPI.setResponses([ stubCCLDepartureData ])
-        let metro = new MetroDepartures(stubAPI, 19810)
-  
-        await metro.fetch({ gtfs: true, maxResults: 1 })
-  
-        expect(metro[0].direction.railDirection).to.equal('Down')
-      })
-  
-      it('Should be calculated for rail buses as well without relying on any TDN', async () => {
-        let stubAPI = new StubAPI('1', '2')
-        stubAPI.setResponses([ stubRRBDepartureData ])
-        let metro = new MetroDepartures(stubAPI, 19810)
-  
-        await metro.fetch({ gtfs: true, maxResults: 1 })
-  
-        expect(metro[0].direction.railDirection).to.equal('Down')
-        expect(metro[1].direction.railDirection).to.equal('Up')
-        expect(metro[2].direction.railDirection).to.equal('Down')
-      })  
-    })
-
     it('Should provide the route data', async () => {
       let stubAPI = new StubAPI('1', '2')
       stubAPI.setResponses([ stubDepartureData ])
@@ -127,51 +92,118 @@ describe('The MetroDepartures class', () => {
       expect(metro[0].routeData.gtfsRouteID).to.equal('2-CRB')
       expect(metro[0].routeData.routeNumber).to.null
     })
+  })
 
-    describe('The calculation of city loop running', () => {
-      it('Should be calculated for regular trains', async () => {
-        let stubAPI = new StubAPI('1', '2')
-        stubAPI.setResponses([ stubCLPTestDepartureData ])
-        let metro = new MetroDepartures(stubAPI, 19810)
-  
-        await metro.fetch({ gtfs: true, maxResults: 1 })
-  
-        expect(metro[0].runData.viaCityLoop).to.be.false
-        expect(metro[1].runData.viaCityLoop).to.be.true
-        expect(metro[2].runData.viaCityLoop).to.be.true
-        expect(metro[3].runData.viaCityLoop).to.be.false
-        expect(metro[4].runData.viaCityLoop).to.be.null
-      })
-  
-      it('Should not be calculated for future trains with no TDN', async () => {
-        let stubAPI = new StubAPI('1', '2')
-        stubAPI.setResponses([ stubCLPTestDepartureData ])
-        let metro = new MetroDepartures(stubAPI, 19810)
-  
-        await metro.fetch({ gtfs: true, maxResults: 1 })
-  
-        expect(metro[4].runData.viaCityLoop).to.be.null
-      })
-  
-      it('Should not be calculated for rail buses', async () => {
-        let stubAPI = new StubAPI('1', '2')
-        stubAPI.setResponses([ stubRRBDepartureData ])
-        let metro = new MetroDepartures(stubAPI, 19810)
-  
-        await metro.fetch({ gtfs: true, maxResults: 1 })
-  
-        expect(metro[0].runData.viaCityLoop).to.be.null
-      })
-  
-      it('Should be true for city circle trains', async () => {
-        let stubAPI = new StubAPI('1', '2')
-        stubAPI.setResponses([ stubCCLDepartureData ])
-        let metro = new MetroDepartures(stubAPI, 19810)
-  
-        await metro.fetch({ gtfs: true, maxResults: 1 })
-  
-        expect(metro[0].runData.viaCityLoop).to.be.true
-      })
+  describe('The calculation of rail direction', () => {
+    it('Should be calculated for regular trains', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].direction.railDirection).to.equal('Down')
+      expect(metro[1].direction.railDirection).to.equal('Up')
+    })
+
+    it('Should be calculated for city circle trains as Down all the time', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubCCLDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].direction.railDirection).to.equal('Down')
+    })
+
+    it('Should be calculated for rail buses as well without relying on any TDN', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubRRBDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].direction.railDirection).to.equal('Down')
+      expect(metro[1].direction.railDirection).to.equal('Up')
+      expect(metro[2].direction.railDirection).to.equal('Down')
+    })  
+  })
+
+  describe('The calculation of city loop running', () => {
+    it('Should be calculated for regular trains', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubCLPTestDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].runData.viaCityLoop).to.be.false
+      expect(metro[1].runData.viaCityLoop).to.be.true
+      expect(metro[2].runData.viaCityLoop).to.be.true
+      expect(metro[3].runData.viaCityLoop).to.be.false
+      expect(metro[4].runData.viaCityLoop).to.be.null
+    })
+
+    it('Should not be calculated for future trains with no TDN', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubCLPTestDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[4].runData.viaCityLoop).to.be.null
+    })
+
+    it('Should not be calculated for rail buses', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubRRBDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].runData.viaCityLoop).to.be.null
+    })
+
+    it('Should be true for city circle trains', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubCCLDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].runData.viaCityLoop).to.be.true
+    })
+  })
+
+  describe('The interchange data', () => {
+    it('Should convert the distributor into the formed by', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].runData.formedBy).to.equal('4001')
+    })
+
+    it('Should convert the feeder into the forming', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[0].runData.forming).to.equal('4000')
+    })
+
+    it('Should not use values where the run_ref is equal to 0', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 19810)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(metro[1].runData.formedBy).to.be.null
     })
   })
 })
