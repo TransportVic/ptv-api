@@ -86,7 +86,7 @@ describe('The MetroDepartures class', () => {
       let stubAPI = new StubAPI('1', '2')
       stubAPI.setResponses([ stubDepartureData ])
       let metro = new MetroDepartures(stubAPI, 19810)
-
+      
       await metro.fetch({ gtfs: true, maxResults: 1 })
 
       expect(metro[0].routeData.routeName).to.equal('Cranbourne')
