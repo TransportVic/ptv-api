@@ -10,7 +10,7 @@ import stubPARDepartureData from './mock-data/city-loop-departures.json' assert 
 import MetroRun from '../lib/metro/metro-run.mjs'
 
 describe('The MetroDepartures class', () => {
-  describe('The fetch function function', () => {
+  describe('The fetch function', () => {
     it('Should call the PTV API providing the stop ID and specified parameters, automatically expanding Run and Route', async () => {
       let stubAPI = new StubAPI('1', '2')
       stubAPI.setResponses([ stubDepartureData ])
