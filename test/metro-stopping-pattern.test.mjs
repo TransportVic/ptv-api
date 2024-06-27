@@ -3,7 +3,6 @@ import { StubAPI } from './stub-api.mjs'
 import { expect } from 'chai'
 import stubPatternData from './mock-data/metro-pattern-pkm.json' assert { type: 'json' }
 
-
 describe('The MetroStoppingPattern class', () => {
   describe('The fetch function', () => {
     it('Should call the PTV API providing the stop ID and specified parameters, automatically expanding the required parameters', async () => {
