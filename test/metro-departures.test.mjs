@@ -93,6 +93,16 @@ describe('The MetroDepartures class', () => {
       expect(metro[0].routeData.gtfsRouteID).to.equal('2-CRB')
       expect(metro[0].routeData.routeNumber).to.null
     })
+
+    it('Should populate the parameters with default data if not provided', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubDepartureData ])
+      let metro = new MetroDepartures(stubAPI, 1181)
+
+      await metro.fetch()
+
+      expect(metro[0].routeData.routeName).to.equal('Cranbourne')
+    })
   })
 
   describe('The calculation of rail direction', () => {
