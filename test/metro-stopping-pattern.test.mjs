@@ -32,5 +32,7 @@ describe('The MetroStoppingPattern class', () => {
       expect(runData.destination).to.equal('Flinders Street')
       expect(runData.viaCityLoop).to.be.true
     })
+
+    // Todo: add checks to trim destination to and from FSS
   })
 })
