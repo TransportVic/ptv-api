@@ -25,12 +25,12 @@ describe('The MetroStoppingPattern class', () => {
       let stoppingPattern = new MetroStoppingPattern(stubAPI, 967104)
       await stoppingPattern.fetch()
 
-      let metroRun = stoppingPattern.extractRunData()
+      let runData = stoppingPattern.runData
 
-      expect(metroRun.tdn).to.equal('C104')
-      expect(metroRun.direction.railDirection).to.equal('Up')
-      expect(metroRun.destination).to.equal('Flinders Street')
-      expect(metroRun.viaCityLoop).to.be.true
+      expect(runData.tdn).to.equal('C104')
+      expect(runData.direction.railDirection).to.equal('Up')
+      expect(runData.destination).to.equal('Flinders Street')
+      expect(runData.viaCityLoop).to.be.true
     })
   })
 })
