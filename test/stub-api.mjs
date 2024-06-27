@@ -5,8 +5,8 @@ export class StubAPI extends PTVAPIInterface {
   responses = []
   calls = []
 
-  constructor(devID, key) {
-    super(devID, key)
+  constructor() {
+    super('', '')
   }
 
   setResponses(responses) {

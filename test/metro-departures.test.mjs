@@ -31,7 +31,7 @@ describe('The MetroDepartures class', () => {
 
       await metro.fetch({ gtfs: true, maxResults: 1 })
     
-      expect(+metro[0].actualDepartureTime).to.equal(+new Date(stubDepartureData.departures[0].estimated_departure_utc))
+      expect(+metro[0].actualDeparture).to.equal(+new Date(stubDepartureData.departures[0].estimated_departure_utc))
     })
 
     it('Should return a position if available', async () => {
