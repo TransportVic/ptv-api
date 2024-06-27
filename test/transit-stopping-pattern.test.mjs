@@ -1,7 +1,5 @@
 import TransitStoppingPattern from '../lib/types/transit-stopping-pattern.mjs'
-
 import { expect } from 'chai'
-import nock from 'nock'
 
 describe('The TransitStoppingPattern class', () => {
   describe('The generateQueryString function', () => {

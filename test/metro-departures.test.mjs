@@ -1,12 +1,12 @@
 import MetroDepartures from '../lib/metro/metro-departures.mjs'
 import { StubAPI } from './stub-api.mjs'
 import { expect } from 'chai'
-import nock from 'nock'
 import stubDepartureData from './mock-data/metro-departures.json' assert { type: 'json' }
 import stubRRBDepartureData from './mock-data/metro-departures-rrb.json' assert { type: 'json' }
 import stubCCLDepartureData from './mock-data/metro-departures-ccl.json' assert { type: 'json' }
 import stubCLPTestDepartureData from './mock-data/metro-departures-via-clp-test.json' assert { type: 'json' }
 import stubPARDepartureData from './mock-data/city-loop-departures.json' assert { type: 'json' }
+import stubPatternData from './mock-data/metro-pattern-pkm.json' assert { type: 'json' }
 import MetroRun from '../lib/metro/metro-run.mjs'
 
 describe('The MetroDepartures class', () => {
@@ -265,6 +265,31 @@ describe('The MetroDepartures class', () => {
 
       await metro.fetch({ gtfs: true, maxResults: 1 })
       expect(metro[0].useFormedByData).to.be.false
+    })
+  })
+
+  describe('The getStoppingPattern function', () => {
+    it('Should fetch the stopping pattern based on the departure\'s TDN', async () => {
+      let departureData = {
+        departures: stubPatternData.departures.slice(0, 1),
+        stops: stubPatternData.stops,
+        directions: stubPatternData.directions,
+        routes: stubPatternData.routes,
+        runs: stubPatternData.runs,
+        status: stubPatternData.status
+      }
+
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ departureData, stubPatternData ])
+      let metro = new MetroDepartures(stubAPI, 49458)
+
+      await metro.fetch({ gtfs: true, maxResults: 1 })
+      expect(metro[0].runData.destination).to.equal('Flinders Street')
+
+      let stoppingPattern = await metro[0].getStoppingPattern()
+      let caulfield = stoppingPattern.stops.find(stn => stn.stationName === 'Caulfield')
+      expect(caulfield).to.not.be.null
+      expect(caulfield.platform).to.equal('3')
     })
   })
 })
