@@ -33,6 +33,26 @@ describe('The MetroStoppingPattern class', () => {
       expect(runData.viaCityLoop).to.be.true
     })
 
+    it('Should extract the stop data from the API response', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubPatternData ])
+      let stoppingPattern = new MetroStoppingPattern(stubAPI, 967104)
+      await stoppingPattern.fetch()
+
+      let stops = stoppingPattern.stops
+
+      expect(stops[0].stationName).to.equal('East Pakenham')
+      expect(stops[0].platform).to.equal('1')
+      expect(stops[0].scheduledDepartureTime.toISOString()).to.equal('2024-06-27T07:45:00.000Z')
+      expect(stops[0].estimatedDepartureTime).to.not.be.null
+      expect(stops[0].estimatedDepartureTime.toISOString()).to.equal('2024-06-27T07:45:00.000Z')
+
+      expect(stops[stops.length - 1].stationName).to.equal('Flinders Street')
+      expect(stops[stops.length - 1].platform).to.equal('6')
+      expect(stops[stops.length - 1].scheduledDepartureTime.toISOString()).to.equal('2024-06-27T09:06:00.000Z')
+      expect(stops[stops.length - 1].estimatedDepartureTime).to.be.null
+    })
+
     // Todo: add checks to trim destination to and from FSS
   })
 })
