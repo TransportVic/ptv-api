@@ -1,0 +1,806 @@
+{
+  "disruptions": [],
+  "departures": [
+    {
+      "skipped_stops": [],
+      "stop_id": 23645,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:35:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 1300
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 24774,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:36:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 1400
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 24773,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:36:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 1500
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 24772,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:37:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 1600
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 24771,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:37:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 1700
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 24770,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:47:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 1800
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 24049,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:52:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 1900
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 29621,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:53:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 2000
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 33862,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:53:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 2100
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 22979,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:53:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 2200
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 22781,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:54:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 2300
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 18768,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:57:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 2400
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 11543,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:57:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 2500
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 18770,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:58:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 2600
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 12151,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:58:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 2700
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 29053,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:59:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 2800
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 18778,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T01:07:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 2900
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 24764,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T01:19:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 3000
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 4406,
+      "route_id": 15742,
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "direction_id": 33,
+      "disruption_ids": [
+        313077
+      ],
+      "scheduled_departure_utc": "2024-06-28T01:24:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 3100
+    }
+  ],
+  "stops": {
+    "4406": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Ringwood",
+      "stop_name": "Ringwood Station/Maroondah Hwy ",
+      "stop_id": 4406,
+      "route_type": 2,
+      "stop_latitude": -37.81508,
+      "stop_longitude": 145.229874,
+      "stop_landmark": "Ringwood Station",
+      "stop_sequence": 0
+    },
+    "11543": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Lilydale",
+      "stop_name": "Cyril St/Maroondah Hwy ",
+      "stop_id": 11543,
+      "route_type": 2,
+      "stop_latitude": -37.75405,
+      "stop_longitude": 145.363632,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "12151": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Lilydale",
+      "stop_name": "Lilydale Post Office/Maroondah Hwy ",
+      "stop_id": 12151,
+      "route_type": 2,
+      "stop_latitude": -37.7575874,
+      "stop_longitude": 145.352264,
+      "stop_landmark": "Lilydale Post Office",
+      "stop_sequence": 0
+    },
+    "18768": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Lilydale",
+      "stop_name": "Tudor Village/Maroondah Hwy ",
+      "stop_id": 18768,
+      "route_type": 2,
+      "stop_latitude": -37.7505264,
+      "stop_longitude": 145.371384,
+      "stop_landmark": "Tudor Village",
+      "stop_sequence": 0
+    },
+    "18770": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Lilydale",
+      "stop_name": "North Rd/Maroondah Hwy ",
+      "stop_id": 18770,
+      "route_type": 2,
+      "stop_latitude": -37.7561646,
+      "stop_longitude": 145.3609,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "18778": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Chirnside Park",
+      "stop_name": "Chirnside Park SC/Maroondah Hwy ",
+      "stop_id": 18778,
+      "route_type": 2,
+      "stop_latitude": -37.757782,
+      "stop_longitude": 145.3128,
+      "stop_landmark": "Chirnside Park SC",
+      "stop_sequence": 0
+    },
+    "22781": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Coldstream",
+      "stop_name": "Bede Ave/Lauriston Dr ",
+      "stop_id": 22781,
+      "route_type": 2,
+      "stop_latitude": -37.7338066,
+      "stop_longitude": 145.384262,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "22979": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Coldstream",
+      "stop_name": "Witham Dr/Lauriston Dr ",
+      "stop_id": 22979,
+      "route_type": 2,
+      "stop_latitude": -37.7304039,
+      "stop_longitude": 145.386414,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "23645": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Healesville",
+      "stop_name": "Maroondah Hwy/Green St ",
+      "stop_id": 23645,
+      "route_type": 2,
+      "stop_latitude": -37.654274,
+      "stop_longitude": 145.51683,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "24049": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Coldstream",
+      "stop_name": "Killara Rd/Maroondah Hwy ",
+      "stop_id": 24049,
+      "route_type": 2,
+      "stop_latitude": -37.7246361,
+      "stop_longitude": 145.378448,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "24764": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Ringwood East",
+      "stop_name": "Burnt Bridge Shopping Centre/Maroondah Hwy ",
+      "stop_id": 24764,
+      "route_type": 2,
+      "stop_latitude": -37.7965622,
+      "stop_longitude": 145.255966,
+      "stop_landmark": "Burnt Bridge Shopping Centre",
+      "stop_sequence": 0
+    },
+    "24770": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Coldstream",
+      "stop_name": "Boundary Rd/Maroondah Hwy ",
+      "stop_id": 24770,
+      "route_type": 2,
+      "stop_latitude": -37.69769,
+      "stop_longitude": 145.420776,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "24771": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Healesville",
+      "stop_name": "Airlie Rd/Maroondah Hwy ",
+      "stop_id": 24771,
+      "route_type": 2,
+      "stop_latitude": -37.67007,
+      "stop_longitude": 145.511581,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "24772": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Healesville",
+      "stop_name": "Steel St/Maroondah Hwy ",
+      "stop_id": 24772,
+      "route_type": 2,
+      "stop_latitude": -37.6658173,
+      "stop_longitude": 145.512985,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "24773": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Healesville",
+      "stop_name": "Crowley Rd/Maroondah Hwy ",
+      "stop_id": 24773,
+      "route_type": 2,
+      "stop_latitude": -37.66236,
+      "stop_longitude": 145.513245,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "24774": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Healesville",
+      "stop_name": "Harker St/Maroondah Hwy ",
+      "stop_id": 24774,
+      "route_type": 2,
+      "stop_latitude": -37.6573868,
+      "stop_longitude": 145.510742,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "29053": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Lilydale",
+      "stop_name": "Lilydale Station/Main St ",
+      "stop_id": 29053,
+      "route_type": 2,
+      "stop_latitude": -37.7567444,
+      "stop_longitude": 145.3455,
+      "stop_landmark": "Lilydale Station",
+      "stop_sequence": 0
+    },
+    "29621": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Coldstream",
+      "stop_name": "Killara Rd/Lauriston Dr ",
+      "stop_id": 29621,
+      "route_type": 2,
+      "stop_latitude": -37.7248268,
+      "stop_longitude": 145.3859,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "33862": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0,
+      "stop_suburb": "Coldstream",
+      "stop_name": "Claire St/Lauriston Dr ",
+      "stop_id": 33862,
+      "route_type": 2,
+      "stop_latitude": -37.7274628,
+      "stop_longitude": 145.386948,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    }
+  },
+  "routes": {
+    "15742": {
+      "route_type": 2,
+      "route_id": 15742,
+      "route_name": "684 - Ringwood Station - Eildon SC via Alexandra & Healesville (from 26 November 2023)",
+      "route_number": "684",
+      "route_gtfs_id": "4-684",
+      "geopath": []
+    }
+  },
+  "runs": {
+    "44-684--1-MF5-95614710": {
+      "run_id": -1,
+      "run_ref": "44-684--1-MF5-95614710",
+      "route_id": 15742,
+      "route_type": 2,
+      "final_stop_id": 4406,
+      "destination_name": "Ringwood Station/Maroondah Hwy ",
+      "status": "scheduled",
+      "direction_id": 33,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.7611798752982,
+        "longitude": 145.337135928112,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": 253,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:02:21Z",
+        "expiry_time": "2024-06-28T00:04:28.4985343Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    }
+  },
+  "directions": {
+    "33": {
+      "direction_id": 33,
+      "direction_name": "Ringwood",
+      "route_id": 15742,
+      "route_type": 2
+    }
+  },
+  "status": {
+    "version": "3.0",
+    "health": 1
+  }
+}

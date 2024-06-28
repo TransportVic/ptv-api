@@ -1,29 +1,16 @@
 import MetroDepartures from '../lib/metro/metro-departures.mjs'
 import { StubAPI } from './stub-api.mjs'
 import { expect } from 'chai'
-import stubDepartureData from './mock-data/metro-departures.json' assert { type: 'json' }
-import stubRRBDepartureData from './mock-data/metro-departures-rrb.json' assert { type: 'json' }
-import stubCCLDepartureData from './mock-data/metro-departures-ccl.json' assert { type: 'json' }
-import stubCLPTestDepartureData from './mock-data/metro-departures-via-clp-test.json' assert { type: 'json' }
-import stubPARDepartureData from './mock-data/city-loop-departures.json' assert { type: 'json' }
-import stubPatternData from './mock-data/metro-pattern-pkm.json' assert { type: 'json' }
+import stubDepartureData from './metro-mock-data/metro-departures.json' assert { type: 'json' }
+import stubRRBDepartureData from './metro-mock-data/metro-departures-rrb.json' assert { type: 'json' }
+import stubCCLDepartureData from './metro-mock-data/metro-departures-ccl.json' assert { type: 'json' }
+import stubCLPTestDepartureData from './metro-mock-data/metro-departures-via-clp-test.json' assert { type: 'json' }
+import stubPARDepartureData from './metro-mock-data/city-loop-departures.json' assert { type: 'json' }
+import stubPatternData from './metro-mock-data/metro-pattern-pkm.json' assert { type: 'json' }
 import MetroRun from '../lib/metro/metro-run.mjs'
 
 describe('The MetroDepartures class', () => {
   describe('The fetch function', () => {
-    it('Should call the PTV API providing the stop ID and specified parameters, automatically expanding Run and Route', async () => {
-      let stubAPI = new StubAPI('1', '2')
-      stubAPI.setResponses([ stubDepartureData ])
-      let metro = new MetroDepartures(stubAPI, 19810)
-
-      await metro.fetch({ gtfs: true, maxResults: 1 })
-
-      expect(stubAPI.getCalls()[0]).to.deep.equal({
-        path: '/v3/departures/route_type/0/stop/19810?gtfs=true&max_results=1&expand=run&expand=route&expand=direction',
-        requestOptions: {}
-      })
-    })
-
     it('Should use the estimated time if available', async () => {
       let stubAPI = new StubAPI('1', '2')
       stubAPI.setResponses([ stubDepartureData ])

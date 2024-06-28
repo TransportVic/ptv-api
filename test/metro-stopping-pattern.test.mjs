@@ -1,7 +1,7 @@
 import MetroStoppingPattern from '../lib/metro/metro-stopping-pattern.mjs'
 import { StubAPI } from './stub-api.mjs'
 import { expect } from 'chai'
-import stubPatternData from './mock-data/metro-pattern-pkm.json' assert { type: 'json' }
+import stubPatternData from './metro-mock-data/metro-pattern-pkm.json' assert { type: 'json' }
 
 describe('The MetroStoppingPattern class', () => {
   describe('The fetch function', () => {
