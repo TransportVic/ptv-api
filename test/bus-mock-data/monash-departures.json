@@ -1,0 +1,1179 @@
+{
+  "departures": [
+    {
+      "stop_id": 33430,
+      "route_id": 8922,
+      "run_id": -1,
+      "run_ref": "41-862--1-MF1-34",
+      "direction_id": 261,
+      "disruption_ids": [
+        301643,
+        285492
+      ],
+      "scheduled_departure_utc": "2024-06-27T23:58:00Z",
+      "estimated_departure_utc": "2024-06-28T00:01:57Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 13270,
+      "run_id": -1,
+      "run_ref": "20-703--1-MF5-1019",
+      "direction_id": 208,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-06-28T00:03:00Z",
+      "estimated_departure_utc": "2024-06-28T00:03:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 12750,
+      "run_id": -1,
+      "run_ref": "49-601--1-MF1-6132714",
+      "direction_id": 173,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-06-28T00:05:00Z",
+      "estimated_departure_utc": "2024-06-28T00:05:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 12753,
+      "run_id": -1,
+      "run_ref": "49-900--1-MF1-5993714",
+      "direction_id": 294,
+      "disruption_ids": [
+        301643
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:05:00Z",
+      "estimated_departure_utc": "2024-06-28T00:05:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 13271,
+      "run_id": -1,
+      "run_ref": "20-733--1-MF5-230",
+      "direction_id": 32,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-06-28T00:05:00Z",
+      "estimated_departure_utc": "2024-06-28T00:05:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 3453,
+      "run_id": 196038,
+      "run_ref": "196038",
+      "direction_id": 261,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-06-28T00:06:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-RUN_15",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 8924,
+      "run_id": -1,
+      "run_ref": "41-802--1-MF1-7",
+      "direction_id": 261,
+      "disruption_ids": [
+        301643
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:06:00Z",
+      "estimated_departure_utc": "2024-06-28T00:06:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 12753,
+      "run_id": -1,
+      "run_ref": "41-900--1-MF1-405",
+      "direction_id": 293,
+      "disruption_ids": [
+        301643
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:07:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 3453,
+      "run_id": 195706,
+      "run_ref": "195706",
+      "direction_id": 181,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-06-28T00:09:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-RUN_18",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 8934,
+      "run_id": -1,
+      "run_ref": "41-804--1-MF1-39",
+      "direction_id": 181,
+      "disruption_ids": [
+        301643
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:09:00Z",
+      "estimated_departure_utc": "2024-06-28T00:09:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 13270,
+      "run_id": -1,
+      "run_ref": "20-703--1-MF5-72",
+      "direction_id": 186,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-06-28T00:09:00Z",
+      "estimated_departure_utc": "2024-06-28T00:09:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 15814,
+      "run_id": 123413,
+      "run_ref": "123413",
+      "direction_id": 190,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-06-28T00:10:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-RUN_10",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 15814,
+      "run_id": 123746,
+      "run_ref": "123746",
+      "direction_id": 171,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-06-28T00:15:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-RUN_11",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 13067,
+      "run_id": -1,
+      "run_ref": "49-630--1-MF1-5983214",
+      "direction_id": 189,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-06-28T00:16:00Z",
+      "estimated_departure_utc": "2024-06-28T00:16:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 8934,
+      "run_id": -1,
+      "run_ref": "41-804--1-MF1-13",
+      "direction_id": 261,
+      "disruption_ids": [
+        301643
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:17:00Z",
+      "estimated_departure_utc": "2024-06-28T00:17:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 953,
+      "run_id": -1,
+      "run_ref": "29-737--1-MF15-14",
+      "direction_id": 219,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-06-28T00:18:00Z",
+      "estimated_departure_utc": "2024-06-28T00:18:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 8924,
+      "run_id": -1,
+      "run_ref": "41-802--1-MF1-28",
+      "direction_id": 181,
+      "disruption_ids": [
+        301643
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:21:00Z",
+      "estimated_departure_utc": "2024-06-28T00:21:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 13271,
+      "run_id": -1,
+      "run_ref": "20-733--1-MF5-66",
+      "direction_id": 184,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-06-28T00:27:00Z",
+      "estimated_departure_utc": "2024-06-28T00:27:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 33430,
+      "route_id": 8922,
+      "run_id": -1,
+      "run_ref": "41-862--1-MF1-83",
+      "direction_id": 181,
+      "disruption_ids": [
+        301643,
+        285492
+      ],
+      "scheduled_departure_utc": "2024-06-28T00:32:00Z",
+      "estimated_departure_utc": "2024-06-28T00:32:00Z",
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "",
+      "departure_sequence": 0
+    }
+  ],
+  "stops": {
+    "33430": {
+      "stop_distance": 0,
+      "stop_suburb": "Clayton",
+      "stop_name": "Monash University",
+      "stop_id": 33430,
+      "route_type": 2,
+      "stop_latitude": -37.91369,
+      "stop_longitude": 145.131775,
+      "stop_landmark": "Monash University",
+      "stop_sequence": 0
+    }
+  },
+  "routes": {
+    "953": {
+      "route_type": 2,
+      "route_id": 953,
+      "route_name": "Croydon Station - Monash University via Boronia & Knox City Shopping Centre & Glen Waverley",
+      "route_number": "737",
+      "route_gtfs_id": "4-737",
+      "geopath": []
+    },
+    "3453": {
+      "route_type": 2,
+      "route_id": 3453,
+      "route_name": "Dandenong - Chadstone via Mulgrave & Oakleigh",
+      "route_number": "802-804-862 combined",
+      "route_gtfs_id": "4-C17",
+      "geopath": []
+    },
+    "8922": {
+      "route_type": 2,
+      "route_id": 8922,
+      "route_name": "Dandenong - Chadstone via North Dandenong & Oakleigh",
+      "route_number": "862",
+      "route_gtfs_id": "4-862",
+      "geopath": []
+    },
+    "8924": {
+      "route_type": 2,
+      "route_id": 8924,
+      "route_name": "Dandenong - Chadstone via Mulgrave & Oakleigh",
+      "route_number": "802",
+      "route_gtfs_id": "4-802",
+      "geopath": []
+    },
+    "8934": {
+      "route_type": 2,
+      "route_id": 8934,
+      "route_name": "Dandenong - Chadstone via Wheelers Hill & Oakleigh",
+      "route_number": "804",
+      "route_gtfs_id": "4-804",
+      "geopath": []
+    },
+    "12750": {
+      "route_type": 2,
+      "route_id": 12750,
+      "route_name": "Huntingdale -  Monash University (Clayton)",
+      "route_number": "601",
+      "route_gtfs_id": "4-601",
+      "geopath": []
+    },
+    "12753": {
+      "route_type": 2,
+      "route_id": 12753,
+      "route_name": "Stud Park SC (Rowville) - Caulfield via Monash University & Chadstone (SMARTBUS Service)",
+      "route_number": "900",
+      "route_gtfs_id": "4-900",
+      "geopath": []
+    },
+    "13067": {
+      "route_type": 2,
+      "route_id": 13067,
+      "route_name": "Elwood - Monash University via Gardenvale & Ormond & Huntingdale",
+      "route_number": "630",
+      "route_gtfs_id": "4-630",
+      "geopath": []
+    },
+    "13270": {
+      "route_type": 2,
+      "route_id": 13270,
+      "route_name": "Middle Brighton - Blackburn via Bentleigh & Clayton & Monash University",
+      "route_number": "703",
+      "route_gtfs_id": "4-703",
+      "geopath": []
+    },
+    "13271": {
+      "route_type": 2,
+      "route_id": 13271,
+      "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+      "route_number": "733",
+      "route_gtfs_id": "4-733",
+      "geopath": []
+    },
+    "15814": {
+      "route_type": 2,
+      "route_id": 15814,
+      "route_name": "Southland - Waverley Gardens via Clayton & Monash University",
+      "route_number": "631",
+      "route_gtfs_id": "4-631",
+      "geopath": []
+    }
+  },
+  "runs": {
+    "123413": {
+      "run_id": 123413,
+      "run_ref": "123413",
+      "route_id": 15814,
+      "route_type": 2,
+      "final_stop_id": 12932,
+      "destination_name": "Waverley Gardens SC/Hansworth St",
+      "status": "scheduled",
+      "direction_id": 190,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null
+    },
+    "123746": {
+      "run_id": 123746,
+      "run_ref": "123746",
+      "route_id": 15814,
+      "route_type": 2,
+      "final_stop_id": 14164,
+      "destination_name": "Southland SC/Karen St",
+      "status": "scheduled",
+      "direction_id": 171,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null
+    },
+    "195706": {
+      "run_id": 195706,
+      "run_ref": "195706",
+      "route_id": 3453,
+      "route_type": 2,
+      "final_stop_id": 11293,
+      "destination_name": "Chadstone Shopping Centre/Eastern Access Rd",
+      "status": "scheduled",
+      "direction_id": 181,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null
+    },
+    "196038": {
+      "run_id": 196038,
+      "run_ref": "196038",
+      "route_id": 3453,
+      "route_type": 2,
+      "final_stop_id": 4443,
+      "destination_name": "Dandenong Station/Foster St",
+      "status": "scheduled",
+      "direction_id": 261,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null
+    },
+    "41-862--1-MF1-34": {
+      "run_id": -1,
+      "run_ref": "41-862--1-MF1-34",
+      "route_id": 8922,
+      "route_type": 2,
+      "final_stop_id": 4443,
+      "destination_name": "Dandenong Station/Foster St",
+      "status": "scheduled",
+      "direction_id": 261,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.9138642961168,
+        "longitude": 145.126459398616,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": 135,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:00:31Z",
+        "expiry_time": "2024-06-28T00:02:44.1044339Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    },
+    "20-703--1-MF5-1019": {
+      "run_id": -1,
+      "run_ref": "20-703--1-MF5-1019",
+      "route_id": 13270,
+      "route_type": 2,
+      "final_stop_id": 10885,
+      "destination_name": "Blackburn Station/South Pde",
+      "status": "scheduled",
+      "direction_id": 208,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.9150411974552,
+        "longitude": 145.121666863619,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": 10,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:00:34Z",
+        "expiry_time": "2024-06-28T00:02:44.001046Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    },
+    "49-601--1-MF1-6132714": {
+      "run_id": -1,
+      "run_ref": "49-601--1-MF1-6132714",
+      "route_id": 12750,
+      "route_type": 2,
+      "final_stop_id": 33168,
+      "destination_name": "Huntingdale Station/Haughton Rd",
+      "status": "scheduled",
+      "direction_id": 173,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.9148516666667,
+        "longitude": 145.131231666667,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": null,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:00:28Z",
+        "expiry_time": "2024-06-28T00:02:44.1393747Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    },
+    "49-900--1-MF1-5993714": {
+      "run_id": -1,
+      "run_ref": "49-900--1-MF1-5993714",
+      "route_id": 12753,
+      "route_type": 2,
+      "final_stop_id": 16281,
+      "destination_name": "Caulfield Railway Station/Sir John Monash Dr",
+      "status": "scheduled",
+      "direction_id": 294,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.916150549518,
+        "longitude": 145.13841997176,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": 279,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:00:43Z",
+        "expiry_time": "2024-06-28T00:02:54.5148752Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    },
+    "20-733--1-MF5-230": {
+      "run_id": -1,
+      "run_ref": "20-733--1-MF5-230",
+      "route_id": 13271,
+      "route_type": 2,
+      "final_stop_id": 14035,
+      "destination_name": "Box Hill Bus Station/Station St",
+      "status": "scheduled",
+      "direction_id": 32,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.9136485859553,
+        "longitude": 145.121986893611,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": 40,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:00:43Z",
+        "expiry_time": "2024-06-28T00:02:54.4587575Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    },
+    "41-802--1-MF1-7": {
+      "run_id": -1,
+      "run_ref": "41-802--1-MF1-7",
+      "route_id": 8924,
+      "route_type": 2,
+      "final_stop_id": 4443,
+      "destination_name": "Dandenong Station/Foster St",
+      "status": "scheduled",
+      "direction_id": 261,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.9065730341492,
+        "longitude": 145.114914779169,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": 128,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:00:45Z",
+        "expiry_time": "2024-06-28T00:02:54.4986731Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    },
+    "41-900--1-MF1-405": {
+      "run_id": -1,
+      "run_ref": "41-900--1-MF1-405",
+      "route_id": 12753,
+      "route_type": 2,
+      "final_stop_id": 13396,
+      "destination_name": "Stud Park SC/Stud Rd",
+      "status": "scheduled",
+      "direction_id": 293,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null
+    },
+    "41-804--1-MF1-39": {
+      "run_id": -1,
+      "run_ref": "41-804--1-MF1-39",
+      "route_id": 8934,
+      "route_type": 2,
+      "final_stop_id": 11293,
+      "destination_name": "Chadstone Shopping Centre/Eastern Access Rd",
+      "status": "scheduled",
+      "direction_id": 181,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.9213926825844,
+        "longitude": 145.180566348697,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": 279,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:00:42Z",
+        "expiry_time": "2024-06-28T00:02:54.403961Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    },
+    "20-703--1-MF5-72": {
+      "run_id": -1,
+      "run_ref": "20-703--1-MF5-72",
+      "route_id": 13270,
+      "route_type": 2,
+      "final_stop_id": 12770,
+      "destination_name": "Middle Brighton Station/Male St",
+      "status": "scheduled",
+      "direction_id": 186,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.8875186815988,
+        "longitude": 145.145554638699,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": 184,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:00:39Z",
+        "expiry_time": "2024-06-28T00:02:54.4315532Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    },
+    "49-630--1-MF1-5983214": {
+      "run_id": -1,
+      "run_ref": "49-630--1-MF1-5983214",
+      "route_id": 13067,
+      "route_type": 2,
+      "final_stop_id": 24325,
+      "destination_name": "St Kilda St/Bent Ave",
+      "status": "scheduled",
+      "direction_id": 189,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null
+    },
+    "41-804--1-MF1-13": {
+      "run_id": -1,
+      "run_ref": "41-804--1-MF1-13",
+      "route_id": 8934,
+      "route_type": 2,
+      "final_stop_id": 4443,
+      "destination_name": "Dandenong Station/Foster St",
+      "status": "scheduled",
+      "direction_id": 261,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.8939,
+        "longitude": 145.08815,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": null,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:00:45.416848Z",
+        "expiry_time": "2024-06-28T00:02:54.5640841Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    },
+    "29-737--1-MF15-14": {
+      "run_id": -1,
+      "run_ref": "29-737--1-MF15-14",
+      "route_id": 953,
+      "route_type": 2,
+      "final_stop_id": 14514,
+      "destination_name": "Croydon Station/Railway Gr",
+      "status": "scheduled",
+      "direction_id": 219,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null
+    },
+    "41-802--1-MF1-28": {
+      "run_id": -1,
+      "run_ref": "41-802--1-MF1-28",
+      "route_id": 8924,
+      "route_type": 2,
+      "final_stop_id": 11293,
+      "destination_name": "Chadstone Shopping Centre/Eastern Access Rd",
+      "status": "scheduled",
+      "direction_id": 181,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.9534153177764,
+        "longitude": 145.207926517292,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": 353,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:00:45Z",
+        "expiry_time": "2024-06-28T00:02:54.4661838Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    },
+    "20-733--1-MF5-66": {
+      "run_id": -1,
+      "run_ref": "20-733--1-MF5-66",
+      "route_id": 13271,
+      "route_type": 2,
+      "final_stop_id": 13989,
+      "destination_name": "Oakleigh Station/Johnson St",
+      "status": "scheduled",
+      "direction_id": 184,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.8456083333333,
+        "longitude": 145.13355,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": 186,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:00:48.068367Z",
+        "expiry_time": "2024-06-28T00:02:54.5261571Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    },
+    "41-862--1-MF1-83": {
+      "run_id": -1,
+      "run_ref": "41-862--1-MF1-83",
+      "route_id": 8922,
+      "route_type": 2,
+      "final_stop_id": 11293,
+      "destination_name": "Chadstone Shopping Centre/Eastern Access Rd",
+      "status": "scheduled",
+      "direction_id": 181,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.9774562564495,
+        "longitude": 145.222142222738,
+        "easting": null,
+        "northing": null,
+        "direction": null,
+        "bearing": 7,
+        "supplier": "Smartrak",
+        "datetime_utc": "2024-06-28T00:00:27Z",
+        "expiry_time": "2024-06-28T00:02:44.123378Z"
+      },
+      "vehicle_descriptor": {
+        "operator": null,
+        "id": null,
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": null,
+        "supplier": "Smartrak",
+        "length": null
+      },
+      "geopath": [],
+      "interchange": null
+    }
+  },
+  "directions": {
+    "32": {
+      "direction_id": 32,
+      "direction_name": "Box Hill",
+      "route_id": 13271,
+      "route_type": 2
+    },
+    "171": {
+      "direction_id": 171,
+      "direction_name": "Southland SC",
+      "route_id": 15814,
+      "route_type": 2
+    },
+    "173": {
+      "direction_id": 173,
+      "direction_name": "Huntingdale Station",
+      "route_id": 12750,
+      "route_type": 2
+    },
+    "181": {
+      "direction_id": 181,
+      "direction_name": "Chadstone SC",
+      "route_id": 3453,
+      "route_type": 2
+    },
+    "184": {
+      "direction_id": 184,
+      "direction_name": "Oakleigh",
+      "route_id": 13271,
+      "route_type": 2
+    },
+    "186": {
+      "direction_id": 186,
+      "direction_name": "Middle Brighton",
+      "route_id": 13270,
+      "route_type": 2
+    },
+    "189": {
+      "direction_id": 189,
+      "direction_name": "Elwood",
+      "route_id": 13067,
+      "route_type": 2
+    },
+    "190": {
+      "direction_id": 190,
+      "direction_name": "Waverley Gardens SC",
+      "route_id": 15814,
+      "route_type": 2
+    },
+    "208": {
+      "direction_id": 208,
+      "direction_name": "Blackburn",
+      "route_id": 13270,
+      "route_type": 2
+    },
+    "219": {
+      "direction_id": 219,
+      "direction_name": "Croydon",
+      "route_id": 953,
+      "route_type": 2
+    },
+    "261": {
+      "direction_id": 261,
+      "direction_name": "Dandenong",
+      "route_id": 8922,
+      "route_type": 2
+    },
+    "293": {
+      "direction_id": 293,
+      "direction_name": "Stud Park SC (Rowville)",
+      "route_id": 12753,
+      "route_type": 2
+    },
+    "294": {
+      "direction_id": 294,
+      "direction_name": "Caulfield",
+      "route_id": 12753,
+      "route_type": 2
+    }
+  },
+  "disruptions": {
+    "285492": {
+      "disruption_id": 285492,
+      "title": "Routes 681, 682, 691, 850 and 862: Temporary stop closure from Wednesday 26 April 2023 until 2026",
+      "url": "http://ptv.vic.gov.au/live-travel-updates/article/routes-681-682-691-850-and-862-temporary-stop-closure-from-wednesday-26-april-2023-until-2026",
+      "description": "Bus Routes 681, 682, 691 (to Waverley Gardens), 850 (to Dandenong) and 862 (to Dandenong) will not service a selected bus stop from Wednesday 26 April 2023 until 2026 due to works.",
+      "disruption_status": "Current",
+      "disruption_type": "Planned Closure",
+      "published_on": "2023-03-29T01:22:17Z",
+      "last_updated": "2023-04-25T17:01:11Z",
+      "from_date": "2023-04-25T17:00:00Z",
+      "to_date": "2026-11-30T16:00:00Z",
+      "routes": [
+        {
+          "route_type": 2,
+          "route_id": 5334,
+          "route_name": "Dandenong - Glen Waverley via Mulgrave & Brandon Park",
+          "route_number": "850",
+          "route_gtfs_id": "4-850",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 13176,
+          "route_name": "Lysterfield - Knox City via Wantirna & Scoresby & Rowville (clockwise)",
+          "route_number": "681",
+          "route_gtfs_id": "4-681",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 13177,
+          "route_name": "Lysterfield - Knox City via Wantirna & Scoresby & Rowville (anti-clockwise)",
+          "route_number": "682",
+          "route_gtfs_id": "4-682",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 13178,
+          "route_name": "Boronia  - Waverley Gardens via Ferntree Gully & Stud Park",
+          "route_number": "691",
+          "route_gtfs_id": "4-691",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 8922,
+          "route_name": "Dandenong - Chadstone via North Dandenong & Oakleigh",
+          "route_number": "862",
+          "route_gtfs_id": "4-862",
+          "direction": null
+        }
+      ],
+      "stops": [],
+      "colour": "#ffd500",
+      "display_on_board": false,
+      "display_status": false
+    },
+    "301643": {
+      "disruption_id": 301643,
+      "title": "The myki machine at Chadstone Shopping Centre is unavailable until further notice.",
+      "url": "http://ptv.vic.gov.au/live-travel-updates/article/the-myki-machine-at-chadstone-shopping-centre-is-unavailable-until-further-notice",
+      "description": "Due to upgrades at Chadstone Shopping Centre, the myki Card Vending Machine (CVM) located at the bus interchange will be unavailable until further notice.",
+      "disruption_status": "Current",
+      "disruption_type": "Other Information",
+      "published_on": "2023-12-01T05:14:57Z",
+      "last_updated": "2023-12-18T20:00:42Z",
+      "from_date": "2023-12-01T05:09:00Z",
+      "to_date": null,
+      "routes": [
+        {
+          "route_type": 2,
+          "route_id": 13024,
+          "route_name": "Box Hill Station - Chadstone via Surrey Hills & Camberwell & Glen Iris",
+          "route_number": "612",
+          "route_gtfs_id": "4-612",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 13025,
+          "route_name": "Glen Waverley - St Kilda via Mount Waverley & Chadstone & Carnegie",
+          "route_number": "623",
+          "route_gtfs_id": "4-623",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 13027,
+          "route_name": "Elsternwick - Chadstone via Ormond & Oakleigh",
+          "route_number": "625",
+          "route_gtfs_id": "4-625",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 15248,
+          "route_name": "Middle Brighton - Chadstone via McKinnon & Carnegie",
+          "route_number": "626",
+          "route_gtfs_id": "4-626",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 13554,
+          "route_name": "Moorabbin Station - Chadstone SC via Bentleigh",
+          "route_number": "627",
+          "route_gtfs_id": "4-627",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 14930,
+          "route_name": "Ringwood - Chadstone SC via Vermont South & Glen Waverley & Oakleigh",
+          "route_number": "742",
+          "route_gtfs_id": "4-742",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 13820,
+          "route_name": "Dandenong - Chadstone via Princes Highway & Oakleigh",
+          "route_number": "800",
+          "route_gtfs_id": "4-800",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 8924,
+          "route_name": "Dandenong - Chadstone via Mulgrave & Oakleigh",
+          "route_number": "802",
+          "route_gtfs_id": "4-802",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 8934,
+          "route_name": "Dandenong - Chadstone via Wheelers Hill & Oakleigh",
+          "route_number": "804",
+          "route_gtfs_id": "4-804",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 13269,
+          "route_name": "Chadstone SC - Sandringham via Murrumbeena & Southland SC",
+          "route_number": "822",
+          "route_gtfs_id": "4-822",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 8922,
+          "route_name": "Dandenong - Chadstone via North Dandenong & Oakleigh",
+          "route_number": "862",
+          "route_gtfs_id": "4-862",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 12753,
+          "route_name": "Stud Park SC (Rowville) - Caulfield via Monash University & Chadstone (SMARTBUS Service)",
+          "route_number": "900",
+          "route_gtfs_id": "4-900",
+          "direction": null
+        },
+        {
+          "route_type": 2,
+          "route_id": 15789,
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_gtfs_id": "4-903",
+          "direction": null
+        }
+      ],
+      "stops": [],
+      "colour": "#ffd500",
+      "display_on_board": true,
+      "display_status": false
+    }
+  },
+  "status": {
+    "version": "3.0",
+    "health": 1
+  }
+}
