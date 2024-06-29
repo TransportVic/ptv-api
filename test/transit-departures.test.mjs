@@ -30,7 +30,7 @@ describe('The TransitDepartures class', () => {
   
   describe('The fetch function', () => {
     it('Should call the PTV API providing the stop ID and specified parameters, automatically expanding Run and Route', async () => {
-      let stubAPI = new StubAPI('1', '2')
+      let stubAPI = new StubAPI()
       stubAPI.setResponses([ stubDepartureData ])
       let departures = new TransitDepartures(stubAPI, 19810)
       await departures.fetchBody(10, {

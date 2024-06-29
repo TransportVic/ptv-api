@@ -2,14 +2,16 @@ import BusStoppingPattern from '../lib/bus/bus-stopping-pattern.mjs'
 import { StubAPI } from './stub-api.mjs'
 import { expect } from 'chai'
 import stubPatternData from './bus-mock-data/684-pattern.json' assert { type: 'json' }
+import PTVAPI from '../lib/ptv-api.mjs'
 
 describe('The BusStoppingPattern class', () => {
   describe('The fetch function', () => {
     it('Should call the PTV API providing the stop ID and specified parameters, automatically expanding the required parameters', async () => {
-      let stubAPI = new StubAPI('1', '2')
+      let stubAPI = new StubAPI()
       stubAPI.setResponses([ stubPatternData ])
-      let stoppingPattern = new BusStoppingPattern(stubAPI, '44-684--1-MF5-95614710')
-      await stoppingPattern.fetch({
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let stoppingPattern = await ptvAPI.bus.getStoppingPatternFromRunRef('44-684--1-MF5-95614710', {
         date: new Date('2024-06-27T07:08:14.150Z'),
         expand: ['vehicleposition']
       })
@@ -21,10 +23,11 @@ describe('The BusStoppingPattern class', () => {
     })
 
     it('Should extract the run data from the API response', async () => {
-      let stubAPI = new StubAPI('1', '2')
+      let stubAPI = new StubAPI()
       stubAPI.setResponses([ stubPatternData ])
-      let stoppingPattern = new BusStoppingPattern(stubAPI, '44-684--1-MF5-95614710')
-      await stoppingPattern.fetch()
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let stoppingPattern = await ptvAPI.bus.getStoppingPatternFromRunRef('44-684--1-MF5-95614710')
 
       let runData = stoppingPattern.runData
 
@@ -32,10 +35,11 @@ describe('The BusStoppingPattern class', () => {
     })
 
     it('Should extract the stop data from the API response', async () => {
-      let stubAPI = new StubAPI('1', '2')
+      let stubAPI = new StubAPI()
       stubAPI.setResponses([ stubPatternData ])
-      let stoppingPattern = new BusStoppingPattern(stubAPI, '44-684--1-MF5-95614710')
-      await stoppingPattern.fetch()
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let stoppingPattern = await ptvAPI.bus.getStoppingPatternFromRunRef('44-684--1-MF5-95614710')
 
       let stops = stoppingPattern.stops
 

@@ -2,14 +2,16 @@ import MetroStoppingPattern from '../lib/metro/metro-stopping-pattern.mjs'
 import { StubAPI } from './stub-api.mjs'
 import { expect } from 'chai'
 import stubPatternData from './metro-mock-data/metro-pattern-pkm.json' assert { type: 'json' }
+import PTVAPI from '../lib/ptv-api.mjs'
 
 describe('The MetroStoppingPattern class', () => {
   describe('The fetch function', () => {
     it('Should call the PTV API providing the stop ID and specified parameters, automatically expanding the required parameters', async () => {
-      let stubAPI = new StubAPI('1', '2')
+      let stubAPI = new StubAPI()
       stubAPI.setResponses([ stubPatternData ])
-      let stoppingPattern = new MetroStoppingPattern(stubAPI, '967104')
-      await stoppingPattern.fetch({
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C104', {
         date: new Date('2024-06-27T07:08:14.150Z')
       })
 
@@ -20,10 +22,10 @@ describe('The MetroStoppingPattern class', () => {
     })
 
     it('Should extract the run data from the API response', async () => {
-      let stubAPI = new StubAPI('1', '2')
+      let stubAPI = new StubAPI()
       stubAPI.setResponses([ stubPatternData ])
-      let stoppingPattern = new MetroStoppingPattern(stubAPI, '967104')
-      await stoppingPattern.fetch()
+      let ptvAPI = new PTVAPI(stubAPI)
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C104')
 
       let runData = stoppingPattern.runData
 
@@ -34,10 +36,10 @@ describe('The MetroStoppingPattern class', () => {
     })
 
     it('Should extract the stop data from the API response', async () => {
-      let stubAPI = new StubAPI('1', '2')
+      let stubAPI = new StubAPI()
       stubAPI.setResponses([ stubPatternData ])
-      let stoppingPattern = new MetroStoppingPattern(stubAPI, '967104')
-      await stoppingPattern.fetch()
+      let ptvAPI = new PTVAPI(stubAPI)
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C104')
 
       let stops = stoppingPattern.stops
 
@@ -54,7 +56,6 @@ describe('The MetroStoppingPattern class', () => {
     })
 
     it('Should deduplicate stops that appear twice in a row', async () => {
-      let stubAPI = new StubAPI('1', '2')
       let duplicatedData = {
         departures: [],
         stops: stubPatternData.stops,
@@ -66,9 +67,10 @@ describe('The MetroStoppingPattern class', () => {
 
       for (let stop of stubPatternData.departures) duplicatedData.departures.push(stop, stop)
 
+      let stubAPI = new StubAPI()
       stubAPI.setResponses([ duplicatedData ])
-      let stoppingPattern = new MetroStoppingPattern(stubAPI, '967104')
-      await stoppingPattern.fetch()
+      let ptvAPI = new PTVAPI(stubAPI)
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C104')
 
       let stops = stoppingPattern.stops
 
