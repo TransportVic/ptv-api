@@ -476,8 +476,8 @@
         "expiry_time": "2024-06-28T00:02:44.1044339Z"
       },
       "vehicle_descriptor": {
-        "operator": null,
-        "id": null,
+        "operator": "Ventura Bus Lines",
+        "id": "60202",
         "low_floor": null,
         "air_conditioned": null,
         "description": null,
