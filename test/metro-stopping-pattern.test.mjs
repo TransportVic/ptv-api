@@ -53,6 +53,30 @@ describe('The MetroStoppingPattern class', () => {
       expect(stops[stops.length - 1].estimatedDeparture).to.be.null
     })
 
+    it('Should deduplicate stops that appear twice in a row', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      let duplicatedData = {
+        departures: [],
+        stops: stubPatternData.stops,
+        directions: stubPatternData.directions,
+        routes: stubPatternData.routes,
+        runs: stubPatternData.runs,
+        status: stubPatternData.status
+      }
+
+      for (let stop of stubPatternData.departures) duplicatedData.departures.push(stop, stop)
+
+      stubAPI.setResponses([ duplicatedData ])
+      let stoppingPattern = new MetroStoppingPattern(stubAPI, 967104)
+      await stoppingPattern.fetch()
+
+      let stops = stoppingPattern.stops
+
+      expect(stops[0].stationName).to.equal('East Pakenham')
+      expect(stops[1].stationName).to.equal('Pakenham')
+      expect(stops[2].stationName).to.equal('Cardinia Road')
+    })
+
     // Todo: add checks to trim destination to and from FSS
   })
 })
