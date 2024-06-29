@@ -33,7 +33,7 @@ describe('The TransitDepartures class', () => {
       let stubAPI = new StubAPI('1', '2')
       stubAPI.setResponses([ stubDepartureData ])
       let departures = new TransitDepartures(stubAPI, 19810)
-      await departures.fetchDepartures(10, {
+      await departures.fetchBody(10, {
         gtfs: true,
         expand: ['vehicleposition']
       })
