@@ -12,7 +12,7 @@
         313077
       ],
       "scheduled_departure_utc": "2024-06-28T00:35:00Z",
-      "estimated_departure_utc": null,
+      "estimated_departure_utc": "2024-06-28T00:35:00Z",
       "at_platform": false,
       "platform_number": null,
       "flags": "",
@@ -516,7 +516,7 @@
       },
       "stop_distance": 0,
       "stop_suburb": "Healesville",
-      "stop_name": "Maroondah Hwy/Green St ",
+    "stop_name": "Maroondah Hwy/Green St ",
       "stop_id": 23645,
       "route_type": 2,
       "stop_latitude": -37.654274,

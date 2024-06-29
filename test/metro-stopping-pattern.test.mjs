@@ -8,7 +8,7 @@ describe('The MetroStoppingPattern class', () => {
     it('Should call the PTV API providing the stop ID and specified parameters, automatically expanding the required parameters', async () => {
       let stubAPI = new StubAPI('1', '2')
       stubAPI.setResponses([ stubPatternData ])
-      let stoppingPattern = new MetroStoppingPattern(stubAPI, 967104)
+      let stoppingPattern = new MetroStoppingPattern(stubAPI, '967104')
       await stoppingPattern.fetch({
         date: new Date('2024-06-27T07:08:14.150Z')
       })
@@ -22,7 +22,7 @@ describe('The MetroStoppingPattern class', () => {
     it('Should extract the run data from the API response', async () => {
       let stubAPI = new StubAPI('1', '2')
       stubAPI.setResponses([ stubPatternData ])
-      let stoppingPattern = new MetroStoppingPattern(stubAPI, 967104)
+      let stoppingPattern = new MetroStoppingPattern(stubAPI, '967104')
       await stoppingPattern.fetch()
 
       let runData = stoppingPattern.runData
@@ -36,7 +36,7 @@ describe('The MetroStoppingPattern class', () => {
     it('Should extract the stop data from the API response', async () => {
       let stubAPI = new StubAPI('1', '2')
       stubAPI.setResponses([ stubPatternData ])
-      let stoppingPattern = new MetroStoppingPattern(stubAPI, 967104)
+      let stoppingPattern = new MetroStoppingPattern(stubAPI, '967104')
       await stoppingPattern.fetch()
 
       let stops = stoppingPattern.stops
@@ -67,7 +67,7 @@ describe('The MetroStoppingPattern class', () => {
       for (let stop of stubPatternData.departures) duplicatedData.departures.push(stop, stop)
 
       stubAPI.setResponses([ duplicatedData ])
-      let stoppingPattern = new MetroStoppingPattern(stubAPI, 967104)
+      let stoppingPattern = new MetroStoppingPattern(stubAPI, '967104')
       await stoppingPattern.fetch()
 
       let stops = stoppingPattern.stops
@@ -77,6 +77,7 @@ describe('The MetroStoppingPattern class', () => {
       expect(stops[2].stationName).to.equal('Cardinia Road')
     })
 
-    // Todo: add checks to trim destination to and from FSS
+    it('Should trim away the city loop stops of the forming trip')
+    it('Should trim away the city loop stops of the formed by trip')
   })
 })
