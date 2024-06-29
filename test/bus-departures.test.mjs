@@ -35,6 +35,8 @@ describe('The BusDepartures class', () => {
       await buses.fetch({ gtfs: true, maxResults: 1 })
     
       expect(buses[0].runData.position).to.not.be.null
+      expect(buses[0].runData.position.type).to.equal('Feature')
+
       let departure630 = buses.find(dep => dep.routeData.routeNumber === '630')
       expect(departure630.runData.position).to.be.null
     })
@@ -45,6 +47,7 @@ describe('The BusDepartures class', () => {
       let buses = new BusDepartures(stubAPI, 19810)
 
       await buses.fetch({ gtfs: true, maxResults: 1 })
+
       let departureCombined = buses.find(dep => dep.routeData.gtfsRouteID === '4-C17')
       expect(departureCombined).to.be.undefined
     })
@@ -58,6 +61,16 @@ describe('The BusDepartures class', () => {
       let departure737 = buses.find(dep => dep.runData.runRef === '29-737--1-MF15-14')
       expect(departure737.routeData.routeNumber).to.equal('737')
       expect(departure737.routeData.routeName).to.equal('Croydon Station - Monash University via Boronia & Knox City Shopping Centre & Glen Waverley')
+    })
+
+    it('Should extract the direction data', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubDepartureData ])
+      let buses = new BusDepartures(stubAPI, 19810)
+      
+      await buses.fetch({ gtfs: true, maxResults: 1 })
+
+      expect(buses[0].runData.direction.directionName).to.equal('Dandenong')
     })
 
   })

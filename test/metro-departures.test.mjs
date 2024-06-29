@@ -29,6 +29,8 @@ describe('The MetroDepartures class', () => {
       await metro.fetch({ gtfs: true, maxResults: 1 })
     
       expect(metro[0].runData.position).to.not.be.null
+      expect(metro[0].runData.position.type).to.equal('Feature')
+
       expect(metro[1].runData.position).to.be.null
     })
 
