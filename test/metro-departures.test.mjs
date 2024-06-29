@@ -17,7 +17,7 @@ describe('The MetroDepartures class', () => {
       let metro = new MetroDepartures(stubAPI, 19810)
 
       await metro.fetch({ gtfs: true, maxResults: 1 })
-    
+
       expect(+metro[0].actualDeparture).to.equal(+new Date(stubDepartureData.departures[0].estimated_departure_utc))
     })
 
