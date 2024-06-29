@@ -49,5 +49,16 @@ describe('The BusDepartures class', () => {
       expect(departureCombined).to.be.undefined
     })
 
+    it('Should extract the route number from the route name if it is missing from the route number', async () => {
+      let stubAPI = new StubAPI('1', '2')
+      stubAPI.setResponses([ stubDepartureData ])
+      let buses = new BusDepartures(stubAPI, 19810)
+      
+      await buses.fetch({ gtfs: true, maxResults: 1 })
+      let departure737 = buses.find(dep => dep.runData.runRef === '29-737--1-MF15-14')
+      expect(departure737.routeData.routeNumber).to.equal('737')
+      expect(departure737.routeData.routeName).to.equal('Croydon Station - Monash University via Boronia & Knox City Shopping Centre & Glen Waverley')
+    })
+
   })
 })

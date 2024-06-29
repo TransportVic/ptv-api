@@ -302,8 +302,8 @@
     "953": {
       "route_type": 2,
       "route_id": 953,
-      "route_name": "Croydon Station - Monash University via Boronia & Knox City Shopping Centre & Glen Waverley",
-      "route_number": "737",
+      "route_name": "Croydon Station - Monash University via Boronia & Knox City Shopping Centre & Glen Waverley (Route 737",
+      "route_number": "",
       "route_gtfs_id": "4-737",
       "geopath": []
     },
