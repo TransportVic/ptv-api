@@ -6,6 +6,7 @@ import stubRRBDepartureData from './metro-mock-data/metro-departures-rrb.json' a
 import stubCCLDepartureData from './metro-mock-data/metro-departures-ccl.json' assert { type: 'json' }
 import stubCLPTestDepartureData from './metro-mock-data/metro-departures-via-clp-test.json' assert { type: 'json' }
 import stubPARDepartureData from './metro-mock-data/city-loop-departures.json' assert { type: 'json' }
+import stubBEGDepartureData from './metro-mock-data/metro-departures-beg.json' assert { type: 'json' }
 import stubPatternData from './metro-mock-data/metro-pattern-pkm.json' assert { type: 'json' }
 import MetroRun from '../lib/metro/metro-run.mjs'
 import PTVAPI from '../lib/ptv-api.mjs'
@@ -286,6 +287,18 @@ describe('The MetroDepartures class', () => {
       let caulfield = stoppingPattern.stops.find(stn => stn.stationName === 'Caulfield')
       expect(caulfield).to.not.be.null
       expect(caulfield.platform).to.equal('3')
+    })
+  })
+
+  describe('Up Direct trains ending at Parliament', () => {
+    it('Should correct correct the destination to Flinders Street', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubBEGDepartureData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let metro = await ptvAPI.metro.getDepartures(19844)
+
+      expect(metro[0].runData.destination).to.equal('Flinders Street')
     })
   })
 })

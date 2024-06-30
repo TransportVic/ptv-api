@@ -1,5 +1,10 @@
 import { expect } from 'chai'
 import MetroRun from '../lib/metro/metro-run.mjs'
+import MetroLine from '../lib/metro/metro-line.mjs'
+import MetroDirection from '../lib/metro/metro-direction.mjs'
+
+const line = new MetroLine(0, 'Pakenham', '2-PKM')
+const direction = new MetroDirection(1, 'City (Flinders Street)', 'Up')
 
 describe('The MetroRun class', () => {
   describe('The isViaLoop function', () => {
@@ -60,7 +65,7 @@ describe('The MetroRun class', () => {
 
   describe('The setVehicle function', () => {
     it('Should appropriately parse VehicleDescriptor data', () => {
-      let run = new MetroRun(null, null, null, null, {
+      let run = new MetroRun(null, null, direction, null, {
         "operator": "Metro Trains Melbourne",
         "id": "1312T-1429T-23M-24M-257M-258M",
         "low_floor": null,
@@ -68,7 +73,7 @@ describe('The MetroRun class', () => {
         "description": "6 Car Xtrapolis",
         "supplier": "CIS - Metro Trains Melbourne",
         "length": "142"
-      }, null, null, null, null)
+      }, null, null, null, null, line)
 
       expect(run.vehicle.model).to.equal('Xtrapolis')
       expect(run.vehicle.cars).to.equal(6)
@@ -77,7 +82,7 @@ describe('The MetroRun class', () => {
     })
 
     it('Should handle HCMT data being formatted differently', () => {
-      let run = new MetroRun(null, null, null, null, {
+      let run = new MetroRun(null, null, direction, null, {
         "operator": "Metro Trains Melbourne",
         "id": "9032M-9932M",
         "low_floor": null,
@@ -85,7 +90,7 @@ describe('The MetroRun class', () => {
         "description": "10-car HCMT",
         "supplier": "CIS - Metro Trains Melbourne",
         "length": "160"
-      }, null, null, null, null)
+      }, null, null, null, null, line)
 
       expect(run.vehicle.model).to.equal('HCMT')
       expect(run.vehicle.cars).to.equal(10)
@@ -94,7 +99,7 @@ describe('The MetroRun class', () => {
     })
 
     it('Should update the name Silver Hitachi to just Hitachi', () => {
-      let run = new MetroRun(null, null, null, null, {
+      let run = new MetroRun(null, null, direction, null, {
         "operator": "Metro Trains Melbourne",
         "id": "1946T-281M-282M",
         "low_floor": null,
@@ -102,7 +107,7 @@ describe('The MetroRun class', () => {
         "description": "3 Car Silver Hitachi",
         "supplier": "CIS - Metro Trains Melbourne",
         "length": "71"
-      }, null, null, null, null)
+      }, null, null, null, null, line)
 
       expect(run.vehicle.model).to.equal('Hitachi')
       expect(run.vehicle.cars).to.equal(3)
