@@ -8,7 +8,8 @@ import stubCLPTestDepartureData from './metro-mock-data/metro-departures-via-clp
 import stubPARDepartureData from './metro-mock-data/city-loop-departures.json' assert { type: 'json' }
 import stubBEGDepartureData from './metro-mock-data/metro-departures-beg.json' assert { type: 'json' }
 import stubSSSDepartureData from './metro-mock-data/metro-departures-sss.json' assert { type: 'json' }
-import stubPatternData from './metro-mock-data/metro-pattern-pkm.json' assert { type: 'json' }
+import stubPKMPatternData from './metro-mock-data/metro-pattern-pkm.json' assert { type: 'json' }
+import stubRCEPatternData from './metro-mock-data/metro-pattern-rce.json' assert { type: 'json' }
 import MetroRun from '../lib/metro/metro-run.mjs'
 import PTVAPI from '../lib/ptv-api.mjs'
 
@@ -268,16 +269,16 @@ describe('The MetroDepartures class', () => {
   describe('The getStoppingPattern function', () => {
     it('Should fetch the stopping pattern based on the departure\'s TDN', async () => {
       let departureData = {
-        departures: stubPatternData.departures.slice(0, 1),
-        stops: stubPatternData.stops,
-        directions: stubPatternData.directions,
-        routes: stubPatternData.routes,
-        runs: stubPatternData.runs,
-        status: stubPatternData.status
+        departures: stubPKMPatternData.departures.slice(0, 1),
+        stops: stubPKMPatternData.stops,
+        directions: stubPKMPatternData.directions,
+        routes: stubPKMPatternData.routes,
+        runs: stubPKMPatternData.runs,
+        status: stubPKMPatternData.status
       }
 
       let stubAPI = new StubAPI()
-      stubAPI.setResponses([ departureData, stubPatternData ])
+      stubAPI.setResponses([ departureData, stubPKMPatternData ])
       let ptvAPI = new PTVAPI(stubAPI)
 
       let metro = await ptvAPI.metro.getDepartures(22180)
@@ -330,6 +331,24 @@ describe('The MetroDepartures class', () => {
   })
 
   describe('Platform 2 (4 Road) at Flemington Racecourse', () => {
-    it('Should update the platform number in the depature data')
+    it('Should update the platform number in the depature data', async () => {
+      let departureData = {
+        departures: stubRCEPatternData.departures.slice(0, 1),
+        stops: stubRCEPatternData.stops,
+        directions: stubRCEPatternData.directions,
+        routes: stubRCEPatternData.routes,
+        runs: stubRCEPatternData.runs,
+        status: stubRCEPatternData.status
+      }
+
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ departureData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let metro = await ptvAPI.metro.getDepartures(20027)
+
+      expect(metro[0].runData.destination).to.equal('Flinders Street')
+      expect(metro[0].platform).to.equal('2')
+    })
   })
 })

@@ -4,6 +4,7 @@ import { expect } from 'chai'
 import stubPKMPatternData from './metro-mock-data/metro-pattern-pkm.json' assert { type: 'json' }
 import stubHBEPatternData from './metro-mock-data/metro-pattern-hbe.json' assert { type: 'json' }
 import stubCBEPatternData from './metro-mock-data/metro-pattern-cbe.json' assert { type: 'json' }
+import stubRCEPatternData from './metro-mock-data/metro-pattern-rce.json' assert { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 
 describe('The MetroStoppingPattern class', () => {
@@ -92,7 +93,15 @@ describe('The MetroStoppingPattern class', () => {
       expect(stops[22].stationName).to.equal('Jolimont')
     })
 
-    it('Should should update the platform number for Platform 2 (4 Road) at Flemington Racecourse')
+    it('Should should update the platform number for Platform 2 (4 Road) at Flemington Racecourse', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubRCEPatternData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('R800')
+
+      expect(stoppingPattern.stops[0].stationName).to.equal('Flemington Racecourse')
+      expect(stoppingPattern.stops[0].platform).to.equal('2')
+    })
 
     it('Should trim away the city loop stops of the forming trip', async () => {
       let stubAPI = new StubAPI()
