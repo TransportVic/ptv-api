@@ -328,4 +328,8 @@ describe('The MetroDepartures class', () => {
       expect(metro[2].runData.tdn).to.equal('5036')
     })
   })
+
+  describe('Platform 2 (4 Road) at Flemington Racecourse', () => {
+    it('Should update the platform number in the depature data')
+  })
 })

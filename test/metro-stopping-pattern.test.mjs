@@ -1,14 +1,15 @@
 import MetroStoppingPattern from '../lib/metro/metro-stopping-pattern.mjs'
 import { StubAPI } from './stub-api.mjs'
 import { expect } from 'chai'
-import stubPatternData from './metro-mock-data/metro-pattern-pkm.json' assert { type: 'json' }
+import stubPKMPatternData from './metro-mock-data/metro-pattern-pkm.json' assert { type: 'json' }
+import stubHBEPatternData from './metro-mock-data/metro-pattern-hbe.json' assert { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 
 describe('The MetroStoppingPattern class', () => {
   describe('The fetch function', () => {
     it('Should call the PTV API providing the stop ID and specified parameters, automatically expanding the required parameters', async () => {
       let stubAPI = new StubAPI()
-      stubAPI.setResponses([ stubPatternData ])
+      stubAPI.setResponses([ stubPKMPatternData ])
       let ptvAPI = new PTVAPI(stubAPI)
 
       let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C104', {
@@ -23,7 +24,7 @@ describe('The MetroStoppingPattern class', () => {
 
     it('Should extract the run data from the API response', async () => {
       let stubAPI = new StubAPI()
-      stubAPI.setResponses([ stubPatternData ])
+      stubAPI.setResponses([ stubPKMPatternData ])
       let ptvAPI = new PTVAPI(stubAPI)
       let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C104')
 
@@ -37,7 +38,7 @@ describe('The MetroStoppingPattern class', () => {
 
     it('Should extract the stop data from the API response', async () => {
       let stubAPI = new StubAPI()
-      stubAPI.setResponses([ stubPatternData ])
+      stubAPI.setResponses([ stubPKMPatternData ])
       let ptvAPI = new PTVAPI(stubAPI)
       let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C104')
 
@@ -58,14 +59,14 @@ describe('The MetroStoppingPattern class', () => {
     it('Should deduplicate stops that appear twice in a row', async () => {
       let duplicatedData = {
         departures: [],
-        stops: stubPatternData.stops,
-        directions: stubPatternData.directions,
-        routes: stubPatternData.routes,
-        runs: stubPatternData.runs,
-        status: stubPatternData.status
+        stops: stubPKMPatternData.stops,
+        directions: stubPKMPatternData.directions,
+        routes: stubPKMPatternData.routes,
+        runs: stubPKMPatternData.runs,
+        status: stubPKMPatternData.status
       }
 
-      for (let stop of stubPatternData.departures) duplicatedData.departures.push(stop, stop)
+      for (let stop of stubPKMPatternData.departures) duplicatedData.departures.push(stop, stop)
 
       let stubAPI = new StubAPI()
       stubAPI.setResponses([ duplicatedData ])
@@ -78,6 +79,19 @@ describe('The MetroStoppingPattern class', () => {
       expect(stops[1].stationName).to.equal('Pakenham')
       expect(stops[2].stationName).to.equal('Cardinia Road')
     })
+
+    it('Should rename Jolimont-MCG to just Jolimont', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubHBEPatternData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('1234')
+
+      let stops = stoppingPattern.stops
+
+      expect(stops[22].stationName).to.equal('Jolimont')
+    })
+
+    it('Should should update the platform number for Platform 2 (4 Road) at Flemington Racecourse')
 
     it('Should trim away the city loop stops of the forming trip')
     it('Should trim away the city loop stops of the formed by trip')
