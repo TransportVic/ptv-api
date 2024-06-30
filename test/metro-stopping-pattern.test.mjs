@@ -3,6 +3,7 @@ import { StubAPI } from './stub-api.mjs'
 import { expect } from 'chai'
 import stubPKMPatternData from './metro-mock-data/metro-pattern-pkm.json' assert { type: 'json' }
 import stubHBEPatternData from './metro-mock-data/metro-pattern-hbe.json' assert { type: 'json' }
+import stubCBEPatternData from './metro-mock-data/metro-pattern-cbe.json' assert { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 
 describe('The MetroStoppingPattern class', () => {
@@ -93,7 +94,30 @@ describe('The MetroStoppingPattern class', () => {
 
     it('Should should update the platform number for Platform 2 (4 Road) at Flemington Racecourse')
 
-    it('Should trim away the city loop stops of the forming trip')
-    it('Should trim away the city loop stops of the formed by trip')
+    it('Should trim away the city loop stops of the forming trip', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubHBEPatternData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('1234')
+
+      expect(stoppingPattern.runData.destination).to.equal('Flinders Street')
+      let lastStop = stoppingPattern.stops[stoppingPattern.stops.length - 1]
+      expect(lastStop.stationName).to.equal('Flinders Street')
+
+      expect(stoppingPattern.formingStops[0].stationName).to.equal('Southern Cross')
+    })
+
+    it('Should trim away the city loop stops of the formed by trip', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubCBEPatternData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C425')
+
+      expect(stoppingPattern.runData.destination).to.equal('Cranbourne')
+      expect(stoppingPattern.stops[0].stationName).to.equal('Flinders Street')
+
+      expect(stoppingPattern.formedByStops[0].stationName).to.equal('Parliament')
+      expect(stoppingPattern.formedByStops.slice(-1)[0].stationName).to.equal('Southern Cross')
+    })
   })
 })
