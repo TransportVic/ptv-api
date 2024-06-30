@@ -15,7 +15,19 @@
       "departure_sequence": 0
     }
   ],
-  "stops": {},
+  "stops": {
+    "1181": {
+      "stop_distance": 0,
+      "stop_suburb": "Melbourne City",
+      "stop_name": "Southern Cross",
+      "stop_id": 1181,
+      "route_type": 0,
+      "stop_latitude": -37.8183327,
+      "stop_longitude": 144.95253,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    }
+  },
   "routes": {},
   "runs": {
     "948803": {

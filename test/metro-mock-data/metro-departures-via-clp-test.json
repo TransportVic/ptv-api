@@ -75,7 +75,19 @@
       "departure_sequence": 0
     }
   ],
-  "stops": {},
+  "stops": {
+    "1099": {
+      "stop_distance": 0,
+      "stop_suburb": "Oakleigh",
+      "stop_name": "Huntingdale",
+      "stop_id": 1099,
+      "route_type": 0,
+      "stop_latitude": -37.91102,
+      "stop_longitude": 145.102371,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    }
+  },
   "routes": {
     "4": {
       "route_type": 0,

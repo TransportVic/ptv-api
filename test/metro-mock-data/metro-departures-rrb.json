@@ -57,7 +57,19 @@
       "departure_sequence": 0
     }
   ],
-  "stops": {},
+  "stops": {
+    "1032": {
+      "stop_distance": 0,
+      "stop_suburb": "Camberwell",
+      "stop_name": "Camberwell",
+      "stop_id": 1032,
+      "route_type": 0,
+      "stop_latitude": -37.8265648,
+      "stop_longitude": 145.058685,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    }
+  },
   "routes": {
     "1": {
       "route_type": 0,

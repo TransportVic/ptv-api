@@ -39,7 +39,7 @@ describe('The TransitDepartures class', () => {
       })
 
       expect(stubAPI.getCalls()[0]).to.deep.equal({
-        path: '/v3/departures/route_type/10/stop/19810?gtfs=true&expand=vehicleposition&expand=run&expand=route&expand=direction',
+        path: '/v3/departures/route_type/10/stop/19810?gtfs=true&expand=vehicleposition&expand=stop&expand=run&expand=route&expand=direction',
         requestOptions: {}
       })
     })

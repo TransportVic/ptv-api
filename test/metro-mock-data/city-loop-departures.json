@@ -33,7 +33,19 @@
       "departure_sequence": 0
     }
   ],
-  "stops": {},
+  "stops": {
+    "1155": {
+      "stop_distance": 0,
+      "stop_suburb": "Melbourne City",
+      "stop_name": "Parliament",
+      "stop_id": 1155,
+      "route_type": 0,
+      "stop_latitude": -37.8110542,
+      "stop_longitude": 144.9729,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    }
+  },
   "routes": {
     "3": {
       "route_type": 0,
