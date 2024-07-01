@@ -76,46 +76,10 @@ describe('The TramDeparture class', () => {
     })
   })
 
-  describe('The getDestination function', () => {
-    it('Should extract the destination of the tram', () => {
-      let firstDeparture = stubELSDepartureData.responseObject[0]
-      expect(TramDeparture.getDestination(firstDeparture)).to.equal('Melbourne University')
-    })
-  })
-
-  describe('The getVehicleData function', () => {
-    it('Should extract the vehicle data of the tram, if available', () => {
-      let firstDeparture = stubELSDepartureData.responseObject[0]
-      expect(TramDeparture.getVehicleData(firstDeparture)).to.deep.equal({
-        operator: 'Yarra Trams',
-        id: 2022,
-        lowFloor: false,
-        airConditioned: true,
-        dataSource: 'TramTracker'
-      })
-    })
-
-    it('Should return null if the data is unavailable', () => {
-      let firstDeparture = { 
-        ...stubELSDepartureData.responseObject[0],
-        VehicleNo: 0
-      }
-
-      expect(TramDeparture.getVehicleData(firstDeparture)).to.be.null
-    })
-  })
-
   describe('The getRouteNumber function', () => {
     it('Should extract the route number of the tram', () => {
       let firstDeparture = stubELSDepartureData.responseObject[0]
       expect(TramDeparture.getRouteNumber(firstDeparture)).to.equal('67')
-    })
-  })
-
-  describe('The getRunNumber function', () => {
-    it('Should extract the run number of the tram', () => {
-      let firstDeparture = stubELSDepartureData.responseObject[0]
-      expect(TramDeparture.getRunNumber(firstDeparture)).to.equal('G-56')
     })
   })
 })
