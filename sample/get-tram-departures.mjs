@@ -7,22 +7,18 @@ import inspect from './inspect.mjs'
 import path from 'path'
 import url from 'url'
 
-import sslRootCas from 'ssl-root-cas'
-import https from 'https'
-
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const rootCas = sslRootCas.create()
-rootCas.addFile(path.resolve(__dirname, 'tt-intermediate.pem'))
-https.globalAgent.options.ca = rootCas
-
 let ptvAPI = new PTVAPI(new PTVAPIInterface(config.devID, config.key))
-ptvAPI.addTramTracker(new TramTrackerAPIInterface(
+let tramTrackerAPIInterface = new TramTrackerAPIInterface(
   config.tramTrackerApplicationID,
   config.tramTrackerToken,
   config.tramTrackerClientID
-))
+)
+tramTrackerAPIInterface.addTTIntermediateCert(path.resolve(__dirname, 'tt-intermediate.pem'))
+
+ptvAPI.addTramTracker(tramTrackerAPIInterface)
 
 async function main() {
   let tramTrackerID = process.argv[2]
