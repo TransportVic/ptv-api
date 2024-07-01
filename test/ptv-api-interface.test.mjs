@@ -79,7 +79,7 @@ describe('The PTV API Interface', () => {
       expect(await api.apiCall(testURL)).to.deep.equal(sampleReply)
     })
 
-    it('Should raise a PTVError as necessary', async () => {
+    it('Should raise a PTVAPIError as necessary', async () => {
       let api = new PTVAPIInterface('1234567', '12345678-1234-1234-1234-123456789ABC')
 
       nock('https://timetableapi.ptv.vic.gov.au').get(fullURL).reply(200, { departures: [], status: { health: 0 } })
