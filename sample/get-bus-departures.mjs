@@ -2,18 +2,16 @@ import { PTVAPIInterface } from '../lib/ptv-api-interface.mjs'
 import PTVAPI from '../lib/ptv-api.mjs'
 import config from './config.json' assert { type: 'json' }
 import inspect from './inspect.mjs'
-import stops from './metro-stops.json' assert { type: 'json' }
 
 let ptvAPI = new PTVAPI(new PTVAPIInterface(config.devID, config.key))
 
 async function main() {
-  let stopName = process.argv[2]
-  let stopGTFSID = stops[stopName]
-  if (!stopGTFSID) return console.error('Invalid stop name', stopName)
+  let stopGTFSID = process.argv[2]
 
-  let departures = await ptvAPI.metro.getDepartures(stopGTFSID, {
+  let departures = await ptvAPI.bus.getDepartures(stopGTFSID, {
     gtfs: true,
-    maxResults: 2
+    maxResults: 2,
+    expand: ['vehicleposition']
   })
 
   inspect(departures)
