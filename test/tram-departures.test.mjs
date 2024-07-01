@@ -28,18 +28,33 @@ describe('The TramDepartures class', () => {
     })
   })
 
-  // describe('The fetch function', () => {
-  //   it('Should extract the route number of the departures', async () => {
-  //     let stubAPI = new StubAPI()
-  //     stubAPI.setResponses([ stubELSDepartureData ])
-  //     stubAPI.skipErrors()
-  //     let ptvAPI = new PTVAPI(stubAPI)
-  //     ptvAPI.addTramTracker(stubAPI)
-  //     let trams = await ptvAPI.tram.getDepartures(1044)
+  describe('The fetch function', () => {
+    it('Should extract the route number and GTFS ID of the departures', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubELSDepartureData ])
+      stubAPI.skipErrors()
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addTramTracker(stubAPI)
+      let trams = await ptvAPI.tram.getDepartures(1044)
 
-  //     expect(trams[0].routeData.routeNumber).to.equal('67')
-  //   })
-  // })
+      expect(trams[0].routeData.routeNumber).to.equal('67')
+      expect(trams[0].routeData.gtfsRouteID).to.equal('3-67')
+    })
+
+    it('Should extract the run data', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubELSDepartureData ])
+      stubAPI.skipErrors()
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addTramTracker(stubAPI)
+      let trams = await ptvAPI.tram.getDepartures(1044)
+
+      expect(trams[0].runData.runNumber).to.equal('G-56')
+      expect(trams[0].runData.destination).to.equal('Melbourne University')
+      expect(trams[0].runData.vehicle).to.not.be.null
+      expect(trams[0].runData.vehicle.id).to.equal(2022)
+    })
+  })
 })
 
 describe('The TramDeparture class', () => {
@@ -73,7 +88,7 @@ describe('The TramDeparture class', () => {
       let firstDeparture = stubELSDepartureData.responseObject[0]
       expect(TramDeparture.getVehicleData(firstDeparture)).to.deep.equal({
         operator: 'Yarra Trams',
-        tramNumber: 2022,
+        id: 2022,
         lowFloor: false,
         airConditioned: true,
         dataSource: 'TramTracker'
