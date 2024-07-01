@@ -9,22 +9,22 @@ describe('The TramDepartures class', () => {
   describe('The getAPIURL function', () => {
     it('Should default the route number to 0 (all routes), and the low floor specification if unspecified', () => {
       let tram = new TramDepartures(null, 1044)
-      expect(tram.getAPIURL()).to.equal('GetPredictionsCollection/1044/0/false')
+      expect(tram.getAPIURL()).to.equal('/GetPredictionsCollection/1044/0/false')
     })
 
     it('Should add the route number if specified', () => {
       let tram = new TramDepartures(null, 1044)
-      expect(tram.getAPIURL({ route: '67' })).to.equal('GetPredictionsCollection/1044/67/false')
+      expect(tram.getAPIURL({ route: '67' })).to.equal('/GetPredictionsCollection/1044/67/false')
     })
 
     it('Should add a low floor specification if specified', () => {
       let tram = new TramDepartures(null, 1044)
-      expect(tram.getAPIURL({ lowFloorOnly: true })).to.equal('GetPredictionsCollection/1044/0/true')
+      expect(tram.getAPIURL({ lowFloorOnly: true })).to.equal('/GetPredictionsCollection/1044/0/true')
     })
 
     it('Should handle both parameters specified at once', () => {
       let tram = new TramDepartures(null, 3001)
-      expect(tram.getAPIURL({ route: '3', lowFloorOnly: true })).to.equal('GetPredictionsCollection/3001/3/true')
+      expect(tram.getAPIURL({ route: '3', lowFloorOnly: true })).to.equal('/GetPredictionsCollection/3001/3/true')
     })
   })
 
