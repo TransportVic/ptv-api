@@ -54,6 +54,19 @@ describe('The TramDepartures class', () => {
       expect(trams[0].runData.vehicle).to.not.be.null
       expect(trams[0].runData.vehicle.id).to.equal(2022)
     })
+
+    it('Should provide the scheduled and estimated departure times', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubELSDepartureData ])
+      stubAPI.skipErrors()
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addTramTracker(stubAPI)
+      let trams = await ptvAPI.tram.getDepartures(1044)
+
+      expect(trams[0].scheduledDeparture).to.not.be.null
+      expect(trams[0].scheduledDeparture.toISOString()).to.equal('2024-07-01T01:25:00.000Z')
+      expect(trams[0].estimatedDeparture).to.not.be.null
+    })
   })
 })
 
