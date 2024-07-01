@@ -19,6 +19,11 @@ export class StubAPI extends PTVAPIInterface {
 
   async apiCall(path, requestOptions={}) {
     this.calls.push({path, requestOptions})
-    return this.responses.shift()
+    let responseData = this.responses.shift()
+
+    this.checkForErrorMessage(responseData)
+    this.checkForAPIStatus(responseData)
+
+    return responseData
   }
 }

@@ -1,8 +1,8 @@
 import { StubAPI } from "./stub-api.mjs"
 import { expect } from 'chai'
 import stubDepartureData from './bus-mock-data/monash-departures.json' assert { type: 'json' }
-import BusDepartures from "../lib/bus/bus-departures.mjs"
 import PTVAPI from "../lib/ptv-api.mjs"
+import { PTVAPIError, PTVAPIInterface } from "../lib/ptv-api-interface.mjs"
 
 describe('The BusDepartures class', () => {
   describe('The fetch function', () => {
@@ -86,5 +86,17 @@ describe('The BusDepartures class', () => {
       expect(departure862.runData.vehicle.smartrakID).to.equal(60202)
     })
 
+    it('Should raise an appropriate error if the Stop ID is invalid', async () => {
+      let response = {"message":"Invalid combination of route_type: bus, stop_id: 34079 & optional query string param gtfs: True","status":{"version":"3.0","health":1}}
+
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ response ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let error = await ptvAPI.bus.getDepartures(34079, { gtfs: true }).catch(e => e)
+
+      expect(error).to.be.instanceof(PTVAPIError)
+      expect(error.code).to.equal('INVALID_STOP')
+    })
   })
 })
