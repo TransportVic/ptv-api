@@ -43,7 +43,7 @@ describe('The V/Line API Interface', () => {
     })
   })
 
-  describe('The fetch function', () => {
+  describe('The apiCalll function', () => {
     it('Should detect when the authorisation keys are invalid and raise an error', async () => {
       let method = new SampleVLineMethod()
       let fullURL = '/vline/test/method?CallerID=ABC-DEF&AccessToken=795511bba1d555c42d4360a6d7544628e454e154'
@@ -65,6 +65,26 @@ describe('The V/Line API Interface', () => {
       let response = await apiInterface.apiCall(method).catch(e => e)
 
       expect(response).to.not.be.instanceof(VLineAPIError)
+    })
+  })
+
+  describe('The performFetch function', () => {
+    it('Should replace a: in the response', async () => {
+      let method = new SampleVLineMethod()
+      let fullURL = '/vline/test/method?CallerID=ABC-DEF&AccessToken=795511bba1d555c42d4360a6d7544628e454e154'
+
+      nock('https://example.vline.com').get(fullURL).reply(200, '<a:GPSLongitude>138.595749</a:GPSLongitude>')
+
+      expect(await apiInterface.performFetch(method)).to.equal('<GPSLongitude>138.595749</GPSLongitude>')
+    })
+
+    it('Should not replace a: inside a tag', async () => {
+      let method = new SampleVLineMethod()
+      let fullURL = '/vline/test/method?CallerID=ABC-DEF&AccessToken=795511bba1d555c42d4360a6d7544628e454e154'
+
+      nock('https://example.vline.com').get(fullURL).reply(200, '<a:LocationName>Echuca: Ampol Roadhouse Northern Highway and Rose Street</a:LocationName>')
+
+      expect(await apiInterface.performFetch(method)).to.equal('<LocationName>Echuca: Ampol Roadhouse Northern Highway and Rose Street</LocationName>')
     })
   })
 })
