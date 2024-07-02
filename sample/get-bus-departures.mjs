@@ -7,6 +7,7 @@ let ptvAPI = new PTVAPI(new PTVAPIInterface(config.devID, config.key))
 
 async function main() {
   let stopGTFSID = process.argv[2]
+  if (!stopGTFSID) return console.error(`Please provide a stop number:\n> node get-bus-departures.mjs stop_id`)
 
   let departures = await ptvAPI.bus.getDepartures(stopGTFSID, {
     gtfs: true,

@@ -22,6 +22,7 @@ ptvAPI.addTramTracker(tramTrackerAPIInterface)
 
 async function main() {
   let tramTrackerID = process.argv[2]
+  if (!tramTrackerID) return console.error(`Please provide a stop number:\n> node get-tram-departures.mjs stop_id`)
 
   let departures = await ptvAPI.tram.getDepartures(tramTrackerID)
 
