@@ -34,3 +34,23 @@ export class StubAPI extends PTVAPIInterface {
     return responseData
   }
 }
+
+export class SampleVLineMethod extends VLineAPIMethod {
+
+  constructor() {
+    super('123456', 'ABCDEF')
+  }
+
+  getMethodName() {
+    return 'TEST_METHOD'
+  }
+
+  getMethodURLPath() {
+    return '/vline/test/method'
+  }
+
+  getMethodURLHost() {
+    return 'https://example.vline.com'
+  }
+
+}
