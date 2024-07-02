@@ -20,7 +20,7 @@ describe('The TramTracker API Interface', () => {
 
       let url = api.constructURL(apiEndpoint)
 
-      expect(url).to.equal('https://ws2.tramtracker.com.au/tramTRACKERV2/RestService/GetPredictionsCollection/1044/0/false?aid=1234567&tkn=abcdefg&cid=0')
+      expect(url).to.equal('https://ws2.tramtracker.com.au/TramTracker/RestService/GetPredictionsCollection/1044/0/false?aid=1234567&tkn=abcdefg&cid=0')
     })
   })
 
@@ -42,7 +42,7 @@ describe('The TramTracker API Interface', () => {
   
   describe('The apiCall function', () => {
     let testURL = '/GetPredictionsCollection/1044/0/false'
-    let fullURL = '/tramTRACKERV2/RestService/GetPredictionsCollection/1044/0/false?aid=1234567&tkn=abcdefg&cid=0'
+    let fullURL = '/TramTracker/RestService/GetPredictionsCollection/1044/0/false?aid=1234567&tkn=abcdefg&cid=0'
 
     it('Should return the TramTracker API response if no errors are found', async () => {
       let api = new TramTrackerAPIInterface('1234567', 'abcdefg', '0')

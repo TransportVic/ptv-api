@@ -18,7 +18,7 @@ describe('The TramRun class', () => {
       let firstDeparture = stubELSDepartureData.responseObject[0]
       expect(TramRun.getVehicleData(firstDeparture)).to.deep.equal({
         operator: 'Yarra Trams',
-        id: 2022,
+        id: 2115,
         lowFloor: false,
         airConditioned: true,
         dataSource: 'TramTracker'
@@ -38,7 +38,7 @@ describe('The TramRun class', () => {
   describe('The getRunNumber function', () => {
     it('Should extract the run number of the tram', () => {
       let firstDeparture = stubELSDepartureData.responseObject[0]
-      expect(TramRun.getRunNumber(firstDeparture)).to.equal('G-56')
+      expect(TramRun.getRunNumber(firstDeparture)).to.equal('G-63')
     })
   })
 })
