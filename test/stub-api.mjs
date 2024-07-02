@@ -1,4 +1,5 @@
-import { PTVAPIError, PTVAPIInterface } from '../lib/ptv-api-interface.mjs'
+import { PTVAPIInterface } from '../lib/ptv-api-interface.mjs'
+import { VLineAPIMethod } from '../lib/vline/api-methods.mjs'
 
 export class StubAPI extends PTVAPIInterface {
 
@@ -38,7 +39,7 @@ export class StubAPI extends PTVAPIInterface {
 export class SampleVLineMethod extends VLineAPIMethod {
 
   constructor() {
-    super('123456', 'ABCDEF')
+    super()
   }
 
   getMethodName() {
