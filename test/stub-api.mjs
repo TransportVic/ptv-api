@@ -53,7 +53,7 @@ export class SampleVLineMethod extends VLineAPIMethod {
   }
 
   getMethodURLPath() {
-    return '/vline/test/method'
+    return this.#urlPath
   }
 
   getMethodURLHost() {
