@@ -1,4 +1,5 @@
 import { PTVAPIInterface } from '../lib/ptv-api-interface.mjs'
+import { VLineAPIInterface } from '../lib/vline-api-interface.mjs'
 import { VLineAPIMethod } from '../lib/vline/api-methods.mjs'
 
 export class StubAPI extends PTVAPIInterface {
@@ -60,4 +61,30 @@ export class SampleVLineMethod extends VLineAPIMethod {
     return 'https://example.vline.com'
   }
 
+}
+
+export class StubVLineAPI extends VLineAPIInterface {
+
+  responses = []
+  calls = []
+
+  constructor() {
+    super('', '')
+  }
+
+  setResponses(responses) {
+    this.responses = responses
+  }
+
+  getCalls() {
+    return this.calls
+  }
+
+  async performFetch(apiMethod, requestOptions) {    
+    let fullURL = this.constructURL(apiMethod)
+    this.calls.push({path: fullURL, requestOptions})
+    let responseData = this.responses.shift()
+
+    return responseData.replace(/(<\/?)a:/g, '$1')
+  }
 }
