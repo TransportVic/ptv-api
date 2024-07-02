@@ -1,6 +1,17 @@
 import { expect } from 'chai'
 import { SampleVLineMethod } from './stub-api.mjs'
-import { VLineAPIInterface } from '../lib/vline-api-interface.mjs'
+import { VLineAPIError, VLineAPIInterface } from '../lib/vline-api-interface.mjs'
+import nock from 'nock'
+
+import fs from 'fs/promises'
+import path from 'path'
+import url from 'url'
+
+const __filename = url.fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const unauthorisedResponse = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'error-unauthorised.xml'))).toString()
+const locationsResponse = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'locations.xml'))).toString()
 
 describe('The V/Line API Interface', () => {
   let apiInterface = new VLineAPIInterface('ABC-DEF', '123-456')
@@ -29,6 +40,31 @@ describe('The V/Line API Interface', () => {
       let url = apiInterface.constructURL(method)
 
       expect(url).to.equal('https://example.vline.com/departures?station=Caulfield&CallerID=ABC-DEF&AccessToken=795511bba1d555c42d4360a6d7544628e454e154')
+    })
+  })
+
+  describe('The fetch function', () => {
+    it('Should detect when the authorisation keys are invalid and raise an error', async () => {
+      let method = new SampleVLineMethod()
+      let fullURL = '/vline/test/method?CallerID=ABC-DEF&AccessToken=795511bba1d555c42d4360a6d7544628e454e154'
+
+      nock('https://example.vline.com').get(fullURL).reply(400, unauthorisedResponse)
+
+      let response = await apiInterface.apiCall(method).catch(e => e)
+
+      expect(response).to.be.instanceof(VLineAPIError)
+      expect(response.code).to.equal('CALLERID_INVALID')
+    })
+
+    it('Should not raise an authorisation error when the keys are valid', async () => {
+      let method = new SampleVLineMethod()
+      let fullURL = '/vline/test/method?CallerID=ABC-DEF&AccessToken=795511bba1d555c42d4360a6d7544628e454e154'
+
+      nock('https://example.vline.com').get(fullURL).reply(200, locationsResponse)
+
+      let response = await apiInterface.apiCall(method).catch(e => e)
+
+      expect(response).to.not.be.instanceof(VLineAPIError)
     })
   })
 })
