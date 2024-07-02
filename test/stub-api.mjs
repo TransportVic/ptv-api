@@ -38,8 +38,14 @@ export class StubAPI extends PTVAPIInterface {
 
 export class SampleVLineMethod extends VLineAPIMethod {
 
+  #urlPath = '/vline/test/method'
+
   constructor() {
     super()
+  }
+
+  setMethodURLPath(urlPath) {
+    this.#urlPath = urlPath
   }
 
   getMethodName() {
