@@ -104,7 +104,7 @@ describe('The V/Line API Interface', () => {
 
       nock('https://example.vline.com').get(fullURL).reply(200, '<a:GPSLongitude>138.595749</a:GPSLongitude>')
 
-      expect(await apiInterface.performFetch(method)).to.equal('<GPSLongitude>138.595749</GPSLongitude>')
+      expect(await apiInterface.performFetch(method)).to.equal('<VGPSLongitude>138.595749</VGPSLongitude>')
     })
 
     it('Should not replace a: inside a tag', async () => {
@@ -113,7 +113,7 @@ describe('The V/Line API Interface', () => {
 
       nock('https://example.vline.com').get(fullURL).reply(200, '<a:LocationName>Echuca: Ampol Roadhouse Northern Highway and Rose Street</a:LocationName>')
 
-      expect(await apiInterface.performFetch(method)).to.equal('<LocationName>Echuca: Ampol Roadhouse Northern Highway and Rose Street</LocationName>')
+      expect(await apiInterface.performFetch(method)).to.equal('<VLocationName>Echuca: Ampol Roadhouse Northern Highway and Rose Street</VLocationName>')
     })
   })
 })

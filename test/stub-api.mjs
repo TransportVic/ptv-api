@@ -85,6 +85,6 @@ export class StubVLineAPI extends VLineAPIInterface {
     this.calls.push({path: fullURL, requestOptions})
     let responseData = this.responses.shift()
 
-    return responseData.replace(/(<\/?)a:/g, '$1')
+    return responseData.replace(/(<\/?)a:/g, '$1V')
   }
 }
