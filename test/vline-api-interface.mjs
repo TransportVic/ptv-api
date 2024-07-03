@@ -6,7 +6,7 @@ import nock from 'nock'
 import fs from 'fs/promises'
 import path from 'path'
 import url from 'url'
-import { GetLiveDisruptions } from '../lib/vline/api-methods.mjs'
+import { GetLiveDisruptionsAPI } from '../lib/vline/get-disruptions.mjs'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -63,10 +63,10 @@ describe('The V/Line API Interface', () => {
     })
 
     it('Should not add authentication data for a Servce Status API Method', () => {
-      let method = new GetLiveDisruptions()
+      let method = new GetLiveDisruptionsAPI('BAL')
       let url = apiInterface.constructURL(method)
 
-      expect(url).to.equal('https://api-servicestatus.vline.com.au/Service/VLineService.svc/web/GetPublishedLiveDisruptions?LineCode={0}')
+      expect(url).to.equal('https://api-servicestatus.vline.com.au/Service/VLineService.svc/web/GetPublishedLiveDisruptions?LineCode=BAL')
     })
 
 
