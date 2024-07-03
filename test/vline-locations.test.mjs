@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename)
 
 const stubLocationsResponse = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'locations.xml'))).toString()
 
-describe('The VLineLocations class', () => {
+describe('The GetLocationsAPI class', () => {
   it('Should provide the data as given in the API response', async () => {
     let stubAPI = new StubVLineAPI()
     stubAPI.setResponses([ stubLocationsResponse ])

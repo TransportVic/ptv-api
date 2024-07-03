@@ -62,7 +62,7 @@ describe('The V/Line API Interface', () => {
       expect(url).to.equal('https://example.vline.com/vline/test/method?CallerID=ABC-DEF&AccessToken=795511bba1d555c42d4360a6d7544628e454e154')
     })
 
-    it('Should add authentication data for a Journey Planner API Method', () => {
+    it('Should not add authentication data for a Servce Status API Method', () => {
       let method = new GetLiveDisruptions()
       let url = apiInterface.constructURL(method)
 
