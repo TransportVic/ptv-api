@@ -6,6 +6,7 @@ import path from 'path'
 import url from 'url'
 import PTVAPI from '../lib/ptv-api.mjs'
 import { GetLiveDisruptionsAPI, GetPlannedDisruptionsAPI, VLineDisruption, VLineDisruptions } from '../lib/vline/get-disruptions.mjs'
+import { VLineStatusMethod } from '../lib/vline/api-methods.mjs'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -68,5 +69,34 @@ describe('The GetLiveDisruptionsAPI class', () => {
     expect(disruptions[0].type).to.equal('LIVE')
     expect(disruptions[0].title).to.equal('Cafe Bar Closure - Swan Hill Service')
     expect(disruptions[0].details).to.equal('The 07:39 Southern Cross - Swan Hill service will operate without Cafe Bar facilities today. Please consider purchasing your food/beverage prior to departure.')
+  })
+})
+
+describe('The VLineStatusMethod class', () => {
+  describe('The replaceEntities method', () => {
+    it('Should replace HTML entities with their proper characters', () => {
+      let input = '&lt;p&gt;&lt;a href="https://www.vline.com.au"&gt;Click here.&lt;/a&gt;&lt;/p&gt;'
+      let output = '<p><a href="https://www.vline.com.au">Click here.</a></p>'
+
+      expect(VLineStatusMethod.replaceEntities(input)).to.equal(output)
+    })
+  })
+
+  describe('The stripHTML method', () => {
+    it('Should replace HTML with just the rendered text', () => {
+      let input = '<p><a href="https://www.vline.com.au">Click here.</a></p>'
+      let output = 'Click here.'
+
+      expect(VLineStatusMethod.stripHTML(input)).to.equal(output)
+    })
+  })
+
+  describe('The sanitise method', () => {
+    it('Should replace the HTML entities then sanitise the response', () => {
+      let input = '&lt;p&gt;&lt;a href="https://www.vline.com.au"&gt;Click here.&lt;/a&gt;&lt;/p&gt;'
+      let output = 'Click here.'
+
+      expect(VLineStatusMethod.sanitise(input)).to.equal(output)
+    })
   })
 })
