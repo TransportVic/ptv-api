@@ -1,6 +1,6 @@
 import { PTVAPIInterface } from '../lib/ptv-api-interface.mjs'
 import { VLineAPIInterface } from '../lib/vline-api-interface.mjs'
-import { VLineAPIMethod } from '../lib/vline/api-methods.mjs'
+import { VLineAPIMethod, VLineJPMethod } from '../lib/vline/api-methods.mjs'
 
 export class StubAPI extends PTVAPIInterface {
 
@@ -37,7 +37,7 @@ export class StubAPI extends PTVAPIInterface {
   }
 }
 
-export class SampleVLineMethod extends VLineAPIMethod {
+export class SampleVLineMethod extends VLineJPMethod {
 
   #urlPath = '/vline/test/method'
 
