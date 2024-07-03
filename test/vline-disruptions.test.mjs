@@ -23,6 +23,11 @@ describe('The GetPlannedDisruptionsAPI class', () => {
     expect(disruptions).to.be.instanceOf(VLineDisruptions)
     expect(disruptions[0]).to.be.instanceOf(VLineDisruption)
 
+    expect(disruptions[0].type).to.equal('PLANNED')
     expect(disruptions[0].title).to.equal('Temporary train timetable on the Gippsland Line')
+    expect(disruptions[0].startTime.toISOString()).to.equal('2024-06-12T14:00:00.000Z')
+    expect(disruptions[0].endTime.toISOString()).to.equal('2024-07-07T14:00:00.000Z')
+    expect(disruptions[0].disruptionID).to.equal('1868')
+    expect(disruptions[0].link).to.equal('https://www.vline.com.au/Service-Changes/Planned-Disruptions/2024/June/Temporary-train-timetable-on-the-Gippsland-Line')
   })
 })
