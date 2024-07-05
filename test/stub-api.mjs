@@ -69,7 +69,7 @@ export class StubVLineAPI extends VLineAPIInterface {
   calls = []
 
   constructor() {
-    super('', '')
+    super('123', 'ABC')
   }
 
   setResponses(responses) {
