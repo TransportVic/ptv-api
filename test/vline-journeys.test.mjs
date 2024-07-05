@@ -45,15 +45,26 @@ describe('The GetJourneysAPI class', () => {
     expect(journey.legs[0].destination).to.equal('Dandenong Station')
     expect(journey.legs[0].runID).to.equal('4603')
     expect(journey.legs[0].serviceType).to.equal('Metro')
+    expect(journey.legs[0].duration).to.equal(52)
+    expect(journey.legs[0].waitTime).to.equal(0)
 
     expect(journey.legs[1].origin).to.equal('Dandenong Station')
     expect(journey.legs[1].destination).to.equal('Koo Wee Rup')
     expect(journey.legs[1].runID).to.equal('C491')
     expect(journey.legs[1].serviceType).to.equal('Coach')
+    expect(journey.legs[1].duration).to.equal(48)
+    expect(journey.legs[1].waitTime).to.equal(6)
 
     expect(journey.legs[2].origin).to.equal('Koo Wee Rup')
     expect(journey.legs[2].destination).to.equal('Lang Lang')
     expect(journey.legs[2].runID).to.equal('C467')
     expect(journey.legs[2].serviceType).to.equal('Coach')
+    expect(journey.legs[2].duration).to.equal(10)
+    expect(journey.legs[2].waitTime).to.equal(5)
+
+    expect(journey.duration).to.equal(121)
+    expect(journey.totalWaitTime).to.equal(11)
+    expect(journey.maxWaitTime).to.equal(6)
+
   })
 })
