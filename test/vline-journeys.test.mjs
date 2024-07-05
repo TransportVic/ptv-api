@@ -30,12 +30,30 @@ describe('The GetJourneysAPI class', () => {
     ptvAPI.addVLine(stubAPI)
 
     let journeys = await ptvAPI.vline.getJourneys('Melbourne: Southern Cross', 'Lang Lang')
-    console.log(journeys)
+
     expect(stubAPI.getCalls()[0].path).to.equal('https://api-jp.vline.com.au/Service/VLineServices.svc/web/GetNextPrevious5Journeys?LocationName=Melbourne: Southern Cross&DestinationName=Lang Lang&hasPrevious=false&CallerID=123&AccessToken=e096a2f997873d0d391b533883d0f98efc3af5f2')
 
     expect(journeys).to.be.instanceOf(VLineJourneys)
-    expect(journeys[0]).to.be.instanceOf(VLineJourney)
 
-    expect(journeys[0].legs.length).to.equal(3)
+    let journey = journeys[0]
+
+    expect(journey).to.be.instanceOf(VLineJourney)
+
+    expect(journey.legs.length).to.equal(3)
+
+    expect(journey.legs[0].origin).to.equal('Melbourne, Southern Cross')
+    expect(journey.legs[0].destination).to.equal('Dandenong Station')
+    expect(journey.legs[0].runID).to.equal('4603')
+    expect(journey.legs[0].serviceType).to.equal('Metro')
+
+    expect(journey.legs[1].origin).to.equal('Dandenong Station')
+    expect(journey.legs[1].destination).to.equal('Koo Wee Rup')
+    expect(journey.legs[1].runID).to.equal('C491')
+    expect(journey.legs[1].serviceType).to.equal('Coach')
+
+    expect(journey.legs[2].origin).to.equal('Koo Wee Rup')
+    expect(journey.legs[2].destination).to.equal('Lang Lang')
+    expect(journey.legs[2].runID).to.equal('C467')
+    expect(journey.legs[2].serviceType).to.equal('Coach')
   })
 })
