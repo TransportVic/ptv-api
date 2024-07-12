@@ -5,7 +5,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import url from 'url'
 import PTVAPI from '../lib/ptv-api.mjs'
-import { GetJourneyStopsAPI, VLineJourneyStop, VLineJourneyStops } from '../lib/vline/get-journey-stops.mjs'
+import { GetJourneyStopsAPI, VLineTripStop, VLineStoppingPattern } from '../lib/vline/get-journey-stops.mjs'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -30,8 +30,11 @@ describe('The GetJourneyStopsAPI class', () => {
 
     expect(stubAPI.getCalls()[0].path).to.contain('https://api-jp.vline.com.au/Service/VLineServices.svc/web/GetJourneyStops?LocationName=Melbourne: Flinders Street&DestinationName=Traralgon Station: Princes Hwy&originDepartureTime=07:39&originServiceIdentifier=8403')
 
-    expect(journeyStops).to.be.instanceOf(VLineJourneyStops)
-    expect(journeyStops[0]).to.be.instanceOf(VLineJourneyStop)
+    expect(journeyStops).to.be.instanceOf(VLineStoppingPattern)
+    expect(journeyStops[0]).to.be.instanceOf(VLineTripStop)
 
+    expect(journeyStops[0].location).to.equal('Melbourne: Flinders Street')
+    expect(journeyStops[0].departureTime.toISOString()).to.equal('2024-07-11T21:39:00.000Z')
+    expect(journeyStops[2].departureTime.toISOString()).to.equal('2024-07-11T22:01:00.000Z')
   })
 })
