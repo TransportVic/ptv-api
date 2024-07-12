@@ -54,6 +54,8 @@ describe('The GetPlatformServicesAPI class', () => {
       expect(departures[0].tdn).to.equal('8811')
       expect(departures[0].direction).to.equal('Down')
 
+      expect(departures[0].platform).to.equal('16')
+
       expect(departures[0].estStationArrivalTime).to.be.null
       expect(departures[0].estArrivalTime).to.be.null
     })
@@ -76,6 +78,8 @@ describe('The GetPlatformServicesAPI class', () => {
 
       expect(arrivals[0].tdn).to.equal('8156')
       expect(arrivals[0].direction).to.equal('Up')
+
+      expect(arrivals[0].platform).to.be.null
 
       expect(arrivals[0].estStationArrivalTime).to.not.be.null
       expect(arrivals[0].estStationArrivalTime.toUTC().toISO()).to.equal('2024-07-12T12:27:00.000Z')

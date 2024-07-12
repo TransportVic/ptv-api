@@ -12,7 +12,7 @@ let vlineAPIInterface = new VLineAPIInterface(
 ptvAPI.addVLine(vlineAPIInterface)
 
 async function main() {
-  let departures = await ptvAPI.vline.getDepartures('Melbourne: Southern Cross', 'D', 30)
+  let departures = await ptvAPI.vline.getDepartures('Melbourne, Southern Cross', 'D', 30)
   inspect(departures)
 }
 
