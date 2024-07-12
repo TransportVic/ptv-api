@@ -32,27 +32,56 @@ describe('The GetPlatformServicesAPI class', () => {
     })
   })
 
-  it('Should provide the data as given in the API response', async () => {
-    let stubAPI = new StubVLineAPI()
-    stubAPI.setResponses([ stubPlatformDepartures ])
-    let ptvAPI = new PTVAPI(stubAPI)
-    ptvAPI.addVLine(stubAPI)
+  describe('The GetPlatformDeparturesAPI class', () => {
+    it('Should provide the data as given in the API response', async () => {
+      let stubAPI = new StubVLineAPI()
+      stubAPI.setResponses([ stubPlatformDepartures ])
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addVLine(stubAPI)
 
-    let departures = await ptvAPI.vline.getPlatformDepartures('Melbourne, Southern Cross', TestPlatformServices.DOWN, 30)
+      let departures = await ptvAPI.vline.getPlatformDepartures('Melbourne, Southern Cross', TestPlatformServices.DOWN, 30)
 
-    expect(departures).to.be.instanceOf(VLinePlatformServices)
-    expect(departures[0]).to.be.instanceOf(VLinePlatformService)
+      expect(departures).to.be.instanceOf(VLinePlatformServices)
+      expect(departures[0]).to.be.instanceOf(VLinePlatformService)
 
-    expect(departures[0].origin).to.equal('Melbourne, Southern Cross')
-    expect(departures[0].destination).to.equal('Geelong Station: Railway Terrace')
+      expect(departures[0].origin).to.equal('Melbourne, Southern Cross')
+      expect(departures[0].destination).to.equal('Geelong Station: Railway Terrace')
 
-    expect(departures[0].departureTime.toISOString()).to.equal('2024-07-12T12:45:00.000Z')    
-    expect(departures[0].arrivalTime.toISOString()).to.equal('2024-07-12T13:48:00.000Z')    
+      expect(departures[0].departureTime.toISOString()).to.equal('2024-07-12T12:45:00.000Z')
+      expect(departures[0].arrivalTime.toISOString()).to.equal('2024-07-12T13:48:00.000Z')
 
-    expect(departures[0].tdn).to.equal('8811')
-    expect(departures[0].direction).to.equal('Down')
+      expect(departures[0].tdn).to.equal('8811')
+      expect(departures[0].direction).to.equal('Down')
 
-    expect(departures[0].estStationArrivalTime).to.be.null
-    expect(departures[0].estArrivalTime).to.be.null
+      expect(departures[0].estStationArrivalTime).to.be.null
+      expect(departures[0].estArrivalTime).to.be.null
+    })
+  })
+
+  describe('The GetPlatformArrivalsAPI class', () => {
+    it('Should provide the data as given in the API response', async () => {
+      let stubAPI = new StubVLineAPI()
+      stubAPI.setResponses([ stubPlatformArrivals ])
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addVLine(stubAPI)
+
+      let arrivals = await ptvAPI.vline.getPlatformArrivals('Footscray Station', TestPlatformServices.UP, 30)
+
+      expect(arrivals[0].origin).to.equal('Wendouree Station')
+      expect(arrivals[0].destination).to.equal('Melbourne, Southern Cross')
+
+      expect(arrivals[0].departureTime.toISOString()).to.equal('2024-07-12T10:51:00.000Z')
+      expect(arrivals[0].arrivalTime.toISOString()).to.equal('2024-07-12T12:38:00.000Z')
+
+      expect(arrivals[0].tdn).to.equal('8156')
+      expect(arrivals[0].direction).to.equal('Up')
+
+      expect(arrivals[0].estStationArrivalTime).to.not.be.null
+      expect(arrivals[0].estStationArrivalTime.toISOString()).to.equal('2024-07-12T12:27:00.000Z')
+      expect(arrivals[0].estArrivalTime.toISOString()).to.equal('2024-07-12T12:38:00.000Z')
+
+      expect(arrivals[1].arrivalTime.toISOString()).to.equal('2024-07-12T12:47:00.000Z')
+      expect(arrivals[1].estArrivalTime.toISOString()).to.equal('2024-07-12T12:48:00.000Z')
+    })
   })
 })
