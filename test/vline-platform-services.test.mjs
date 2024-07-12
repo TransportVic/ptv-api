@@ -40,7 +40,7 @@ describe('The GetPlatformServicesAPI class', () => {
       let ptvAPI = new PTVAPI(stubAPI)
       ptvAPI.addVLine(stubAPI)
 
-      let departures = await ptvAPI.vline.getPlatformDepartures('Melbourne, Southern Cross', TestPlatformServices.DOWN, 30)
+      let departures = await ptvAPI.vline.getDepartures('Melbourne, Southern Cross', TestPlatformServices.DOWN, 30)
 
       expect(departures).to.be.instanceOf(VLinePlatformServices)
       expect(departures[0]).to.be.instanceOf(VLinePlatformService)
@@ -66,7 +66,7 @@ describe('The GetPlatformServicesAPI class', () => {
       let ptvAPI = new PTVAPI(stubAPI)
       ptvAPI.addVLine(stubAPI)
 
-      let arrivals = await ptvAPI.vline.getPlatformArrivals('Footscray Station', TestPlatformServices.UP, 30)
+      let arrivals = await ptvAPI.vline.getArrivals('Footscray Station', TestPlatformServices.UP, 30)
 
       expect(arrivals[0].origin).to.equal('Wendouree Station')
       expect(arrivals[0].destination).to.equal('Melbourne, Southern Cross')
@@ -91,7 +91,7 @@ describe('The GetPlatformServicesAPI class', () => {
       let ptvAPI = new PTVAPI(stubAPI)
       ptvAPI.addVLine(stubAPI)
 
-      let arrivals = await ptvAPI.vline.getPlatformArrivals('Footscray Station', TestPlatformServices.UP, 30)
+      let arrivals = await ptvAPI.vline.getArrivals('Footscray Station', TestPlatformServices.UP, 30)
       let pattern = await arrivals[0].getStoppingPattern()
 
       expect(stubAPI.getCalls()[1].path).to.equal('https://api-jp.vline.com.au/Service/VLineServices.svc/web/GetJourneyStops?LocationName=Wendouree Station&DestinationName=Melbourne, Southern Cross&originDepartureTime=2024-07-12T10:51:00.000Z&originServiceIdentifier=8156&CallerID=123&AccessToken=ce31c8bb53fa483ac564c8fed8622265ebc81da5')
