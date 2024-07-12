@@ -5,12 +5,13 @@ import fs from 'fs/promises'
 import path from 'path'
 import url from 'url'
 import PTVAPI from '../lib/ptv-api.mjs'
-import { GetPlatformServicesAPI } from '../lib/vline/get-platform-services.mjs'
+import { GetPlatformServicesAPI, VLinePlatformService, VLinePlatformServices } from '../lib/vline/get-platform-services.mjs'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const stubJourneyStopsResponse = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'journey-stops.xml'))).toString()
+const stubPlatformDepartures = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'platform-departures.xml'))).toString()
+const stubPlatformArrivals = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'platform-arrivals.xml'))).toString()
 
 describe('The GetPlatformServicesAPI class', () => {
   class TestPlatformServices extends GetPlatformServicesAPI {
@@ -31,4 +32,15 @@ describe('The GetPlatformServicesAPI class', () => {
     })
   })
 
+  it('Should provide the data as given in the API response', async () => {
+    let stubAPI = new StubVLineAPI()
+    stubAPI.setResponses([ stubPlatformDepartures ])
+    let ptvAPI = new PTVAPI(stubAPI)
+    ptvAPI.addVLine(stubAPI)
+
+    let departures = await ptvAPI.vline.getPlatformDepartures('Melbourne, Southern Cross', TestPlatformServices.DOWN, 30)
+
+    expect(departures).to.be.instanceOf(VLinePlatformServices)
+    expect(departures[0]).to.be.instanceOf(VLinePlatformService)
+  })
 })
