@@ -42,5 +42,17 @@ describe('The GetPlatformServicesAPI class', () => {
 
     expect(departures).to.be.instanceOf(VLinePlatformServices)
     expect(departures[0]).to.be.instanceOf(VLinePlatformService)
+
+    expect(departures[0].origin).to.equal('Melbourne, Southern Cross')
+    expect(departures[0].destination).to.equal('Geelong Station: Railway Terrace')
+
+    expect(departures[0].departureTime.toISOString()).to.equal('2024-07-12T12:45:00.000Z')    
+    expect(departures[0].arrivalTime.toISOString()).to.equal('2024-07-12T13:48:00.000Z')    
+
+    expect(departures[0].tdn).to.equal('8811')
+    expect(departures[0].direction).to.equal('Down')
+
+    expect(departures[0].estStationArrivalTime).to.be.null
+    expect(departures[0].estArrivalTime).to.be.null
   })
 })
