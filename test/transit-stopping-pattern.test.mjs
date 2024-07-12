@@ -1,3 +1,4 @@
+import { parseISOTime, parseMSTime } from '../lib/date-utils.mjs'
 import TransitStoppingPattern from '../lib/types/transit-stopping-pattern.mjs'
 import { expect } from 'chai'
 
@@ -12,6 +13,15 @@ describe('The TransitStoppingPattern class', () => {
 
       expect(queryString).to.equal('?date_utc=2024-06-27T07:08:14.150Z&expand=VehiclePosition&expand=VehicleDescriptor')
     })
+  })
+
+  it('Should accept DateTime objects', () => {
+    let stoppingPattern = new TransitStoppingPattern()
+    let queryString = stoppingPattern.generateQueryString({
+      date: parseMSTime(1719472094150)
+    })
+
+    expect(queryString).to.equal('?date_utc=2024-06-27T07:08:14.150Z')
   })
 
   describe('The addExpandData function', () => {

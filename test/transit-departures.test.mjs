@@ -3,6 +3,7 @@ import { expect } from 'chai'
 import nock from 'nock'
 import { StubAPI } from './stub-api.mjs'
 import stubDepartureData from './metro-mock-data/metro-departures.json' assert { type: 'json' }
+import { parseISOTime } from '../lib/date-utils.mjs'
 
 describe('The TransitDepartures class', () => {
   describe('The generateQueryString function', () => {
@@ -25,6 +26,24 @@ describe('The TransitDepartures class', () => {
       })
 
       expect(queryString).to.equal('?platform_numbers=1&platform_numbers=2&platform_numbers=5&gtfs=true')
+    })
+
+    it('Should accept Date objects', () => {
+      let departures = new TransitDepartures()
+      let queryString = departures.generateQueryString({
+        date: new Date('2024-07-12T20:29:00.000Z')
+      })
+
+      expect(queryString).to.equal('?date_utc=2024-07-12T20:29:00.000Z')
+    })
+
+    it('Should accept DateTime objects', () => {
+      let departures = new TransitDepartures()
+      let queryString = departures.generateQueryString({
+        date: parseISOTime('2024-07-12T20:29:00.000Z')
+      })
+
+      expect(queryString).to.equal('?date_utc=2024-07-12T20:29:00.000Z')
     })
   })
   
