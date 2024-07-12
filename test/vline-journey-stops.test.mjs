@@ -6,6 +6,7 @@ import path from 'path'
 import url from 'url'
 import PTVAPI from '../lib/ptv-api.mjs'
 import { GetJourneyStopsAPI, VLineTripStop, VLineStoppingPattern } from '../lib/vline/get-journey-stops.mjs'
+import { dateLikeToISO, parseISOTime } from '../lib/date-utils.mjs'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -16,7 +17,9 @@ describe('The GetJourneyStopsAPI class', () => {
   describe('The getMethodURLPath function', () => {
     it('Should populate the query string with the given inputs', () => {
       let journeyStops = new GetJourneyStopsAPI('Melbourne, Southern Cross', 'Traralgon Station: Princes Hwy', '14:23', '8417')
-      expect(journeyStops.getMethodURLPath()).to.equal('/VLineServices.svc/web/GetJourneyStops?LocationName=Melbourne, Southern Cross&DestinationName=Traralgon Station: Princes Hwy&originDepartureTime=14:23&originServiceIdentifier=8417')
+
+      let expectedDate = dateLikeToISO(parseISOTime('14:23'))
+      expect(journeyStops.getMethodURLPath()).to.equal(`/VLineServices.svc/web/GetJourneyStops?LocationName=Melbourne, Southern Cross&DestinationName=Traralgon Station: Princes Hwy&originDepartureTime=${expectedDate}&originServiceIdentifier=8417`)
     })
   })
 
@@ -28,7 +31,8 @@ describe('The GetJourneyStopsAPI class', () => {
 
     let journeyStops = await ptvAPI.vline.getJourneyStops('Melbourne: Flinders Street', 'Traralgon Station: Princes Hwy', '07:39', '8403')
 
-    expect(stubAPI.getCalls()[0].path).to.contain('https://api-jp.vline.com.au/Service/VLineServices.svc/web/GetJourneyStops?LocationName=Melbourne: Flinders Street&DestinationName=Traralgon Station: Princes Hwy&originDepartureTime=07:39&originServiceIdentifier=8403')
+    let expectedDate = dateLikeToISO(parseISOTime('07:39'))
+    expect(stubAPI.getCalls()[0].path).to.contain(`https://api-jp.vline.com.au/Service/VLineServices.svc/web/GetJourneyStops?LocationName=Melbourne: Flinders Street&DestinationName=Traralgon Station: Princes Hwy&originDepartureTime=${expectedDate}&originServiceIdentifier=8403`)
 
     expect(journeyStops).to.be.instanceOf(VLineStoppingPattern)
     expect(journeyStops[0]).to.be.instanceOf(VLineTripStop)

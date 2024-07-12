@@ -1,0 +1,133 @@
+<GetJourneyStopsResponse xmlns="http://tempuri.org/">
+  <GetJourneyStopsResult xmlns:a="http://schemas.datacontract.org/2004/07/VLine.JourneyPlanner.Entities" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <a:Stop>
+      <a:ArrivalTime>0001-01-01T00:00:00</a:ArrivalTime>
+      <a:DepartureTime>2024-07-12T20:51:00</a:DepartureTime>
+      <a:LocationID>3238</a:LocationID>
+      <a:LocationName>Wendouree Station</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly>u</a:SetDownPickupOnly>
+      <a:StopSequence>1</a:StopSequence>
+    </a:Stop>
+    <a:Stop>
+      <a:ArrivalTime>0001-01-01T00:00:00</a:ArrivalTime>
+      <a:DepartureTime>2024-07-12T20:58:00</a:DepartureTime>
+      <a:LocationID>33</a:LocationID>
+      <a:LocationName>Ballarat Station</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly />
+      <a:StopSequence>3</a:StopSequence>
+    </a:Stop>
+    <a:Stop>
+      <a:ArrivalTime>0001-01-01T00:00:00</a:ArrivalTime>
+      <a:DepartureTime>2024-07-12T21:20:00</a:DepartureTime>
+      <a:LocationID>68</a:LocationID>
+      <a:LocationName>Ballan Station</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly />
+      <a:StopSequence>11</a:StopSequence>
+    </a:Stop>
+    <a:Stop>
+      <a:ArrivalTime>0001-01-01T00:00:00</a:ArrivalTime>
+      <a:DepartureTime>2024-07-12T21:48:00</a:DepartureTime>
+      <a:LocationID>30</a:LocationID>
+      <a:LocationName>Bacchus Marsh Station</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly />
+      <a:StopSequence>17</a:StopSequence>
+    </a:Stop>
+    <a:Stop>
+      <a:ArrivalTime>0001-01-01T00:00:00</a:ArrivalTime>
+      <a:DepartureTime>2024-07-12T21:57:00</a:DepartureTime>
+      <a:LocationID>385</a:LocationID>
+      <a:LocationName>Melton Station</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly />
+      <a:StopSequence>20</a:StopSequence>
+    </a:Stop>
+    <a:Stop>
+      <a:ArrivalTime>0001-01-01T00:00:00</a:ArrivalTime>
+      <a:DepartureTime>2024-07-12T22:01:00</a:DepartureTime>
+      <a:LocationID>3376</a:LocationID>
+      <a:LocationName>Cobblebank</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly />
+      <a:StopSequence>22</a:StopSequence>
+    </a:Stop>
+    <a:Stop>
+      <a:ArrivalTime>0001-01-01T00:00:00</a:ArrivalTime>
+      <a:DepartureTime>2024-07-12T22:04:00</a:DepartureTime>
+      <a:LocationID>519</a:LocationID>
+      <a:LocationName>Rockbank Station</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly />
+      <a:StopSequence>23</a:StopSequence>
+    </a:Stop>
+    <a:Stop>
+      <a:ArrivalTime>0001-01-01T00:00:00</a:ArrivalTime>
+      <a:DepartureTime>2024-07-12T22:10:00</a:DepartureTime>
+      <a:LocationID>3345</a:LocationID>
+      <a:LocationName>Caroline Springs Station</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly />
+      <a:StopSequence>24</a:StopSequence>
+    </a:Stop>
+    <a:Stop>
+      <a:ArrivalTime>0001-01-01T00:00:00</a:ArrivalTime>
+      <a:DepartureTime>2024-07-12T22:14:00</a:DepartureTime>
+      <a:LocationID>175</a:LocationID>
+      <a:LocationName>Deer Park Station</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly />
+      <a:StopSequence>27</a:StopSequence>
+    </a:Stop>
+    <a:Stop>
+      <a:ArrivalTime>0001-01-01T00:00:00</a:ArrivalTime>
+      <a:DepartureTime>2024-07-12T22:17:00</a:DepartureTime>
+      <a:LocationID>22</a:LocationID>
+      <a:LocationName>Ardeer Station</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly />
+      <a:StopSequence>28</a:StopSequence>
+    </a:Stop>
+    <a:Stop>
+      <a:ArrivalTime>0001-01-01T00:00:00</a:ArrivalTime>
+      <a:DepartureTime>2024-07-12T22:22:00</a:DepartureTime>
+      <a:LocationID>607</a:LocationID>
+      <a:LocationName>Sunshine Station</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly>d</a:SetDownPickupOnly>
+      <a:StopSequence>29</a:StopSequence>
+    </a:Stop>
+    <a:Stop>
+      <a:ArrivalTime>0001-01-01T00:00:00</a:ArrivalTime>
+      <a:DepartureTime>2024-07-12T22:27:00</a:DepartureTime>
+      <a:LocationID>231</a:LocationID>
+      <a:LocationName>Footscray Station</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly>d</a:SetDownPickupOnly>
+      <a:StopSequence>30</a:StopSequence>
+    </a:Stop>
+    <a:Stop>
+      <a:ArrivalTime>2024-07-12T22:38:00</a:ArrivalTime>
+      <a:DepartureTime>0001-01-01T00:00:00</a:DepartureTime>
+      <a:LocationID>2258</a:LocationID>
+      <a:LocationName>Melbourne, Southern Cross</a:LocationName>
+      <a:ServiceIdentifier>8156</a:ServiceIdentifier>
+      <a:ServiceType>Train</a:ServiceType>
+      <a:SetDownPickupOnly>d</a:SetDownPickupOnly>
+      <a:StopSequence>36</a:StopSequence>
+    </a:Stop>
+</GetJourneyStopsResponse>

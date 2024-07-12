@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename)
 
 const stubPlatformDepartures = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'platform-departures.xml'))).toString()
 const stubPlatformArrivals = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'platform-arrivals.xml'))).toString()
+const stubJourneyStops = (await fs.readFile(path.join(__dirname, 'vline-mock-data', '8156-journey-stops.xml'))).toString()
 
 describe('The GetPlatformServicesAPI class', () => {
   class TestPlatformServices extends GetPlatformServicesAPI {
@@ -82,6 +83,23 @@ describe('The GetPlatformServicesAPI class', () => {
 
       expect(arrivals[1].arrivalTime.toUTC().toISO()).to.equal('2024-07-12T12:47:00.000Z')
       expect(arrivals[1].estArrivalTime.toUTC().toISO()).to.equal('2024-07-12T12:48:00.000Z')
+    })
+
+    it('Should be able to fetch the stopping pattern', async () => {
+      let stubAPI = new StubVLineAPI()
+      stubAPI.setResponses([ stubPlatformArrivals, stubJourneyStops ])
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addVLine(stubAPI)
+
+      let arrivals = await ptvAPI.vline.getPlatformArrivals('Footscray Station', TestPlatformServices.UP, 30)
+      let pattern = await arrivals[0].getStoppingPattern()
+
+      expect(stubAPI.getCalls()[1].path).to.equal('https://api-jp.vline.com.au/Service/VLineServices.svc/web/GetJourneyStops?LocationName=Wendouree Station&DestinationName=Melbourne, Southern Cross&originDepartureTime=2024-07-12T10:51:00.000Z&originServiceIdentifier=8156&CallerID=123&AccessToken=ce31c8bb53fa483ac564c8fed8622265ebc81da5')
+      expect(pattern[0].location).to.equal('Wendouree Station')
+      expect(pattern[1].location).to.equal('Ballarat Station')
+
+      expect(pattern[3].location).to.equal('Bacchus Marsh Station')
+      expect(pattern[3].departureTime.toUTC().toISO()).to.equal('2024-07-12T11:48:00.000Z')
     })
   })
 })
