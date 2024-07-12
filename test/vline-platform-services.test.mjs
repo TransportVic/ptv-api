@@ -47,8 +47,8 @@ describe('The GetPlatformServicesAPI class', () => {
       expect(departures[0].origin).to.equal('Melbourne, Southern Cross')
       expect(departures[0].destination).to.equal('Geelong Station: Railway Terrace')
 
-      expect(departures[0].departureTime.toISOString()).to.equal('2024-07-12T12:45:00.000Z')
-      expect(departures[0].arrivalTime.toISOString()).to.equal('2024-07-12T13:48:00.000Z')
+      expect(departures[0].departureTime.toUTC().toISO()).to.equal('2024-07-12T12:45:00.000Z')
+      expect(departures[0].arrivalTime.toUTC().toISO()).to.equal('2024-07-12T13:48:00.000Z')
 
       expect(departures[0].tdn).to.equal('8811')
       expect(departures[0].direction).to.equal('Down')
@@ -70,18 +70,18 @@ describe('The GetPlatformServicesAPI class', () => {
       expect(arrivals[0].origin).to.equal('Wendouree Station')
       expect(arrivals[0].destination).to.equal('Melbourne, Southern Cross')
 
-      expect(arrivals[0].departureTime.toISOString()).to.equal('2024-07-12T10:51:00.000Z')
-      expect(arrivals[0].arrivalTime.toISOString()).to.equal('2024-07-12T12:38:00.000Z')
+      expect(arrivals[0].departureTime.toUTC().toISO()).to.equal('2024-07-12T10:51:00.000Z')
+      expect(arrivals[0].arrivalTime.toUTC().toISO()).to.equal('2024-07-12T12:38:00.000Z')
 
       expect(arrivals[0].tdn).to.equal('8156')
       expect(arrivals[0].direction).to.equal('Up')
 
       expect(arrivals[0].estStationArrivalTime).to.not.be.null
-      expect(arrivals[0].estStationArrivalTime.toISOString()).to.equal('2024-07-12T12:27:00.000Z')
-      expect(arrivals[0].estArrivalTime.toISOString()).to.equal('2024-07-12T12:38:00.000Z')
+      expect(arrivals[0].estStationArrivalTime.toUTC().toISO()).to.equal('2024-07-12T12:27:00.000Z')
+      expect(arrivals[0].estArrivalTime.toUTC().toISO()).to.equal('2024-07-12T12:38:00.000Z')
 
-      expect(arrivals[1].arrivalTime.toISOString()).to.equal('2024-07-12T12:47:00.000Z')
-      expect(arrivals[1].estArrivalTime.toISOString()).to.equal('2024-07-12T12:48:00.000Z')
+      expect(arrivals[1].arrivalTime.toUTC().toISO()).to.equal('2024-07-12T12:47:00.000Z')
+      expect(arrivals[1].estArrivalTime.toUTC().toISO()).to.equal('2024-07-12T12:48:00.000Z')
     })
   })
 })

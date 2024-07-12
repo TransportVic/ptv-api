@@ -44,12 +44,12 @@ describe('The BusStoppingPattern class', () => {
       let stops = stoppingPattern.stops
 
       expect(stops[0].stationName).to.equal('Maroondah Hwy/Green St')
-      expect(stops[0].scheduledDeparture.toISOString()).to.equal('2024-06-28T00:35:00.000Z')
+      expect(stops[0].scheduledDeparture.toUTC().toISO()).to.equal('2024-06-28T00:35:00.000Z')
       expect(stops[0].estimatedDeparture).to.not.be.null
-      expect(stops[0].estimatedDeparture.toISOString()).to.equal('2024-06-28T00:35:00.000Z')
+      expect(stops[0].estimatedDeparture.toUTC().toISO()).to.equal('2024-06-28T00:35:00.000Z')
 
       expect(stops[1].stationName).to.equal('Harker St/Maroondah Hwy')
-      expect(stops[1].scheduledDeparture.toISOString()).to.equal('2024-06-28T00:36:00.000Z')
+      expect(stops[1].scheduledDeparture.toUTC().toISO()).to.equal('2024-06-28T00:36:00.000Z')
       expect(stops[1].estimatedDeparture).to.be.null
     })
   })

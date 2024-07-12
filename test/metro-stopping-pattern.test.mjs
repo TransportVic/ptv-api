@@ -48,13 +48,13 @@ describe('The MetroStoppingPattern class', () => {
 
       expect(stops[0].stationName).to.equal('East Pakenham')
       expect(stops[0].platform).to.equal('1')
-      expect(stops[0].scheduledDeparture.toISOString()).to.equal('2024-06-27T07:45:00.000Z')
+      expect(stops[0].scheduledDeparture.toUTC().toISO()).to.equal('2024-06-27T07:45:00.000Z')
       expect(stops[0].estimatedDeparture).to.not.be.null
-      expect(stops[0].estimatedDeparture.toISOString()).to.equal('2024-06-27T07:45:00.000Z')
+      expect(stops[0].estimatedDeparture.toUTC().toISO()).to.equal('2024-06-27T07:45:00.000Z')
 
       expect(stops[stops.length - 1].stationName).to.equal('Flinders Street')
       expect(stops[stops.length - 1].platform).to.equal('6')
-      expect(stops[stops.length - 1].scheduledDeparture.toISOString()).to.equal('2024-06-27T09:06:00.000Z')
+      expect(stops[stops.length - 1].scheduledDeparture.toUTC().toISO()).to.equal('2024-06-27T09:06:00.000Z')
       expect(stops[stops.length - 1].estimatedDeparture).to.be.null
     })
 

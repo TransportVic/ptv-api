@@ -34,7 +34,7 @@ describe('The GetJourneyStopsAPI class', () => {
     expect(journeyStops[0]).to.be.instanceOf(VLineTripStop)
 
     expect(journeyStops[0].location).to.equal('Melbourne: Flinders Street')
-    expect(journeyStops[0].departureTime.toISOString()).to.equal('2024-07-11T21:39:00.000Z')
-    expect(journeyStops[2].departureTime.toISOString()).to.equal('2024-07-11T22:01:00.000Z')
+    expect(journeyStops[0].departureTime.toUTC().toISO()).to.equal('2024-07-11T21:39:00.000Z')
+    expect(journeyStops[2].departureTime.toUTC().toISO()).to.equal('2024-07-11T22:01:00.000Z')
   })
 })

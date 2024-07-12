@@ -64,7 +64,7 @@ describe('The TramDepartures class', () => {
       let trams = await ptvAPI.tram.getDepartures(1044)
 
       expect(trams[0].scheduledDeparture).to.not.be.null
-      expect(trams[0].scheduledDeparture.toISOString()).to.equal('2024-07-02T01:01:00.000Z')
+      expect(trams[0].scheduledDeparture.toUTC().toISO()).to.equal('2024-07-02T01:01:00.000Z')
       expect(trams[0].estimatedDeparture).to.not.be.null
     })
   })
@@ -76,7 +76,7 @@ describe('The TramDeparture class', () => {
       let firstDeparture = stubELSDepartureData.responseObject[0]
       let departureTime = TramDeparture.getScheduledTime(firstDeparture)
 
-      expect(departureTime.toISOString()).to.equal('2024-07-02T01:01:00.000Z')
+      expect(departureTime.toUTC().toISO()).to.equal('2024-07-02T01:01:00.000Z')
     })
   })
 
@@ -85,7 +85,7 @@ describe('The TramDeparture class', () => {
       let firstDeparture = stubELSDepartureData.responseObject[0]
       let departureTime = TramDeparture.getEstimatedTime(firstDeparture)
 
-      expect(departureTime.toISOString()).to.equal('2024-07-02T01:01:05.390Z')
+      expect(departureTime.toUTC().toISO()).to.equal('2024-07-02T01:01:05.390Z')
     })
   })
 
