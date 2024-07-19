@@ -18,7 +18,17 @@ describe('The getRouteRuns function of the MetroInterface', () => {
     expect(stubAPI.getCalls()[0].path).to.equal('/v3/runs/route/5?expand=VehicleDescriptor&expand=VehiclePosition&include_advertised_interchange=true')
   })
 
-  // it('Should transform the PTV API runs into MetroRun instances', () => {
+  it('Should transform the PTV API runs into MetroRun instances', async () => {
+    let stubAPI = new StubAPI()
+    stubAPI.setResponses([ stubMDDRunData ])
+    let ptvAPI = new PTVAPI(stubAPI)
 
-  // })
+    let runs = await ptvAPI.metro.getRouteRuns(5, {
+      expand: ['VehicleDescriptor', 'VehiclePosition'],
+      includeForming: true
+    })
+
+    let tdn1697 = runs.find(run => run.tdn === '1697')
+    expect(!tdn1697).to.be.false
+  })
 })
