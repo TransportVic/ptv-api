@@ -3,6 +3,8 @@ import { StubAPI } from './stub-api.mjs'
 import PTVAPI from '../lib/ptv-api.mjs'
 
 import stubMDDRunData from './metro-mock-data/mdd-runs.json' assert { type: 'json' }
+import stubLILRunData from './metro-mock-data/lil-runs.json' assert { type: 'json' }
+
 import { SimplifiedMetroRun } from '../lib/metro/metro-runs.mjs'
 
 describe('The getRouteRuns function of the MetroInterface', () => {
@@ -62,7 +64,7 @@ describe('The getRouteRuns function of the MetroInterface', () => {
     expect(tdn3202).to.be.undefined
   })
 
-  it('Should backfill forming/formed by data if it only goes one way', async () => {
+  it('Should backfill forming/formed by data if it only goes one way (Mernda data)', async () => {
     let stubAPI = new StubAPI()
     stubAPI.setResponses([ stubMDDRunData ])
     let ptvAPI = new PTVAPI(stubAPI)
@@ -80,5 +82,25 @@ describe('The getRouteRuns function of the MetroInterface', () => {
     })
 
     expect(tdn1108.forming).to.be.null
+  })
+
+  it('Should backfill forming/formed by data if it only goes one way (Lilydale data)', async () => {
+    let stubAPI = new StubAPI()
+    stubAPI.setResponses([ stubLILRunData ])
+    let ptvAPI = new PTVAPI(stubAPI)
+
+    let runs = await ptvAPI.metro.getRouteRuns(9)
+
+    let tdn3202 = runs.find(run => run.tdn === '3202')
+    expect(tdn3202).to.not.be.undefined
+    expect(tdn3202.formedBy).to.deep.equal({
+      tdn: '3231',
+      runRef: '951231'
+    })
+
+    expect(tdn3202.forming).to.deep.equal({
+      tdn: '1697',
+      runRef: '949697'
+    })
   })
 })
