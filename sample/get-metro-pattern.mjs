@@ -9,7 +9,9 @@ async function main() {
   let tdn = process.argv[2]
   if (!tdn) return console.error('Please provide a TDN!')
 
-  let trip = await ptvAPI.metro.getStoppingPatternFromTDN(tdn)
+  let trip = await ptvAPI.metro.getStoppingPatternFromTDN(tdn, {
+    includeForming: true
+  })
 
   inspect(trip)
 }
