@@ -1,0 +1,162 @@
+{
+  "runs": [
+    {
+      "run_id": 45888,
+      "run_ref": "45888",
+      "route_id": 5,
+      "route_type": 0,
+      "final_stop_id": 1228,
+      "destination_name": "Mernda ",
+      "status": "scheduled",
+      "direction_id": 9,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null,
+      "run_note": null
+    },
+    {
+      "run_id": 45889,
+      "run_ref": "45889",
+      "route_id": 5,
+      "route_type": 0,
+      "final_stop_id": 1041,
+      "destination_name": "Clifton Hill ",
+      "status": "scheduled",
+      "direction_id": 9,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null,
+      "run_note": null
+    },
+    {
+      "run_id": 949697,
+      "run_ref": "949697",
+      "route_id": 5,
+      "route_type": 0,
+      "final_stop_id": 1228,
+      "destination_name": "Mernda ",
+      "status": "scheduled",
+      "direction_id": 9,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.673608200957084,
+        "longitude": 145.0153910155511,
+        "easting": 324978.2644622625,
+        "northing": 5828544.846381114,
+        "direction": "Outbound",
+        "bearing": 186.26073629390189,
+        "supplier": "CIS - Metro Trains Melbourne",
+        "datetime_utc": "2024-07-19T14:36:17",
+        "expiry_time": "2024-07-19T14:36:53"
+      },
+      "vehicle_descriptor": {
+        "operator": "Metro Trains Melbourne",
+        "id": "1409T-1659T-217M-218M-917M-918M",
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": "6 Car Xtrapolis",
+        "supplier": "CIS - Metro Trains Melbourne",
+        "length": "142"
+      },
+      "geopath": [],
+      "interchange": {
+        "feeder": {
+          "run_ref": "949108",
+          "route_id": 5,
+          "stop_id": 1155,
+          "advertised": false
+        },
+        "distributor": {
+          "run_ref": "951202",
+          "route_id": 9,
+          "stop_id": 1228,
+          "advertised": false
+        }
+      },
+      "run_note": ""
+    },
+    {
+      "run_id": 949108,
+      "run_ref": "949108",
+      "route_id": 5,
+      "route_type": 0,
+      "final_stop_id": 1155,
+      "destination_name": "Parliament ",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": {
+        "latitude": -37.673608200957084,
+        "longitude": 145.0153910155511,
+        "easting": 324978.2644622625,
+        "northing": 5828544.846381114,
+        "direction": "Outbound",
+        "bearing": 186.26073629390189,
+        "supplier": "CIS - Metro Trains Melbourne",
+        "datetime_utc": "2024-07-19T14:36:17",
+        "expiry_time": "2024-07-19T14:36:53"
+      },
+      "vehicle_descriptor": {
+        "operator": "Metro Trains Melbourne",
+        "id": "1409T-1659T-217M-218M-917M-918M",
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": "6 Car Xtrapolis",
+        "supplier": "CIS - Metro Trains Melbourne",
+        "length": "142"
+      },
+      "geopath": [],
+      "interchange": {
+        "feeder": null,
+        "distributor": null
+      },
+      "run_note": ""
+    },
+    {
+      "run_id": 951202,
+      "run_ref": "951202",
+      "route_id": 9,
+      "route_type": 0,
+      "final_stop_id": 1071,
+      "destination_name": "Flinders Street ",
+      "status": "updated",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 2,
+      "vehicle_position": {
+        "latitude": -37.837228177818304,
+        "longitude": 145.26383193197168,
+        "easting": 347226.9375,
+        "northing": 5810824.5,
+        "direction": "Outbound",
+        "bearing": 141.2674814048493,
+        "supplier": "CIS - Metro Trains Melbourne",
+        "datetime_utc": "2024-07-19T14:36:16",
+        "expiry_time": "2024-07-19T14:36:50"
+      },
+      "vehicle_descriptor": {
+        "operator": "Metro Trains Melbourne",
+        "id": "1408T-1660T-215M-216M-919M-920M",
+        "low_floor": null,
+        "air_conditioned": null,
+        "description": "6 Car Xtrapolis",
+        "supplier": "CIS - Metro Trains Melbourne",
+        "length": "142"
+      },
+      "geopath": [],
+      "interchange": {
+        "feeder": null,
+        "distributor": null
+      },
+      "run_note": ""
+    }
+  ]
+}
