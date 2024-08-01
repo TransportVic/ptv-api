@@ -1,8 +1,8 @@
 import { PTVAPIInterface } from '../lib/ptv-api-interface.mjs'
 import PTVAPI from '../lib/ptv-api.mjs'
-import config from './config.json' assert { type: 'json' }
+import config from './config.json' with { type: 'json' }
 import inspect from './inspect.mjs'
-import stops from './metro-stops.json' assert { type: 'json' }
+import stops from './metro-stops.json' with { type: 'json' }
 
 let ptvAPI = new PTVAPI(new PTVAPIInterface(config.devID, config.key))
 

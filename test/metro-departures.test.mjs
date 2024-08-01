@@ -1,15 +1,15 @@
 import MetroDepartures from '../lib/metro/metro-departures.mjs'
 import { StubAPI } from './stub-api.mjs'
 import { expect } from 'chai'
-import stubDepartureData from './metro-mock-data/metro-departures.json' assert { type: 'json' }
-import stubRRBDepartureData from './metro-mock-data/metro-departures-rrb.json' assert { type: 'json' }
-import stubCCLDepartureData from './metro-mock-data/metro-departures-ccl.json' assert { type: 'json' }
-import stubCLPTestDepartureData from './metro-mock-data/metro-departures-via-clp-test.json' assert { type: 'json' }
-import stubPARDepartureData from './metro-mock-data/city-loop-departures.json' assert { type: 'json' }
-import stubBEGDepartureData from './metro-mock-data/metro-departures-beg.json' assert { type: 'json' }
-import stubSSSDepartureData from './metro-mock-data/metro-departures-sss.json' assert { type: 'json' }
-import stubPKMPatternData from './metro-mock-data/metro-pattern-pkm.json' assert { type: 'json' }
-import stubRCEPatternData from './metro-mock-data/metro-pattern-rce.json' assert { type: 'json' }
+import stubDepartureData from './metro-mock-data/metro-departures.json' with { type: 'json' }
+import stubRRBDepartureData from './metro-mock-data/metro-departures-rrb.json' with { type: 'json' }
+import stubCCLDepartureData from './metro-mock-data/metro-departures-ccl.json' with { type: 'json' }
+import stubCLPTestDepartureData from './metro-mock-data/metro-departures-via-clp-test.json' with { type: 'json' }
+import stubPARDepartureData from './metro-mock-data/city-loop-departures.json' with { type: 'json' }
+import stubBEGDepartureData from './metro-mock-data/metro-departures-beg.json' with { type: 'json' }
+import stubSSSDepartureData from './metro-mock-data/metro-departures-sss.json' with { type: 'json' }
+import stubPKMPatternData from './metro-mock-data/metro-pattern-pkm.json' with { type: 'json' }
+import stubRCEPatternData from './metro-mock-data/metro-pattern-rce.json' with { type: 'json' }
 import MetroRun from '../lib/metro/metro-run.mjs'
 import PTVAPI from '../lib/ptv-api.mjs'
 

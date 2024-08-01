@@ -2,8 +2,8 @@ import { expect } from 'chai'
 import { StubAPI } from './stub-api.mjs'
 import PTVAPI from '../lib/ptv-api.mjs'
 
-import stubMDDRunData from './metro-mock-data/mdd-runs.json' assert { type: 'json' }
-import stubLILRunData from './metro-mock-data/lil-runs.json' assert { type: 'json' }
+import stubMDDRunData from './metro-mock-data/mdd-runs.json' with { type: 'json' }
+import stubLILRunData from './metro-mock-data/lil-runs.json' with { type: 'json' }
 
 import { SimplifiedMetroRun } from '../lib/metro/metro-runs.mjs'
 

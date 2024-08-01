@@ -1,7 +1,7 @@
 import BusStoppingPattern from '../lib/bus/bus-stopping-pattern.mjs'
 import { StubAPI } from './stub-api.mjs'
 import { expect } from 'chai'
-import stubPatternData from './bus-mock-data/684-pattern.json' assert { type: 'json' }
+import stubPatternData from './bus-mock-data/684-pattern.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 
 describe('The BusStoppingPattern class', () => {

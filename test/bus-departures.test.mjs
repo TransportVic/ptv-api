@@ -1,6 +1,6 @@
 import { StubAPI } from "./stub-api.mjs"
 import { expect } from 'chai'
-import stubDepartureData from './bus-mock-data/monash-departures.json' assert { type: 'json' }
+import stubDepartureData from './bus-mock-data/monash-departures.json' with { type: 'json' }
 import PTVAPI from "../lib/ptv-api.mjs"
 import { PTVAPIError, PTVAPIInterface } from "../lib/ptv-api-interface.mjs"
 
