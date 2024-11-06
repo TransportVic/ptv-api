@@ -266,6 +266,18 @@ describe('The MetroDepartures class', () => {
 
       expect(metro[0].useFormedByData).to.be.false
     })
+
+    it('Should updated run-through destinations like Southern Cross or Parliament to Flinders Street', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubPARDepartureData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let metro = await ptvAPI.metro.getDepartures(22180)
+
+      expect(metro[2].runData.destination).to.equal('Flinders Street')
+      expect(metro[2].runData.forming.tdn).to.equal('5265')
+      expect(metro[2].runData.forming.destination).to.equal('Craigieburn')
+    })
   })
 
   describe('The getStoppingPattern function', () => {
