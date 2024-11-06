@@ -1,0 +1,176 @@
+{
+  "departures": [
+    {
+      "stop_id": 1015,
+      "route_id": 13,
+      "run_id": 56187,
+      "run_ref": "56187",
+      "direction_id": 5,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-11-06T06:45:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-RUN_8",
+      "departure_sequence": 0,
+      "departure_note": null
+    },
+    {
+      "stop_id": 1015,
+      "route_id": 13,
+      "run_id": 56144,
+      "run_ref": "56144",
+      "direction_id": 13,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-11-06T07:13:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-RUN_6",
+      "departure_sequence": 0,
+      "departure_note": null
+    },
+    {
+      "stop_id": 1015,
+      "route_id": 13,
+      "run_id": 56145,
+      "run_ref": "56145",
+      "direction_id": 13,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-11-06T07:47:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-RUN_7",
+      "departure_sequence": 0,
+      "departure_note": null
+    },
+    {
+      "stop_id": 1015,
+      "route_id": 13,
+      "run_id": 56188,
+      "run_ref": "56188",
+      "direction_id": 5,
+      "disruption_ids": [],
+      "scheduled_departure_utc": "2024-11-06T09:03:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-RUN_9",
+      "departure_sequence": 0,
+      "departure_note": null
+    }
+  ],
+  "stops": {
+    "1015": {
+      "stop_distance": 0,
+      "stop_suburb": "Baxter",
+      "stop_name": "Baxter",
+      "stop_id": 1015,
+      "route_type": 0,
+      "stop_latitude": -38.194046,
+      "stop_longitude": 145.160522,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    }
+  },
+  "routes": {
+    "13": {
+      "route_type": 0,
+      "route_id": 13,
+      "route_name": "Stony Point",
+      "route_number": "",
+      "route_gtfs_id": "2-STY",
+      "geopath": []
+    }
+  },
+  "runs": {
+    "56144": {
+      "run_id": 56144,
+      "run_ref": "56144",
+      "route_id": 13,
+      "route_type": 0,
+      "final_stop_id": 1185,
+      "destination_name": "Stony Point",
+      "status": "scheduled",
+      "direction_id": 13,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null,
+      "run_note": ""
+    },
+    "56145": {
+      "run_id": 56145,
+      "run_ref": "56145",
+      "route_id": 13,
+      "route_type": 0,
+      "final_stop_id": 1185,
+      "destination_name": "Stony Point",
+      "status": "scheduled",
+      "direction_id": 13,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null,
+      "run_note": ""
+    },
+    "56187": {
+      "run_id": 56187,
+      "run_ref": "56187",
+      "route_id": 13,
+      "route_type": 0,
+      "final_stop_id": 1073,
+      "destination_name": "Frankston",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null,
+      "run_note": ""
+    },
+    "56188": {
+      "run_id": 56188,
+      "run_ref": "56188",
+      "route_id": 13,
+      "route_type": 0,
+      "final_stop_id": 1073,
+      "destination_name": "Frankston",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null,
+      "run_note": ""
+    }
+  },
+  "directions": {
+    "5": {
+      "direction_id": 5,
+      "direction_name": "Frankston",
+      "route_id": 13,
+      "route_type": 0
+    },
+    "13": {
+      "direction_id": 13,
+      "direction_name": "Stony Point",
+      "route_id": 13,
+      "route_type": 0
+    }
+  },
+  "disruptions": {},
+  "status": {
+    "version": "3.0",
+    "health": 1
+  }
+}

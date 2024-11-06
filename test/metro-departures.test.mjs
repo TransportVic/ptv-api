@@ -8,6 +8,8 @@ import stubCLPTestDepartureData from './metro-mock-data/metro-departures-via-clp
 import stubPARDepartureData from './metro-mock-data/city-loop-departures.json' with { type: 'json' }
 import stubBEGDepartureData from './metro-mock-data/metro-departures-beg.json' with { type: 'json' }
 import stubSSSDepartureData from './metro-mock-data/metro-departures-sss.json' with { type: 'json' }
+import stubBXRDepartureData from './metro-mock-data/metro-departures-bxr.json' with { type: 'json' }
+
 import stubPKMPatternData from './metro-mock-data/metro-pattern-pkm.json' with { type: 'json' }
 import stubRCEPatternData from './metro-mock-data/metro-pattern-rce.json' with { type: 'json' }
 import MetroRun from '../lib/metro/metro-run.mjs'
@@ -349,6 +351,25 @@ describe('The MetroDepartures class', () => {
 
       expect(metro[0].runData.destination).to.equal('Flinders Street')
       expect(metro[0].platform).to.equal('2')
+    })
+  })
+
+  describe('Stony Point trains', () => {
+    it('Should accuratly detect their rail direction', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubBXRDepartureData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let metro = await ptvAPI.metro.getDepartures(19834)
+
+      expect(metro[0].runData.destination).to.equal('Frankston')
+      expect(metro[0].runData.tdn).to.be.null
+      expect(metro[0].runData.direction.railDirection).to.equal('Up')
+      console.log(metro[0].runData.direction)
+
+      expect(metro[1].runData.destination).to.equal('Stony Point')
+      expect(metro[1].runData.tdn).to.be.null
+      expect(metro[1].runData.direction.railDirection).to.equal('Down')
     })
   })
 })
