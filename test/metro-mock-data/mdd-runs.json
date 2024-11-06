@@ -68,15 +68,15 @@
       "geopath": [],
       "interchange": {
         "feeder": {
-          "run_ref": "949108",
-          "route_id": 5,
-          "stop_id": 1155,
-          "advertised": false
-        },
-        "distributor": {
           "run_ref": "951202",
           "route_id": 9,
           "stop_id": 1228,
+          "advertised": false
+        },
+        "distributor": {
+          "run_ref": "949108",
+          "route_id": 5,
+          "stop_id": 1155,
           "advertised": false
         }
       },

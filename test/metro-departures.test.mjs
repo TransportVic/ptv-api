@@ -187,7 +187,7 @@ describe('The MetroDepartures class', () => {
 
       let metro = await ptvAPI.metro.getDepartures(19810)
 
-      expect(metro[0].runData.formedBy.tdn).to.equal('4001')
+      expect(metro[0].runData.formedBy.tdn).to.equal('4000')
     })
 
     it('Should convert the feeder into the forming', async () => {
@@ -197,7 +197,7 @@ describe('The MetroDepartures class', () => {
 
       let metro = await ptvAPI.metro.getDepartures(19810)
 
-      expect(metro[0].runData.forming.tdn).to.equal('4000')
+      expect(metro[0].runData.forming.tdn).to.equal('4001')
     })
 
     it('Should not use values where the run_ref is equal to 0', async () => {
@@ -207,7 +207,7 @@ describe('The MetroDepartures class', () => {
 
       let metro = await ptvAPI.metro.getDepartures(19810)
 
-      expect(metro[1].runData.formedBy).to.be.null
+      expect(metro[1].runData.forming).to.be.null
     })
   })
 
@@ -229,7 +229,7 @@ describe('The MetroDepartures class', () => {
 
       let metro = await ptvAPI.metro.getDepartures(22180)
 
-      expect(metro[0].runData.tdn).to.equal('6606')
+      expect(metro[0].runData.tdn).to.equal('5616')
       expect(metro[0].runData.destination).to.equal('Flinders Street')
       expect(metro[0].runData.viaCityLoop).to.be.true
       expect(metro[0].runData.direction.railDirection).to.equal('Up')

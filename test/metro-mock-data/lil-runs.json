@@ -16,15 +16,15 @@
       "geopath": [],
       "interchange": {
         "feeder": {
-          "run_ref": "949108",
-          "route_id": 5,
-          "stop_id": 1155,
-          "advertised": false
-        },
-        "distributor": {
           "run_ref": "951202",
           "route_id": 9,
           "stop_id": 1228,
+          "advertised": false
+        },
+        "distributor": {
+          "run_ref": "949108",
+          "route_id": 5,
+          "stop_id": 1155,
           "advertised": false
         }
       },
@@ -45,13 +45,13 @@
       "vehicle_descriptor": null,
       "geopath": [],
       "interchange": {
-        "feeder": {
+        "feeder": null,
+        "distributor": {
           "run_ref": "949697",
           "route_id": 5,
           "stop_id": 1228,
           "advertised": false
-        },
-        "distributor": null
+        }
       },
       "run_note": ""
     },
@@ -71,17 +71,17 @@
       "geopath": [],
       "interchange": {
         "feeder": {
-          "run_ref": "951202",
-          "route_id": 9,
-          "stop_id": 1071,
-          "advertised": false
-        },
-        "distributor": {
           "run_ref": "951926",
           "route_id": 2,
           "stop_id": 1115,
           "advertised": false
-        }
+        },
+        "distributor": {
+          "run_ref": "951202",
+          "route_id": 9,
+          "stop_id": 1071,
+          "advertised": false
+        } 
       },
       "run_note": ""
     }
