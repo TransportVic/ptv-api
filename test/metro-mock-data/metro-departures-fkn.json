@@ -1,0 +1,94 @@
+{
+  "departures": [
+    {
+      "stop_id": 1073,
+      "route_id": 6,
+      "run_id": 952450,
+      "run_ref": "952450",
+      "direction_id": 1,
+      "disruption_ids": [
+        322144,
+        142498
+      ],
+      "scheduled_departure_utc": "2024-11-06T06:20:00Z",
+      "estimated_departure_utc": "2024-11-06T06:20:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 0,
+      "departure_note": "via Flinders Street"
+    }
+  ],
+  "stops": {
+    "1073": {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Frankston",
+      "stop_id": 1073,
+      "route_type": 0,
+      "stop_latitude": -38.1429863,
+      "stop_longitude": 145.12616,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    }
+  },
+  "routes": {
+    "6": {
+      "route_type": 0,
+      "route_id": 6,
+      "route_name": "Frankston",
+      "route_number": "",
+      "route_gtfs_id": "2-FKN",
+      "geopath": []
+    }
+  },
+  "runs": {
+    "952450": {
+      "run_id": 952450,
+      "run_ref": "952450",
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1181,
+      "destination_name": "Southern Cross",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": {
+        "feeder": {
+          "run_ref": "952453",
+          "route_id": 6,
+          "stop_id": 1073,
+          "advertised": false,
+          "direction_id": 5,
+          "destination_name": "Frankston"
+        },
+        "distributor": {
+          "run_ref": "954283",
+          "route_id": 6,
+          "stop_id": 1113,
+          "advertised": true,
+          "direction_id": 16,
+          "destination_name": "Laverton"
+        }
+      },
+      "run_note": ""
+    }
+  },
+  "directions": {
+    "1": {
+      "direction_id": 1,
+      "direction_name": "City (Flinders Street)",
+      "route_id": 6,
+      "route_type": 0
+    }
+  },
+  "disruptions": {},
+  "status": {
+    "version": "3.0",
+    "health": 1
+  }
+}
