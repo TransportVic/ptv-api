@@ -42,13 +42,15 @@ describe('The getRouteRuns function of the MetroInterface', () => {
     expect(tdn1697.formedBy).to.deep.equal({
       tdn: '3202',
       runRef: '951202',
-      destination: 'Flinders Street'
+      destination: 'Flinders Street',
+      advertised: false
     })
 
     expect(tdn1697.forming).to.deep.equal({
       tdn: '1108',
       runRef: '949108',
-      destination: 'Parliament'
+      destination: 'Parliament',
+      advertised: false
     })
   })
 
@@ -81,7 +83,8 @@ describe('The getRouteRuns function of the MetroInterface', () => {
     expect(tdn1108.formedBy).to.deep.equal({
       tdn: '1697',
       runRef: '949697',
-      destination: 'Mernda'
+      destination: 'Mernda',
+      advertised: false
     })
 
     expect(tdn1108.forming).to.be.null
@@ -99,13 +102,15 @@ describe('The getRouteRuns function of the MetroInterface', () => {
     expect(tdn3202.formedBy).to.deep.equal({
       tdn: '3231',
       runRef: '951231',
-      destination: 'Lilydale'
+      destination: 'Lilydale',
+      advertised: false
     })
 
     expect(tdn3202.forming).to.deep.equal({
       tdn: '1697',
       runRef: '949697',
-      destination: 'Mernda'
+      destination: 'Mernda',
+      advertised: false
     })
   })
 })
