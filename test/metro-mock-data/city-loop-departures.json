@@ -84,13 +84,15 @@
           "run_ref": "953616",
           "route_id": 15,
           "stop_id": 1071,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Flinders Street"
         },
         "distributor": {
           "run_ref": "954606",
           "route_id": 14,
           "stop_id": 1198,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Flinders Street"
         }
       }
     },
@@ -113,13 +115,15 @@
           "run_ref": "953834",
           "route_id": 3,
           "stop_id": 1071,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Flinders Street"
         },
         "distributor": {
           "run_ref": "953808",
           "route_id": 3,
           "stop_id": 1028,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Flinders Street"
         }
       }
     }

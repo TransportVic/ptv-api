@@ -1210,13 +1210,15 @@
           "run_ref": "949637",
           "route_id": 5,
           "stop_id": 1228,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Mernda"
         },
         "distributor": {
           "run_ref": "949821",
           "route_id": 8,
           "stop_id": 1155,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Hurstbridge"
         }
       }
     }

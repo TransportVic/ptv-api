@@ -1139,13 +1139,15 @@
           "run_ref": "967501",
           "route_id": 4,
           "stop_id": 1045,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Cranbourne"
         },
         "distributor": {
           "run_ref": "967083",
           "route_id": 11,
           "stop_id": 1071,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "East Pakenham"
         }
       }
     }

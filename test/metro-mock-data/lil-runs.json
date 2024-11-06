@@ -19,13 +19,15 @@
           "run_ref": "951202",
           "route_id": 9,
           "stop_id": 1228,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Flinders Street "
         },
         "distributor": {
           "run_ref": "949108",
           "route_id": 5,
           "stop_id": 1155,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Parliament "
         }
       },
       "run_note": ""
@@ -50,7 +52,8 @@
           "run_ref": "949697",
           "route_id": 5,
           "stop_id": 1228,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Mernda "
         }
       },
       "run_note": ""
@@ -74,13 +77,15 @@
           "run_ref": "951926",
           "route_id": 2,
           "stop_id": 1115,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Flinders Street "
         },
         "distributor": {
           "run_ref": "951202",
           "route_id": 9,
           "stop_id": 1071,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Flinders Street "
         } 
       },
       "run_note": ""

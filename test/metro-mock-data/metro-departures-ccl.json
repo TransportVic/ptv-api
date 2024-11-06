@@ -67,13 +67,15 @@
           "run_ref": "948805",
           "route_id": 99,
           "stop_id": 1071,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Flinders Street"
         },
         "distributor": {
           "run_ref": "948801",
           "route_id": 99,
           "stop_id": 1071,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Flinders Street"
         }
       }
     }

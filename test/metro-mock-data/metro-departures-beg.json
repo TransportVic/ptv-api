@@ -58,13 +58,15 @@
           "run_ref": "951867",
           "route_id": 9,
           "stop_id": 1163,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Lilydale"
         },
         "distributor": {
           "run_ref": "951651",
           "route_id": 2,
           "stop_id": 1155,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Blackburn"
         }
       }
     }

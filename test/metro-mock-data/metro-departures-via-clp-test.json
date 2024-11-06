@@ -176,7 +176,8 @@
           "run_ref": "953631",
           "route_id": 15,
           "stop_id": 1198,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Upfield"
         },
         "distributor": null
       }
@@ -200,7 +201,8 @@
           "run_ref": "953631",
           "route_id": 15,
           "stop_id": 1198,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Upfield"
         },
         "distributor": null
       }
@@ -224,7 +226,8 @@
           "run_ref": "953631",
           "route_id": 15,
           "stop_id": 1198,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Upfield"
         },
         "distributor": null
       }
@@ -248,7 +251,8 @@
           "run_ref": "953631",
           "route_id": 15,
           "stop_id": 1198,
-          "advertised": false
+          "advertised": false,
+          "destination_name": "Upfield"
         },
         "distributor": null
       }
