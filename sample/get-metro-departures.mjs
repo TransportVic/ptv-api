@@ -20,10 +20,9 @@ async function main() {
 
   // let nextTrain = departures[0]
   // console.log(nextTrain) // 14:50 Flinders Street from Mooroolbark Platform 1
-  // console.log(typeof nextTrain) // MetroDeparture
 
   // let stoppingPattern = await nextTrain.getStoppingPattern()
-  // console.log()
+  // console.log(stoppingPattern)
 }
 
 main()
