@@ -25,18 +25,39 @@ describe('The MetroStoppingPattern class', () => {
   describe('When handling FKN -> NPT through running', () => {
     it('It should only contain stops from FKN to FSS as part of the main trip', async () => {
       let stubAPI = new StubAPI()
-      stubAPI.setResponses([ stubFKNDepartureData ])
+      stubAPI.setResponses([ stubFKNPatternData ])
       let ptvAPI = new PTVAPI(stubAPI)
 
-      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN(4452)
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN(4454)
+
+      expect(stoppingPattern.stops[0].stationName).to.equal('Frankston')
+      expect(stoppingPattern.stops.slice(-1)[0].stationName).to.equal('Flinders Street')
+    })
+
+    it('It should show the LAV trip as part of the forming, and keep the current trip as FSS headboard', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubFKNPatternData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN(4454)
       let runData = stoppingPattern.runData
 
       expect(runData.destination).to.equal('Flinders Street')
       expect(runData.forming.tdn).to.equal('6285')
       expect(runData.forming.destination).to.equal('Laverton')
+      expect(runData.forming.advertised).to.be.true
+    })
 
-      expect(stoppingPattern.stops[0].stationName).to.equal('Frankston')
-      expect(stoppingPattern.stops.slice(-1)[0].stationName).to.equal('Flinders Street')
+    it('It should only contain stops from FKN to FSS as part of the main trip', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubFKNPatternData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN(4454)
+
+      expect(stoppingPattern.formingStops[0].stationName).to.equal('Southern Cross')
+      expect(stoppingPattern.formingStops.slice(-1)[0].stationName).to.equal('Laverton')
+      expect(stoppingPattern.formingStops.length).to.equal(12)
     })
   })
 })
