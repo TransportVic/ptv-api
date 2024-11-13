@@ -377,7 +377,6 @@ describe('The MetroDepartures class', () => {
       expect(metro[0].runData.destination).to.equal('Frankston')
       expect(metro[0].runData.tdn).to.be.null
       expect(metro[0].runData.direction.railDirection).to.equal('Up')
-      console.log(metro[0].runData.direction)
 
       expect(metro[1].runData.destination).to.equal('Stony Point')
       expect(metro[1].runData.tdn).to.be.null

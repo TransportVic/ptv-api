@@ -14,6 +14,12 @@ ptvAPI.addVLine(vlineAPIInterface)
 async function main() {
   let departures = await ptvAPI.vline.getDepartures('Melbourne, Southern Cross', 'D', 30)
   inspect(departures)
+
+  let nextTrain = departures[0]
+  console.log(nextTrain)
+
+  let stoppingPattern = await nextTrain.getStoppingPattern()
+  console.log(stoppingPattern)
 }
 
 main()
