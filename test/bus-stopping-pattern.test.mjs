@@ -52,5 +52,29 @@ describe('The BusStoppingPattern class', () => {
       expect(stops[1].scheduledDeparture.toUTC().toISO()).to.equal('2024-06-28T00:36:00.000Z')
       expect(stops[1].estimatedDeparture).to.be.null
     })
+
+    it('Should deduplicate stops that appear twice in a row', async () => {
+      let duplicatedData = {
+        departures: [],
+        stops: stubPatternData.stops,
+        directions: stubPatternData.directions,
+        routes: stubPatternData.routes,
+        runs: stubPatternData.runs,
+        status: stubPatternData.status
+      }
+
+      for (let stop of stubPatternData.departures) duplicatedData.departures.push(stop, stop)
+
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ duplicatedData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+      let stoppingPattern = await ptvAPI.bus.getStoppingPatternFromRunRef('44-684--1-MF5-95614710')
+
+      let stops = stoppingPattern.stops
+
+      expect(stops[0].stationName).to.equal('Maroondah Hwy/Green St')
+      expect(stops[1].stationName).to.equal('Harker St/Maroondah Hwy')
+      expect(stops[2].stationName).to.equal('Crowley Rd/Maroondah Hwy')
+    })
   })
 })
