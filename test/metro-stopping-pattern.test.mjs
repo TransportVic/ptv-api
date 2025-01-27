@@ -7,6 +7,7 @@ import stubCBEPatternData from './metro-mock-data/metro-pattern-cbe.json' with {
 import stubRCEPatternData from './metro-mock-data/metro-pattern-rce.json' with { type: 'json' }
 import stubBadPatternData from './metro-mock-data/metro-bad-pattern.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
+import { dateLikeToISO, stubDate, unstubDate } from '../lib/date-utils.mjs'
 
 describe('The MetroStoppingPattern class', () => {
   describe('The fetch function', () => {
@@ -135,16 +136,27 @@ describe('The MetroStoppingPattern class', () => {
     let stubAPI = new StubAPI()
     stubAPI.setResponses([ stubBadPatternData ])
     let ptvAPI = new PTVAPI(stubAPI)
+
+    stubDate("2025-01-12T11:30:00Z")
+
     let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('1695')
 
     expect(stoppingPattern.runData.destination).to.equal('Mernda')
     expect(stoppingPattern.stops[0].stationName).to.equal('Flinders Street')
 
     expect(stoppingPattern.stops[0].delay).to.equal(0)
-    expect(stoppingPattern.stops.find(stop => stop.stationName === 'West Richmond').delay).to.equal(0)
-    expect(stoppingPattern.stops.find(stop => stop.stationName === 'North Richmond').delay).to.equal(0)
-    expect(stoppingPattern.stops.find(stop => stop.stationName === 'Clifton Hill').delay).to.equal(0)
+
+    let wrm = stoppingPattern.stops.find(stop => stop.stationName === 'West Richmond')
+    expect(wrm.delay).to.equal(0)
+    expect(dateLikeToISO(wrm.estimatedDeparture)).to.equal('2025-01-12T11:45:00.000Z')
+
+    let nrm = stoppingPattern.stops.find(stop => stop.stationName === 'North Richmond')
+    expect(nrm.delay).to.equal(0)
+    expect(dateLikeToISO(nrm.estimatedDeparture)).to.equal('2025-01-12T11:47:00.000Z')
+
     expect(stoppingPattern.stops.find(stop => stop.stationName === 'Epping').delay).to.equal(2)
     expect(stoppingPattern.stops.slice(-1)[0].delay).to.be.null
+
+    unstubDate()
   })
 })
