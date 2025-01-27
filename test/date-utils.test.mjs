@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { dateLikeToISO, parseISOTime } from '../lib/date-utils.mjs'
+import { dateLikeToISO, getDateNow, parseISOTime, stubDate, unstubDate } from '../lib/date-utils.mjs'
 
 describe('The Date utils functions', () => {
   describe('The Melbourne time parser', () => {
@@ -24,6 +24,21 @@ describe('The Date utils functions', () => {
 
     it('Should raise an error for invalid date strings', () => {
       expect(dateLikeToISO.bind(null, '2024-99-99')).to.throw('2024-99-99 is not a valid time string!')
+    })
+  })
+
+  describe('The stub functions', () => {
+    it('Should normally return the current date and time', () => {
+      let timeNow = +new Date()
+      expect(Math.abs(getDateNow() - timeNow)).to.be.lessThan(20)
+    })
+
+    it('Should allow stubbing a particular time', () => {
+      let targetTime = new Date('2024-07-16T00:00:00')
+
+      stubDate(targetTime)
+      expect(Math.abs(getDateNow() - targetTime)).to.equal(0)
+      unstubDate()
     })
   })
 })
