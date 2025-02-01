@@ -13,7 +13,7 @@ const sampleReply = await fs.readFile(path.join(__dirname, 'gtfsr-data', 'metro-
 
 let testURL = 'https://gtfs-r.test/'
 
-describe('The GTFSTripUpdates class', () => {
+describe('The GTFSRTripUpdates class', () => {
   it('Should return a list of TripUpdates', async () => {
     let api = new GTFSRTripUpdates(testURL, 'test')
     nock(testURL).get('/').reply(200, sampleReply)
