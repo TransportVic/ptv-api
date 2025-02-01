@@ -25,7 +25,7 @@ describe('The base GTFSREndpoint class', () => {
     let apiResponse = await api.fetch()
     expect(apiResponse.header.gtfs_realtime_version).to.equal('2.0')
     expect(apiResponse.entity[0].id).to.equal('2025-02-01-5872')
-    expect(apiResponse.entity[0].id.trip_update.trip).to.deep.equal({
+    expect(apiResponse.entity[0].trip_update.trip).to.deep.equal({
       trip_id: '100.T2.2-CGB-vpt-28.10.R',
       route_id: '',
       direction_id: 0,
