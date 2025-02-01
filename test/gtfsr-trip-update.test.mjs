@@ -6,18 +6,19 @@ import url from 'url'
 import GTFSRTripUpdates, { TripStopUpdate, TripUpdate } from '../lib/gtfsr/gtfsr-trip-update.mjs'
 import { dateLikeToISO } from '../lib/date-utils.mjs'
 import MetroTripUpdates, { MetroTripUpdate } from '../lib/gtfsr/metro-trip-update.mjs'
+import GTFSREndpoint from '../lib/gtfsr/gtfsr-endpoint.mjs'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const sampleReply = await fs.readFile(path.join(__dirname, 'gtfsr-data', 'metro-tripupdates.bin'))
 
-let testURL = 'https://gtfs-r.test/'
+const testHost = GTFSREndpoint.API_HOST
 
 describe('The GTFSRTripUpdates class', () => {
   it('Should return a list of TripUpdates', async () => {
-    let api = new GTFSRTripUpdates(testURL, 'test')
-    nock(testURL).get('/').reply(200, sampleReply)
+    let api = new GTFSRTripUpdates('/', 'test')
+    nock(testHost).get('/').reply(200, sampleReply)
 
     let apiResponse = await api.fetch()
 
@@ -31,8 +32,8 @@ describe('The GTFSRTripUpdates class', () => {
   })
 
   it('Should return TripStopUpdates inside each TripUpdate', async () => {
-    let api = new GTFSRTripUpdates(testURL, 'test')
-    nock(testURL).get('/').reply(200, sampleReply)
+    let api = new GTFSRTripUpdates('/', 'test')
+    nock(testHost).get('/').reply(200, sampleReply)
 
     let apiResponse = await api.fetch()
 
@@ -46,8 +47,8 @@ describe('The GTFSRTripUpdates class', () => {
 
 describe('The MetroTripUpdates class', () => {
   it('Should additionally return the trip TDN', async () => {
-    let api = new MetroTripUpdates(testURL, 'test')
-    nock(testURL).get('/').reply(200, sampleReply)
+    let api = new MetroTripUpdates('test')
+    nock(testHost).get(MetroTripUpdates.API_PATH).reply(200, sampleReply)
 
     let apiResponse = await api.fetch()
 

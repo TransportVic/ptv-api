@@ -10,17 +10,18 @@ const __dirname = path.dirname(__filename)
 
 const sampleReply = await fs.readFile(path.join(__dirname, 'gtfsr-data', 'metro-tripupdates.bin'))
 
-let testURL = 'https://gtfs-r.test/'
+const testHost = GTFSREndpoint.API_HOST
+
 class TestAPI extends GTFSREndpoint {
 
-  constructor() { super(testURL, 'dev-key-here') }
+  constructor() { super('/', 'dev-key-here') }
 
 }
 
 describe('The base GTFSREndpoint class', () => {
   it('Should decode the specified protobuf file and return it as JSON', async () => {
     let api = new TestAPI()
-    nock(testURL).get('/').reply(200, sampleReply)
+    nock(testHost).get('/').reply(200, sampleReply)
 
     let apiResponse = await api.fetch()
     expect(apiResponse.header.gtfs_realtime_version).to.equal('2.0')
