@@ -5,6 +5,7 @@ import path from 'path'
 import url from 'url'
 import GTFSRTripUpdates, { TripStopUpdate, TripUpdate } from '../lib/gtfsr/gtfsr-trip-update.mjs'
 import { dateLikeToISO } from '../lib/date-utils.mjs'
+import MetroTripUpdates, { MetroTripUpdate } from '../lib/gtfsr/metro-trip-update.mjs'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -40,5 +41,18 @@ describe('The GTFSRTripUpdates class', () => {
     expect(apiResponse[0].stopUpdates[0].stopGTFSID).to.be.null
     expect(dateLikeToISO(apiResponse[0].stopUpdates[0].arrivalTime)).to.equal('2025-02-01T06:39:00.000Z')
     expect(dateLikeToISO(apiResponse[0].stopUpdates[0].departureTime)).to.equal('2025-02-01T06:40:00.000Z')
+  })
+})
+
+describe('The MetroTripUpdates class', () => {
+  it('Should additionally return the trip TDN', async () => {
+    let api = new MetroTripUpdates(testURL, 'test')
+    nock(testURL).get('/').reply(200, sampleReply)
+
+    let apiResponse = await api.fetch()
+
+    expect(apiResponse[0]).to.be.instanceOf(MetroTripUpdate)
+    expect(apiResponse[0].tdn).to.equal('5872')
+    expect(apiResponse[1].tdn).to.equal('2679')
   })
 })
