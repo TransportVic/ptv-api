@@ -19,7 +19,6 @@ describe('The GTFSTripUpdates class', () => {
     nock(testURL).get('/').reply(200, sampleReply)
 
     let apiResponse = await api.fetch()
-    console.log(apiResponse.entity[0].trip_update.stop_time_update)
 
     expect(apiResponse[0]).to.be.instanceOf(TripUpdate)
     expect(apiResponse[0].liveTripID).to.equal('2025-02-01-5872')
@@ -28,6 +27,13 @@ describe('The GTFSTripUpdates class', () => {
       departureDate: '20250201',
       departureTime: '17:15'
     })
+  })
+
+  it('Should return TripStopUpdates inside each TripUpdate', async () => {
+    let api = new GTFSRTripUpdates(testURL, 'test')
+    nock(testURL).get('/').reply(200, sampleReply)
+
+    let apiResponse = await api.fetch()
 
     expect(apiResponse[0].stopUpdates[0]).to.be.instanceOf(TripStopUpdate)
     expect(apiResponse[0].stopUpdates[0].stopSequence).to.equal(10)
