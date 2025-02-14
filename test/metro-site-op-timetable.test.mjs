@@ -9,7 +9,10 @@ describe('The MetroSiteOpTimetable class', () => {
     it('Should retrieve operational timetable data for a given line', async () => {
       let stubAPI = new StubAPI()
       stubAPI.setResponses([ stubWILOpData ])
+      stubAPI.skipErrors()
+
       let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
 
       let willamstown = ptvAPI.metroSite.getOperationalTimetable(ptvAPI.metroSite.lines.WILLIAMSTOWN)
 
@@ -25,7 +28,10 @@ describe('The MetroSiteOpTimetable class', () => {
     it('Should return forming and formed by data', async () => {
       let stubAPI = new StubAPI()
       stubAPI.setResponses([ stubWILOpData ])
+      stubAPI.skipErrors()
+
       let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
 
       let willamstown = ptvAPI.metroSite.getOperationalTimetable(ptvAPI.metroSite.lines.WILLIAMSTOWN)
 
