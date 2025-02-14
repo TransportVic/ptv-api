@@ -16,7 +16,7 @@ describe('The MetroSiteOpTimetable class', () => {
 
       let willamstown = await ptvAPI.metroSite.getOperationalTimetable(ptvAPI.metroSite.lines.WILLIAMSTOWN)
 
-      let td6300 = willamstown.find(trip => trip.tdn = '6300')
+      let td6300 = willamstown.find(trip => trip.tdn === '6300')
       expect(td6300).to.exist
 
       let stops = td6300.stops
@@ -35,9 +35,9 @@ describe('The MetroSiteOpTimetable class', () => {
 
       let willamstown = await ptvAPI.metroSite.getOperationalTimetable(ptvAPI.metroSite.lines.WILLIAMSTOWN)
 
-      let td6304 = willamstown.find(trip => trip.tdn = '6304')
+      let td6304 = willamstown.find(trip => trip.tdn === '6304')
       expect(td6304).to.exist
-      
+
       expect(td6304.runData.formedBy).to.deep.equal({
         tdn: '6301'
       })
