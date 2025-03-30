@@ -18,6 +18,7 @@ describe('The MetroSiteOpTimetable class', () => {
 
       let td6300 = willamstown.find(trip => trip.tdn === '6300')
       expect(td6300).to.exist
+      expect(dateLikeToISO(td6300.operationalDateMoment)).to.equal('2025-02-13T13:00:00.000Z')
       expect(td6300.operationalDate).to.equal('20250214')
 
       let stops = td6300.stops
