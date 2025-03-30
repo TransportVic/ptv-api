@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { StubVLineAPI } from './stub-api.mjs'
+import { StubVLineAPI } from '../stub-api.mjs'
 
 import fs from 'fs/promises'
 import path from 'path'

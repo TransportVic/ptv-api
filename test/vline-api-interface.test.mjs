@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { SampleVLineMethod } from './stub-api.mjs'
+import { SampleVLineMethod } from '../stub-api.mjs'
 import { VLineAPIError, VLineAPIInterface } from '../lib/vline-api-interface.mjs'
 import nock from 'nock'
 

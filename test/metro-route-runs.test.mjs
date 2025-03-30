@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { StubAPI } from './stub-api.mjs'
+import { StubAPI } from '../stub-api.mjs'
 import PTVAPI from '../lib/ptv-api.mjs'
 
 import stubMDDRunData from './metro-mock-data/mdd-runs.json' with { type: 'json' }

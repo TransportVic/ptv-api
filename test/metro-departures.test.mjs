@@ -1,5 +1,5 @@
 import MetroDepartures from '../lib/metro/metro-departures.mjs'
-import { StubAPI } from './stub-api.mjs'
+import { StubAPI } from '../stub-api.mjs'
 import { expect } from 'chai'
 import stubDepartureData from './metro-mock-data/metro-departures.json' with { type: 'json' }
 import stubRRBDepartureData from './metro-mock-data/metro-departures-rrb.json' with { type: 'json' }

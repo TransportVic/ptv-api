@@ -1,4 +1,4 @@
-import { StubAPI } from './stub-api.mjs'
+import { StubAPI } from '../stub-api.mjs'
 import { expect } from 'chai'
 import stubFKNDepartureData from './metro-mock-data/metro-departures-fkn.json' with { type: 'json' }
 import stubFKNPatternData from './metro-mock-data/metro-pattern-fkn-lav.json' with { type: 'json' }

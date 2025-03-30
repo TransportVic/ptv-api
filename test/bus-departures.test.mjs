@@ -1,4 +1,4 @@
-import { StubAPI } from "./stub-api.mjs"
+import { StubAPI } from "../stub-api.mjs"
 import { expect } from 'chai'
 import stubDepartureData from './bus-mock-data/monash-departures.json' with { type: 'json' }
 import PTVAPI from "../lib/ptv-api.mjs"

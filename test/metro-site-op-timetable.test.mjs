@@ -1,8 +1,8 @@
-import { StubAPI } from './stub-api.mjs'
+import { StubAPI } from '../stub-api.mjs'
 import { expect } from 'chai'
 import stubWILOpData from './metro-site-mock-data/williamstown-op.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
-import { dateLikeToISO, stubDate, unstubDate } from '../lib/date-utils.mjs'
+import { dateLikeToISO } from '../lib/date-utils.mjs'
 
 describe('The MetroSiteOpTimetable class', () => {
   describe('The fetch function', () => {

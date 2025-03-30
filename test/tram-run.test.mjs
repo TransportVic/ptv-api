@@ -1,7 +1,7 @@
 import PTVAPI from "../lib/ptv-api.mjs"
 import TramDepartures from "../lib/tram/tram-departures.mjs"
 import { expect } from 'chai'
-import { StubAPI } from "./stub-api.mjs"
+import { StubAPI } from "../stub-api.mjs"
 import stubELSDepartureData from './tram-mock-data/elsternwick-departures.json' with { type: 'json' }
 import TramRun from "../lib/tram/tram-run.mjs"
 

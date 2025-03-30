@@ -1,6 +1,6 @@
 import TransitDepartures from '../lib/types/transit-departures.mjs'
 import { expect } from 'chai'
-import { StubAPI } from './stub-api.mjs'
+import { StubAPI } from '../stub-api.mjs'
 import stubDepartureData from './metro-mock-data/metro-departures.json' with { type: 'json' }
 
 describe('The TransitDepartures class', () => {

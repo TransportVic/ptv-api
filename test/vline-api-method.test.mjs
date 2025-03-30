@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import nock from 'nock'
 import { VLineAPIMethod } from '../lib/vline/api-methods.mjs'
-import { SampleVLineMethod } from './stub-api.mjs'
+import { SampleVLineMethod } from '../stub-api.mjs'
 
 describe('The V/Line API Method class', () => {
   it('Should calculate the HMAC based on the method name and authentication details', () => {

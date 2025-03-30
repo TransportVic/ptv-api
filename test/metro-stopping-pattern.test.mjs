@@ -1,5 +1,5 @@
 import MetroStoppingPattern from '../lib/metro/metro-stopping-pattern.mjs'
-import { StubAPI } from './stub-api.mjs'
+import { StubAPI } from '../stub-api.mjs'
 import { expect } from 'chai'
 import stubPKMPatternData from './metro-mock-data/metro-pattern-pkm.json' with { type: 'json' }
 import stubHBEPatternData from './metro-mock-data/metro-pattern-hbe.json' with { type: 'json' }
