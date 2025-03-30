@@ -1,12 +1,18 @@
 {
-  "name": "ptv-api",
-  "version": "1.0.1",
+  "name": "@transportme/ptv-api",
+  "version": "1.0.2",
   "description": "",
   "main": "index.mjs",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
+  "files": [
+    "/lib",
+    "/res",
+    "/index.mjs",
+    "/stub-api.mjs"
+  ],
   "scripts": {
     "test": "mocha"
   },
