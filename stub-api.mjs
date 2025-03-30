@@ -1,6 +1,6 @@
 import { PTVAPIInterface } from './lib/ptv-api-interface.mjs'
 import { VLineAPIInterface } from './lib/vline-api-interface.mjs'
-import { VLineAPIMethod, VLineJPMethod } from './lib/vline/api-methods.mjs'
+import { VLineJPMethod } from './lib/vline/api-methods.mjs'
 
 export class StubAPI extends PTVAPIInterface {
 
