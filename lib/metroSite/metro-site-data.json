@@ -1,20 +1,68 @@
 {
   "lines": {
-    "ALAMEIN": "82",
-    "BELGRAVE": "84",
-    "CRAIGIEBURN": "85",
-    "CRANBOURNE": "86",
-    "FRANKSTON": "88",
-    "GLEN_WAVERLEY": "89",
-    "HURSTBRIDGE": "90",
-    "LILYDALE": "91",
-    "PAKENHAM": "92",
-    "SANDRINGHAM": "93",
-    "MERNDA": "87",
-    "STONY_POINT": "94",
-    "SUNBURY": "95",
-    "UPFIELD": "96",
-    "WERRIBEE": "97",
-    "WILLIAMSTOWN": "98"
+    "ALAMEIN": {
+      "lineName": "Alamein",
+      "lineID": "82"
+    },
+    "BELGRAVE": {
+      "lineName": "Belgrave",
+      "lineID": "84"
+    },
+    "CRAIGIEBURN": {
+      "lineName": "Craigieburn",
+      "lineID": "85"
+    },
+    "CRANBOURNE": {
+      "lineName": "Cranbourne",
+      "lineID": "86"
+    },
+    "FRANKSTON": {
+      "lineName": "Frankston",
+      "lineID": "88"
+    },
+    "GLEN_WAVERLEY": {
+      "lineName": "Glen Waverley",
+      "lineID": "89"
+    },
+    "HURSTBRIDGE": {
+      "lineName": "Hurstbridge",
+      "lineID": "90"
+    },
+    "LILYDALE": {
+      "lineName": "Lilydale",
+      "lineID": "91"
+    },
+    "PAKENHAM": {
+      "lineName": "Pakenham",
+      "lineID": "92"
+    },
+    "SANDRINGHAM": {
+      "lineName": "Sandringham",
+      "lineID": "93"
+    },
+    "MERNDA": {
+      "lineName": "Mernda",
+      "lineID": "87"
+    },
+    "STONY_POINT": {
+      "lineName": "Stony Point",
+      "lineID": "94"
+    },
+    "SUNBURY": {
+      "lineName": "Sunbury",
+      "lineID": "95"
+    },
+    "UPFIELD": {
+      "lineName": "Upfield",
+      "lineID": "96"
+    },
+    "WERRIBEE": {
+      "lineName": "Werribee",
+      "lineID": "97"
+    },
+    "WILLIAMSTOWN": {
+      "lineName": "Williamstown",
+      "lineID": "98"
+    }
   }
 }
