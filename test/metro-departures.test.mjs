@@ -9,6 +9,7 @@ import stubPARDepartureData from './metro-mock-data/city-loop-departures.json' w
 import stubBEGDepartureData from './metro-mock-data/metro-departures-beg.json' with { type: 'json' }
 import stubSSSDepartureData from './metro-mock-data/metro-departures-sss.json' with { type: 'json' }
 import stubBXRDepartureData from './metro-mock-data/metro-departures-bxr.json' with { type: 'json' }
+import stubRMDDepartureData from './metro-mock-data/metro-departures-rmd.json' with { type: 'json' }
 
 import stubPKMPatternData from './metro-mock-data/metro-pattern-pkm.json' with { type: 'json' }
 import stubRCEPatternData from './metro-mock-data/metro-pattern-rce.json' with { type: 'json' }
@@ -277,6 +278,25 @@ describe('The MetroDepartures class', () => {
       expect(metro[2].runData.destination).to.equal('Flinders Street')
       expect(metro[2].runData.forming.tdn).to.equal('5265')
       expect(metro[2].runData.forming.destination).to.equal('Craigieburn')
+    })
+
+    it('Should marked updated/amended trips as such', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubRMDDepartureData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let metro = await ptvAPI.metro.getDepartures(22180)
+
+      expect(metro[0].runData.destination).to.equal('Flinders Street')
+      expect(metro[0].runData.tdn).to.equal('C008')
+      expect(metro[0].runData.forming.tdn).to.equal('C013')
+      expect(metro[0].runData.forming.destination).to.equal('East Pakenham')
+      expect(metro[0].runData.updated).to.be.true
+
+      expect(metro[1].runData.destination).to.equal('Flinders Street')
+      expect(metro[1].runData.tdn).to.equal('X016')
+      expect(metro[1].runData.forming.destination).to.equal('Sandringham')
+      expect(metro[1].runData.updated).to.be.false
     })
   })
 
