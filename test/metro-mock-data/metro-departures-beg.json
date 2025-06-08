@@ -46,7 +46,7 @@
       "route_type": 0,
       "final_stop_id": 1155,
       "destination_name": "Parliament",
-      "status": "scheduled",
+      "status": "cancelled",
       "direction_id": 1,
       "run_sequence": 0,
       "express_stop_count": 1,
