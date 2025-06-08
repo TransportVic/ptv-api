@@ -126,6 +126,7 @@ describe('The MetroStoppingPattern class', () => {
     let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C425')
 
     expect(stoppingPattern.runData.destination).to.equal('Cranbourne')
+    expect(stoppingPattern.runData.updated).to.be.true
     expect(stoppingPattern.stops[0].stationName).to.equal('Flinders Street')
 
     expect(stoppingPattern.formedByStops[0].stationName).to.equal('Parliament')
@@ -158,5 +159,13 @@ describe('The MetroStoppingPattern class', () => {
     expect(stoppingPattern.stops.slice(-1)[0].delay).to.be.null
 
     unstubDate()
+  })
+
+  it('Should mark cancelled trips as such', async () => {
+    let stubAPI = new StubAPI()
+    stubAPI.setResponses([ stubHBEPatternData ])
+    let ptvAPI = new PTVAPI(stubAPI)
+    let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('1234')
+    expect(stoppingPattern.runData.cancelled).to.be.true
   })
 })
