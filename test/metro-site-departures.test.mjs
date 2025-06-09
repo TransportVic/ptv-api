@@ -40,5 +40,31 @@ describe('The MetroSiteDeparture class', () => {
       expect(dateLikeToISO(td4406Stops[4].estimatedArrival)).to.equal('2025-04-20T05:50:00.000Z')
       expect(dateLikeToISO(td4406Stops[4].estimatedDeparture)).to.equal('2025-04-20T05:51:00.000Z')
     })
+
+    it('Should shift post 12am departures forward by a day', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ {
+        entries: [{"timetable_num": "0", "day_type": "3", "to_city": "0", "station": "Flinders Street", "time_seconds": "86580", "time_str": "12:03 AM", "is_arrival": "0", "trip_id": "6065", "platform": "5", "estimated_arrival_time_str": "11:52 PM", "estimated_arrival_time_seconds": 85920, "estimated_departure_time_str": "0:03 AM", "estimated_departure_time_seconds": 180, "estimated_platform": "5"}],
+        created: 1749473586000
+      } ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let departures = await ptvAPI.metroSite.getDepartures()
+
+      let td6065 = departures.find(trip => trip.tdn === '6065')
+      expect(td6065).to.exist
+      expect(dateLikeToISO(td6065.operationalDateMoment)).to.equal('2025-06-08T14:00:00.000Z')
+      expect(td6065.operationalDate).to.equal('20250609')
+
+      let td1054Stops = td6065.stops
+      expect(td1054Stops[0].stationName).to.equal('Flinders Street')
+      expect(td1054Stops[0].platform).to.equal('5')
+      expect(dateLikeToISO(td1054Stops[0].scheduledDeparture)).to.equal('2025-06-09T14:03:00.000Z')
+      expect(dateLikeToISO(td1054Stops[0].estimatedArrival)).to.equal('2025-06-09T13:52:00.000Z')
+      expect(dateLikeToISO(td1054Stops[0].estimatedDeparture)).to.equal('2025-06-09T14:03:00.000Z')
+    })
   })
 })
