@@ -1,0 +1,1929 @@
+{
+  "disruptions": [],
+  "departures": [
+    {
+      "skipped_stops": [],
+      "stop_id": 1205,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T08:45:00Z",
+      "estimated_departure_utc": "2025-06-09T08:44:40Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 1,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1097,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T08:48:00Z",
+      "estimated_departure_utc": "2025-06-09T08:49:00Z",
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 2,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1225,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T08:51:00Z",
+      "estimated_departure_utc": "2025-06-09T08:53:00Z",
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 3,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1220,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T08:54:00Z",
+      "estimated_departure_utc": "2025-06-09T08:55:00Z",
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 4,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1113,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T08:56:00Z",
+      "estimated_departure_utc": "2025-06-09T08:57:00Z",
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 5,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1210,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:00:00Z",
+      "estimated_departure_utc": "2025-06-09T09:02:00Z",
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 6,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1005,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:02:00Z",
+      "estimated_departure_utc": "2025-06-09T09:04:00Z",
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 7,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1175,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:04:00Z",
+      "estimated_departure_utc": "2025-06-09T09:06:00Z",
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 8,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1141,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:13:00Z",
+      "estimated_departure_utc": "2025-06-09T09:15:00Z",
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 9,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1182,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:15:00Z",
+      "estimated_departure_utc": "2025-06-09T09:17:02Z",
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 10,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1216,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:17:00Z",
+      "estimated_departure_utc": "2025-06-09T09:20:00Z",
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 11,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1176,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:19:00Z",
+      "estimated_departure_utc": "2025-06-09T09:22:00Z",
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 12,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1072,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:21:00Z",
+      "estimated_departure_utc": "2025-06-09T09:25:00Z",
+      "at_platform": false,
+      "platform_number": "5",
+      "flags": "",
+      "departure_sequence": 13,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1179,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:24:00Z",
+      "estimated_departure_utc": "2025-06-09T09:27:00Z",
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 14,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1144,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:27:00Z",
+      "estimated_departure_utc": "2025-06-09T09:30:00Z",
+      "at_platform": false,
+      "platform_number": "5",
+      "flags": "",
+      "departure_sequence": 15,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1181,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:30:00Z",
+      "estimated_departure_utc": "2025-06-09T09:33:00Z",
+      "at_platform": false,
+      "platform_number": "13",
+      "flags": "",
+      "departure_sequence": 16,
+      "departure_note": "via Flinders Street"
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1071,
+      "route_id": 16,
+      "run_id": 954482,
+      "run_ref": "954482",
+      "direction_id": 1,
+      "disruption_ids": [
+        337153,
+        336160,
+        261006
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:34:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "8",
+      "flags": "E",
+      "departure_sequence": 17,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1181,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:30:00Z",
+      "estimated_departure_utc": "2025-06-09T09:33:00Z",
+      "at_platform": false,
+      "platform_number": "13",
+      "flags": "",
+      "departure_sequence": 18,
+      "departure_note": null
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1071,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447,
+        261006
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:39:00Z",
+      "estimated_departure_utc": "2025-06-09T09:38:40Z",
+      "at_platform": false,
+      "platform_number": "8",
+      "flags": "",
+      "departure_sequence": 19,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1162,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:42:00Z",
+      "estimated_departure_utc": "2025-06-09T09:43:00Z",
+      "at_platform": false,
+      "platform_number": "4",
+      "flags": "",
+      "departure_sequence": 20,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1180,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:45:00Z",
+      "estimated_departure_utc": "2025-06-09T09:46:00Z",
+      "at_platform": false,
+      "platform_number": "4",
+      "flags": "",
+      "departure_sequence": 21,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1089,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:47:00Z",
+      "estimated_departure_utc": "2025-06-09T09:48:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 22,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1194,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:49:00Z",
+      "estimated_departure_utc": "2025-06-09T09:50:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 23,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1008,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:50:00Z",
+      "estimated_departure_utc": "2025-06-09T09:52:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 24,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1118,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:53:00Z",
+      "estimated_departure_utc": "2025-06-09T09:54:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 25,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1036,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:56:00Z",
+      "estimated_departure_utc": "2025-06-09T09:57:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 26,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1081,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T09:59:00Z",
+      "estimated_departure_utc": "2025-06-09T10:01:31Z",
+      "at_platform": false,
+      "platform_number": "3",
+      "flags": "",
+      "departure_sequence": 27,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1152,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:01:00Z",
+      "estimated_departure_utc": "2025-06-09T10:02:00Z",
+      "at_platform": false,
+      "platform_number": "3",
+      "flags": "",
+      "departure_sequence": 28,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1119,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:03:00Z",
+      "estimated_departure_utc": "2025-06-09T10:04:00Z",
+      "at_platform": false,
+      "platform_number": "3",
+      "flags": "",
+      "departure_sequence": 29,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1020,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:05:00Z",
+      "estimated_departure_utc": "2025-06-09T10:05:00Z",
+      "at_platform": false,
+      "platform_number": "3",
+      "flags": "",
+      "departure_sequence": 30,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1157,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:06:00Z",
+      "estimated_departure_utc": "2025-06-09T10:07:00Z",
+      "at_platform": false,
+      "platform_number": "3",
+      "flags": "",
+      "departure_sequence": 31,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1132,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:08:00Z",
+      "estimated_departure_utc": "2025-06-09T10:09:00Z",
+      "at_platform": false,
+      "platform_number": "3",
+      "flags": "",
+      "departure_sequence": 32,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1095,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:10:00Z",
+      "estimated_departure_utc": "2025-06-09T10:12:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 33,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1001,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:12:00Z",
+      "estimated_departure_utc": "2025-06-09T10:14:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 34,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1039,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:13:00Z",
+      "estimated_departure_utc": "2025-06-09T10:16:00Z",
+      "at_platform": false,
+      "platform_number": "3",
+      "flags": "",
+      "departure_sequence": 35,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1122,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:16:00Z",
+      "estimated_departure_utc": "2025-06-09T10:19:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 36,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1154,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:18:00Z",
+      "estimated_departure_utc": "2025-06-09T10:21:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 37,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1134,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:21:00Z",
+      "estimated_departure_utc": "2025-06-09T10:23:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 38,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1011,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:24:00Z",
+      "estimated_departure_utc": "2025-06-09T10:27:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 39,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1060,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:26:00Z",
+      "estimated_departure_utc": "2025-06-09T10:28:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 40,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1038,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:28:00Z",
+      "estimated_departure_utc": "2025-06-09T10:31:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 41,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1024,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:30:00Z",
+      "estimated_departure_utc": "2025-06-09T10:33:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 42,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:33:00Z",
+      "estimated_departure_utc": "2025-06-09T10:35:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 43,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1174,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:36:00Z",
+      "estimated_departure_utc": "2025-06-09T10:38:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 44,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1106,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:39:00Z",
+      "estimated_departure_utc": "2025-06-09T10:42:00Z",
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 45,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1073,
+      "route_id": 6,
+      "run_id": 952439,
+      "run_ref": "952439",
+      "direction_id": 5,
+      "disruption_ids": [
+        329447
+      ],
+      "scheduled_departure_utc": "2025-06-09T10:43:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "E",
+      "departure_sequence": 46,
+      "departure_note": ""
+    }
+  ],
+  "stops": {
+    "1181": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": true,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Melbourne City",
+      "stop_name": "Southern Cross",
+      "stop_id": 1181,
+      "route_type": 0,
+      "stop_latitude": -37.8179321,
+      "stop_longitude": 144.951416,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1071": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Melbourne City",
+      "stop_name": "Flinders Street",
+      "stop_id": 1071,
+      "route_type": 0,
+      "stop_latitude": -37.81831,
+      "stop_longitude": 144.966965,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1162": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Richmond",
+      "stop_name": "Richmond",
+      "stop_id": 1162,
+      "route_type": 0,
+      "stop_latitude": -37.8240738,
+      "stop_longitude": 144.990158,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1180": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "South Yarra",
+      "stop_name": "South Yarra",
+      "stop_id": 1180,
+      "route_type": 0,
+      "stop_latitude": -37.8384438,
+      "stop_longitude": 144.99234,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1089": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "South Yarra",
+      "stop_name": "Hawksburn",
+      "stop_id": 1089,
+      "route_type": 0,
+      "stop_latitude": -37.844593,
+      "stop_longitude": 145.002136,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1194": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Armadale",
+      "stop_name": "Toorak",
+      "stop_id": 1194,
+      "route_type": 0,
+      "stop_latitude": -37.85077,
+      "stop_longitude": 145.0139,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1008": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Armadale",
+      "stop_name": "Armadale",
+      "stop_id": 1008,
+      "route_type": 0,
+      "stop_latitude": -37.8564529,
+      "stop_longitude": 145.019333,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1118": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Malvern",
+      "stop_name": "Malvern",
+      "stop_id": 1118,
+      "route_type": 0,
+      "stop_latitude": -37.86625,
+      "stop_longitude": 145.0293,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1036": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Caulfield East",
+      "stop_name": "Caulfield",
+      "stop_id": 1036,
+      "route_type": 0,
+      "stop_latitude": -37.8774567,
+      "stop_longitude": 145.042526,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1081": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Glen Huntly",
+      "stop_name": "Glen Huntly",
+      "stop_id": 1081,
+      "route_type": 0,
+      "stop_latitude": -37.8897171,
+      "stop_longitude": 145.042221,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1152": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1,Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1,
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Ormond",
+      "stop_name": "Ormond",
+      "stop_id": 1152,
+      "route_type": 0,
+      "stop_latitude": -37.90321,
+      "stop_longitude": 145.039612,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1119": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1,Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1,
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Mckinnon",
+      "stop_name": "McKinnon",
+      "stop_id": 1119,
+      "route_type": 0,
+      "stop_latitude": -37.910305,
+      "stop_longitude": 145.0383,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1020": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1,Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1,
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Bentleigh",
+      "stop_name": "Bentleigh",
+      "stop_id": 1020,
+      "route_type": 0,
+      "stop_latitude": -37.9174271,
+      "stop_longitude": 145.036987,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1157": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Bentleigh",
+      "stop_name": "Patterson",
+      "stop_id": 1157,
+      "route_type": 0,
+      "stop_latitude": -37.9251442,
+      "stop_longitude": 145.035461,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1132": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Moorabbin",
+      "stop_name": "Moorabbin",
+      "stop_id": 1132,
+      "route_type": 0,
+      "stop_latitude": -37.93435,
+      "stop_longitude": 145.036743,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1095": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Highett",
+      "stop_name": "Highett",
+      "stop_id": 1095,
+      "route_type": 0,
+      "stop_latitude": -37.9484253,
+      "stop_longitude": 145.04187,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1001": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Cheltenham",
+      "stop_name": "Southland",
+      "stop_id": 1001,
+      "route_type": 0,
+      "stop_latitude": -37.95876,
+      "stop_longitude": 145.049118,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1039": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Cheltenham",
+      "stop_name": "Cheltenham",
+      "stop_id": 1039,
+      "route_type": 0,
+      "stop_latitude": -37.9666519,
+      "stop_longitude": 145.05455,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1122": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Mentone",
+      "stop_name": "Mentone",
+      "stop_id": 1122,
+      "route_type": 0,
+      "stop_latitude": -37.98297,
+      "stop_longitude": 145.066,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1154": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Parkdale",
+      "stop_name": "Parkdale",
+      "stop_id": 1154,
+      "route_type": 0,
+      "stop_latitude": -37.9930763,
+      "stop_longitude": 145.076324,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1134": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Mordialloc",
+      "stop_name": "Mordialloc",
+      "stop_id": 1134,
+      "route_type": 0,
+      "stop_latitude": -38.006588,
+      "stop_longitude": 145.087662,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1011": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Aspendale",
+      "stop_name": "Aspendale",
+      "stop_id": 1011,
+      "route_type": 0,
+      "stop_latitude": -38.02722,
+      "stop_longitude": 145.102158,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1060": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Edithvale",
+      "stop_name": "Edithvale",
+      "stop_id": 1060,
+      "route_type": 0,
+      "stop_latitude": -38.0360641,
+      "stop_longitude": 145.1073,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1038": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Chelsea",
+      "stop_name": "Chelsea",
+      "stop_id": 1038,
+      "route_type": 0,
+      "stop_latitude": -38.05332,
+      "stop_longitude": 145.116638,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1024": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Bonbeach",
+      "stop_name": "Bonbeach",
+      "stop_id": 1024,
+      "route_type": 0,
+      "stop_latitude": -38.06507,
+      "stop_longitude": 145.120026,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1035": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Carrum",
+      "stop_name": "Carrum",
+      "stop_id": 1035,
+      "route_type": 0,
+      "stop_latitude": -38.0765038,
+      "stop_longitude": 145.122833,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1174": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Seaford",
+      "stop_name": "Seaford",
+      "stop_id": 1174,
+      "route_type": 0,
+      "stop_latitude": -38.1040154,
+      "stop_longitude": 145.128235,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1106": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Seaford",
+      "stop_name": "Kananook",
+      "stop_id": 1106,
+      "route_type": 0,
+      "stop_latitude": -38.12174,
+      "stop_longitude": 145.135284,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1073": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": true,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Frankston",
+      "stop_id": 1073,
+      "route_type": 0,
+      "stop_latitude": -38.1429863,
+      "stop_longitude": 145.12616,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1205": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Werribee",
+      "stop_name": "Werribee",
+      "stop_id": 1205,
+      "route_type": 0,
+      "stop_latitude": -37.8993835,
+      "stop_longitude": 144.661118,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1097": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Hoppers Crossing",
+      "stop_name": "Hoppers Crossing",
+      "stop_id": 1097,
+      "route_type": 0,
+      "stop_latitude": -37.8832779,
+      "stop_longitude": 144.700958,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1225": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": true,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Williams Landing",
+      "stop_name": "Williams Landing",
+      "stop_id": 1225,
+      "route_type": 0,
+      "stop_latitude": -37.86987,
+      "stop_longitude": 144.747452,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1220": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Laverton",
+      "stop_name": "Aircraft",
+      "stop_id": 1220,
+      "route_type": 0,
+      "stop_latitude": -37.8666039,
+      "stop_longitude": 144.7608,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1113": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1,Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1,
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Laverton",
+      "stop_name": "Laverton",
+      "stop_id": 1113,
+      "route_type": 0,
+      "stop_latitude": -37.8636932,
+      "stop_longitude": 144.772614,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1210": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1,Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1,
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Altona",
+      "stop_name": "Westona",
+      "stop_id": 1210,
+      "route_type": 0,
+      "stop_latitude": -37.8651657,
+      "stop_longitude": 144.813492,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1005": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1,Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1,
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Altona",
+      "stop_name": "Altona",
+      "stop_id": 1005,
+      "route_type": 0,
+      "stop_latitude": -37.86715,
+      "stop_longitude": 144.829651,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1175": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Seaholme",
+      "stop_name": "Seaholme",
+      "stop_id": 1175,
+      "route_type": 0,
+      "stop_latitude": -37.8678436,
+      "stop_longitude": 144.840958,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1141": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Newport",
+      "stop_name": "Newport",
+      "stop_id": 1141,
+      "route_type": 0,
+      "stop_latitude": -37.8427124,
+      "stop_longitude": 144.8836,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1182": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Spotswood",
+      "stop_name": "Spotswood",
+      "stop_id": 1182,
+      "route_type": 0,
+      "stop_latitude": -37.8306351,
+      "stop_longitude": 144.885941,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1216": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Yarraville",
+      "stop_name": "Yarraville",
+      "stop_id": 1216,
+      "route_type": 0,
+      "stop_latitude": -37.81585,
+      "stop_longitude": 144.889938,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1176": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Seddon",
+      "stop_name": "Seddon",
+      "stop_id": 1176,
+      "route_type": 0,
+      "stop_latitude": -37.8090019,
+      "stop_longitude": 144.89566,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1072": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Footscray",
+      "stop_name": "Footscray",
+      "stop_id": 1072,
+      "route_type": 0,
+      "stop_latitude": -37.8010864,
+      "stop_longitude": 144.9032,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1179": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Kensington",
+      "stop_name": "South Kensington",
+      "stop_id": 1179,
+      "route_type": 0,
+      "stop_latitude": -37.7995338,
+      "stop_longitude": 144.925476,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1144": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "West Melbourne",
+      "stop_name": "North Melbourne",
+      "stop_id": 1144,
+      "route_type": 0,
+      "stop_latitude": -37.807415,
+      "stop_longitude": 144.942566,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    }
+  },
+  "routes": {
+    "6": {
+      "route_type": 0,
+      "route_id": 6,
+      "route_name": "Frankston",
+      "route_number": "",
+      "route_gtfs_id": "2-FKN",
+      "geopath": []
+    },
+    "16": {
+      "route_type": 0,
+      "route_id": 16,
+      "route_name": "Werribee",
+      "route_number": "",
+      "route_gtfs_id": "2-WER",
+      "geopath": []
+    }
+  },
+  "runs": {
+    "952439": {
+      "run_id": 952439,
+      "run_ref": "952439",
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1073,
+      "destination_name": "Frankston",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": {
+        "feeder": {
+          "run_ref": "954482",
+          "route_id": 16,
+          "stop_id": 1071,
+          "advertised": true,
+          "direction_id": 1,
+          "destination_name": "Flinders Street"
+        },
+        "distributor": {
+          "run_ref": "952452",
+          "route_id": 6,
+          "stop_id": 1181,
+          "advertised": false,
+          "direction_id": 1,
+          "destination_name": "Southern Cross"
+        }
+      },
+      "run_note": "",
+      "externalService": null
+    },
+    "954482": {
+      "run_id": 954482,
+      "run_ref": "954482",
+      "route_id": 16,
+      "route_type": 0,
+      "final_stop_id": 1071,
+      "destination_name": "Flinders Street",
+      "status": "updated",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": {
+        "feeder": null,
+        "distributor": {
+          "run_ref": "952439",
+          "route_id": 6,
+          "stop_id": 1073,
+          "advertised": true,
+          "direction_id": 5,
+          "destination_name": "Frankston"
+        }
+      },
+      "run_note": "",
+      "externalService": null
+    }
+  },
+  "directions": {
+    "5": {
+      "direction_id": 5,
+      "direction_name": "Frankston",
+      "route_id": 6,
+      "route_type": 0
+    },
+    "1": {
+      "direction_id": 1,
+      "direction_name": "City",
+      "route_id": 16,
+      "route_type": 0
+    }
+  },
+  "status": {
+    "version": "3.0",
+    "health": 1
+  }
+}
