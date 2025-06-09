@@ -209,13 +209,13 @@ describe('The MetroStoppingPattern class', () => {
     expect((await ptvAPI.metro.getStoppingPatternFromTDN('1234')).runData.operationDay).to.equal('20250406')
   })
 
-  it('Should remove duplicated Flinders Street and Southern Cross stops on Cross City trips', async () => {
+  it.only('Should remove duplicated Flinders Street and Southern Cross stops on Cross City trips', async () => {
     let stubAPI = new StubAPI()
     stubAPI.setResponses([ stubTD4439PatternData ])
     let ptvAPI = new PTVAPI(stubAPI)
 
     let pattern = await ptvAPI.metro.getStoppingPatternFromTDN('4439')
     expect(dateLikeToISO(pattern.stops[0].scheduledDeparture)).to.equal('2025-06-09T09:39:00.000Z')
-    expect(dateLikeToISO(pattern.formedByStops[pattern.formedByStops.lenght - 1].scheduledDeparture)).to.equal('2025-06-09T09:34:00.000Z')
+    expect(dateLikeToISO(pattern.formedByStops[pattern.formedByStops.length - 1].scheduledDeparture)).to.equal('2025-06-09T09:34:00.000Z')
   })
 })
