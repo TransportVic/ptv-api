@@ -9,6 +9,8 @@ import stubTD4439PatternData from './metro-mock-data/tdn-4439-pattern.json' with
 import PTVAPI from '../lib/ptv-api.mjs'
 import { dateLikeToISO, stubDate, unstubDate } from '../lib/date-utils.mjs'
 
+let clone = o => JSON.parse(JSON.stringify(o))
+
 describe('The MetroStoppingPattern class', () => {
   describe('The fetch function', () => {
     it('Should call the PTV API providing the stop ID and specified parameters, automatically expanding the required parameters', async () => {
@@ -133,6 +135,18 @@ describe('The MetroStoppingPattern class', () => {
     expect(stoppingPattern.formedByStops.slice(-1)[0].stationName).to.equal('Southern Cross')
   })
 
+  it('Should mark additional trips as such', async () => {
+    let stubAPI = new StubAPI()
+    let response = clone(stubCBEPatternData)
+    response.runs[response.departures[0].run_ref].status = 'added'
+    stubAPI.setResponses([ response ])
+
+    let ptvAPI = new PTVAPI(stubAPI)
+    let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C425')
+
+    expect(stoppingPattern.runData.additional).to.be.true
+  })
+
   it('Should identify pattern data where there is a random block of lateness in the future and correct this', async () => {
     let stubAPI = new StubAPI()
     stubAPI.setResponses([ stubBadPatternData ])
@@ -180,7 +194,7 @@ describe('The MetroStoppingPattern class', () => {
 
   it('Should return the previous day as the trip\'s PT operation day if it starts before 3am', async () => {
     let stubAPI = new StubAPI()
-    let response = JSON.parse(JSON.stringify(stubHBEPatternData))
+    let response = clone(stubHBEPatternData)
     response.departures[0].scheduled_departure_utc = '2024-06-30T15:46:00Z'
     stubAPI.setResponses([ response ])
     let ptvAPI = new PTVAPI(stubAPI)
@@ -191,13 +205,13 @@ describe('The MetroStoppingPattern class', () => {
 
   it('Should account for a repeated 2am on DST days when calculating the PT operation day', async () => {
     let stubAPI = new StubAPI()
-    let response1 = JSON.parse(JSON.stringify(stubHBEPatternData))
+    let response1 = clone(stubHBEPatternData)
     response1.departures[0].scheduled_departure_utc = '2025-04-05T15:46:00Z' // First 2am
 
-    let response2 = JSON.parse(JSON.stringify(stubHBEPatternData))
+    let response2 = clone(stubHBEPatternData)
     response2.departures[0].scheduled_departure_utc = '2025-04-05T16:46:00Z' // Second 2am
 
-    let response3 = JSON.parse(JSON.stringify(stubHBEPatternData))
+    let response3 = clone(stubHBEPatternData)
     response3.departures[0].scheduled_departure_utc = '2025-04-05T17:46:00Z' // 3am
 
     stubAPI.setResponses([ response1, response2, response3 ])
