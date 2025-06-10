@@ -72,16 +72,15 @@ describe('The MetroNotifyAlerts class', () => {
 
     it('Should return general alerts together with the data', async () => {
       let stubAPI = new StubAPI()
-      stubAPI.setResponses([ stubNotifyData ])
+      stubAPI.setResponses([ stubGeneralAlert ])
       stubAPI.skipErrors()
 
       let ptvAPI = new PTVAPI(stubAPI)
       ptvAPI.addMetroSite(stubAPI)
 
       let alerts = await ptvAPI.metroSite.getNotifyData()
-
-      let hoppers = alerts.find(alert => alert.type === 'general')
-      expect(hoppers.lineNames).to.have.members([
+      let general = alerts.find(alert => alert.type === 'general')
+      expect(general.lineNames).to.have.members([
         'Alamein',               'Belgrave',
         'Craigieburn',           'Cranbourne',
         'Frankston',             'Glen Waverley',
@@ -92,12 +91,12 @@ describe('The MetroNotifyAlerts class', () => {
         'Werribee',              'Williamstown',
         'Flemington Racecourse'
       ])
-      expect(hoppers.startTime.toISOString()).to.equal('2024-06-04T18:45:00.000Z')
-      expect(hoppers.endTime.toISOString()).to.equal('2024-06-05T00:45:00.000Z')
-      expect(hoppers.type).to.equal('general')
-      expect(hoppers.rawHTML).to.equal('<h1>Melbourne Central Station Closed</h1>\n<p>Melbourne Central station is currently closed due to a water leak.</p>\n<p>We are currently working to restore access to the station.</p>\n<p>Passengers wanting to travel to/from the Melbourne Central area may use either Flagstaff or Parliament stations or access other stations via Yarra Trams services.</p>')
-      expect(hoppers.html).to.equal('<h1>Melbourne Central Station Closed</h1>\n<p>Melbourne Central station is currently closed due to a water leak.</p>\n<p>We are currently working to restore access to the station.</p>\n<p>Passengers wanting to travel to/from the Melbourne Central area may use either Flagstaff or Parliament stations or access other stations via Yarra Trams services.</p>')
-      expect(hoppers.text).to.equal('Melbourne Central Station Closed\nMelbourne Central station is currently closed due to a water leak.\nWe are currently working to restore access to the station.\nPassengers wanting to travel to/from the Melbourne Central area may use either Flagstaff or Parliament stations or access other stations via Yarra Trams services.')
+      expect(general.startTime.toISOString()).to.equal('2024-06-04T18:45:00.000Z')
+      expect(general.endTime.toISOString()).to.equal('2024-06-05T00:45:00.000Z')
+      expect(general.type).to.equal('general')
+      expect(general.rawHTML).to.equal('<h1>Melbourne Central Station Closed</h1>\n<p>Melbourne Central station is currently closed due to a water leak.</p>\n<p>We are currently working to restore access to the station.</p>\n<p>Passengers wanting to travel to/from the Melbourne Central area may use either Flagstaff or Parliament stations or access other stations via Yarra Trams services.</p>')
+      expect(general.html).to.equal('<h1>Melbourne Central Station Closed</h1>\n<p>Melbourne Central station is currently closed due to a water leak.</p>\n<p>We are currently working to restore access to the station.</p>\n<p>Passengers wanting to travel to/from the Melbourne Central area may use either Flagstaff or Parliament stations or access other stations via Yarra Trams services.</p>')
+      expect(general.text).to.equal('Melbourne Central Station Closed\nMelbourne Central station is currently closed due to a water leak.\nWe are currently working to restore access to the station.\nPassengers wanting to travel to/from the Melbourne Central area may use either Flagstaff or Parliament stations or access other stations via Yarra Trams services.')
     })
   })
 })
