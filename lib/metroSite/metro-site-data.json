@@ -63,6 +63,10 @@
     "WILLIAMSTOWN": {
       "lineName": "Williamstown",
       "lineID": "98"
+    },
+    "FLEMINGTON_RACECOURSE": {
+      "lineName": "Flemington Racecourse",
+      "lineID": "0"
     }
   }
 }
