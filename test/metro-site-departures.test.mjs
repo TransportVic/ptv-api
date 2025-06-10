@@ -1,6 +1,7 @@
 import { StubAPI } from '../stub-api.mjs'
 import { expect } from 'chai'
 import stubDepartureData from './metro-site-mock-data/departures.json' with { type: 'json' }
+import stubBadDepartureData from './metro-site-mock-data/bad-departures.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 import { dateLikeToISO } from '../lib/date-utils.mjs'
 
@@ -65,6 +66,29 @@ describe('The MetroSiteDeparture class', () => {
       expect(dateLikeToISO(td1054Stops[0].scheduledDeparture)).to.equal('2025-06-09T14:03:00.000Z')
       expect(dateLikeToISO(td1054Stops[0].estimatedArrival)).to.equal('2025-06-09T13:52:00.000Z')
       expect(dateLikeToISO(td1054Stops[0].estimatedDeparture)).to.equal('2025-06-09T14:03:00.000Z')
+    })
+
+    it('Should not set arrival times if it is unavailable', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubBadDepartureData ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let departures = await ptvAPI.metroSite.getDepartures()
+
+      let td2319 = departures.find(trip => trip.tdn === '2319')
+      expect(td2319).to.exist
+      expect(dateLikeToISO(td2319.operationalDateMoment)).to.equal('2025-06-09T14:00:00.000Z')
+      expect(td2319.operationalDate).to.equal('20250610')
+
+      let td1054Stops = td2319.stops
+      expect(td1054Stops[0].stationName).to.equal('Camberwell')
+      expect(td1054Stops[0].platform).to.equal('3')
+      expect(dateLikeToISO(td1054Stops[0].scheduledDeparture)).to.equal('2025-06-10T00:47:00.000Z')
+      expect(dateLikeToISO(td1054Stops[0].estimatedArrival)).to.be.null
+      expect(dateLikeToISO(td1054Stops[0].estimatedDeparture)).to.equal('2025-06-10T00:47:00.000Z')
     })
   })
 })
