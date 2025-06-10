@@ -87,7 +87,7 @@ describe('The MetroSiteDeparture class', () => {
       expect(td1054Stops[0].stationName).to.equal('Camberwell')
       expect(td1054Stops[0].platform).to.equal('3')
       expect(dateLikeToISO(td1054Stops[0].scheduledDeparture)).to.equal('2025-06-10T00:47:00.000Z')
-      expect(dateLikeToISO(td1054Stops[0].estimatedArrival)).to.be.null
+      expect(td1054Stops[0].estimatedArrival).to.be.null
       expect(dateLikeToISO(td1054Stops[0].estimatedDeparture)).to.equal('2025-06-10T00:47:00.000Z')
     })
   })
