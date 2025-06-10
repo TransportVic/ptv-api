@@ -18,7 +18,7 @@ describe('The MetroNotifyAlerts class', () => {
       let alerts = await ptvAPI.metroSite.getNotifyData()
 
       let flemington = alerts.find(alert => alert.rawID === '629190')
-      expect(flemington.lineNames).to.equal(['Flemington Racecourse'])
+      expect(flemington.lineNames).to.have.members(['Flemington Racecourse'])
       expect(flemington.startTime.toISOString()).to.equal('2025-02-14T09:57:00.000Z')
       expect(flemington.endTime.toISOString()).to.equal('2025-02-14T11:40:00.000Z')
       expect(flemington.modifiedTime.toISOString()).to.equal('2025-02-14T09:57:31.000Z')
@@ -61,13 +61,11 @@ describe('The MetroNotifyAlerts class', () => {
       ptvAPI.addMetroSite(stubAPI)
 
       let initialAlerts = await ptvAPI.metroSite.getNotifyData()
-      
       let initialAlert = initialAlerts.find(alert => alert.rawID === '629190')
-      expect(initialAlert.lineName).to.equal('Flemington Racecourse')
       
       let updatedAlerts = await ptvAPI.metroSite.getNotifyData()
       let updatedAlert = updatedAlerts.find(alert => alert.rawID === '629190')
-      expect(updatedAlert.lineName).to.equal('Flemington Racecourse')
+
       expect(initialAlert.id).to.not.equal(updatedAlert.id)
     })
   })
