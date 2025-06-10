@@ -49,5 +49,20 @@ describe('The MetroSiteOpTimetable class', () => {
         tdn: '4317'
       })
     })
+
+    it('Should not request data for notify alert only lines', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let opTimetable = await ptvAPI.metroSite.getOperationalTimetable(ptvAPI.metroSite.lines.FLEMINGTON_RACECOURSE_NOTIFY)
+      expect(opTimetable.length).to.equal(0)
+
+      opTimetable = await ptvAPI.metroSite.getOperationalTimetable(ptvAPI.metroSite.lines.SHOWGROUNDS_NOTIFY)
+      expect(opTimetable.length).to.equal(0)
+    })
   })
 })

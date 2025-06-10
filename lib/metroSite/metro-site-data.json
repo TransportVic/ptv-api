@@ -67,6 +67,16 @@
     "FLEMINGTON_RACECOURSE": {
       "lineName": "Flemington Racecourse",
       "lineID": "0"
+    },
+    "FLEMINGTON_RACECOURSE_NOTIFY": {
+      "lineName": "Flemington Racecourse",
+      "lineID": "168307",
+      "notifyOnly": true
+    },
+    "SHOWGROUNDS_NOTIFY": {
+      "lineName": "Flemington Racecourse",
+      "lineID": "92761",
+      "notifyOnly": true
     }
   }
 }
