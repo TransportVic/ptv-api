@@ -2,6 +2,7 @@ import { StubAPI } from '../stub-api.mjs'
 import { expect } from 'chai'
 import stubNotifyData from './metro-site-mock-data/flemington-alert.json' with { type: 'json' }
 import stubGeneralAlert from './metro-site-mock-data/general-alert.json' with { type: 'json' }
+import stubServiceAlert from './metro-site-mock-data/service-alert.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 
 let clone = o => JSON.parse(JSON.stringify(o))
@@ -97,6 +98,23 @@ describe('The MetroNotifyAlerts class', () => {
       expect(general.rawHTML).to.equal('<h1>Melbourne Central Station Closed</h1>\n<p>Melbourne Central station is currently closed due to a water leak.</p>\n<p>We are currently working to restore access to the station.</p>\n<p>Passengers wanting to travel to/from the Melbourne Central area may use either Flagstaff or Parliament stations or access other stations via Yarra Trams services.</p>')
       expect(general.html).to.equal('<h1>Melbourne Central Station Closed</h1>\n<p>Melbourne Central station is currently closed due to a water leak.</p>\n<p>We are currently working to restore access to the station.</p>\n<p>Passengers wanting to travel to/from the Melbourne Central area may use either Flagstaff or Parliament stations or access other stations via Yarra Trams services.</p>')
       expect(general.text).to.equal('Melbourne Central Station Closed\nMelbourne Central station is currently closed due to a water leak.\nWe are currently working to restore access to the station.\nPassengers wanting to travel to/from the Melbourne Central area may use either Flagstaff or Parliament stations or access other stations via Yarra Trams services.')
+    })
+
+    it('Should return TDNs for service alerts', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubServiceAlert ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let alerts = await ptvAPI.metroSite.getNotifyData()
+      let general = alerts.find(alert => alert.rawID === '647069')
+      expect(general.lineNames).to.have.members(['Mernda'])
+      expect(general.type).to.equal('service')
+      expect(general.rawHTML).to.equal('<p>The 8:46am Flinders Street to Epping service is currently running up to 10 minutes late.</p>')
+      expect(general.text).to.equal('The 8:46am Flinders Street to Epping service is currently running up to 10 minutes late.')
+      expect(general.runID).to.equal('1653')
     })
   })
 })
