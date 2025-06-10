@@ -2,7 +2,6 @@ import { StubAPI } from '../stub-api.mjs'
 import { expect } from 'chai'
 import stubNotifyData from './metro-site-mock-data/flemington-alert.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
-import { dateLikeToISO } from '../lib/date-utils.mjs'
 
 describe('The MetroNotifyAlerts class', () => {
   describe('The fetch function', () => {
@@ -17,6 +16,7 @@ describe('The MetroNotifyAlerts class', () => {
       let alerts = await ptvAPI.metroSite.getNotifyData()
 
       let flemington = alerts.find(alert => alert.rawID === '629190')
+      expect(flemington.lineName).to.equal('Flemington Racecourse')
       expect(flemington.startTime.toISOString()).to.equal('2025-02-14T09:57:00.000Z')
       expect(flemington.endTime.toISOString()).to.equal('2025-02-14T11:40:00.000Z')
       expect(flemington.modifiedTime.toISOString()).to.equal('2025-02-14T09:57:31.000Z')
