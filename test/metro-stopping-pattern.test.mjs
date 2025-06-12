@@ -6,6 +6,7 @@ import stubCBEPatternData from './metro-mock-data/metro-pattern-cbe.json' with {
 import stubRCEPatternData from './metro-mock-data/metro-pattern-rce.json' with { type: 'json' }
 import stubBadPatternData from './metro-mock-data/metro-bad-pattern.json' with { type: 'json' }
 import stubTD4439PatternData from './metro-mock-data/tdn-4439-pattern.json' with { type: 'json' }
+import stubTD3230PatternData from './metro-mock-data/tdn-3230-pattern.json' with { type: 'json' }
 import stubTD4439BadPatternData from './metro-mock-data/tdn-4439-pattern-bad-day.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 import { dateLikeToISO, stubDate, unstubDate } from '../lib/date-utils.mjs'
@@ -153,7 +154,7 @@ describe('The MetroStoppingPattern class', () => {
     stubAPI.setResponses([ stubBadPatternData ])
     let ptvAPI = new PTVAPI(stubAPI)
 
-    stubDate("2025-01-12T11:30:00Z")
+    stubDate('2025-01-12T11:30:00Z')
 
     let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('1695')
 
@@ -172,6 +173,31 @@ describe('The MetroStoppingPattern class', () => {
 
     expect(stoppingPattern.stops.find(stop => stop.stationName === 'Epping').delay).to.equal(2)
     expect(stoppingPattern.stops.slice(-1)[0].delay).to.be.null
+
+    unstubDate()
+  })
+
+  it('Should not apply delay correction to FSS on Up trips', async () => {
+    let stubAPI = new StubAPI()
+    stubAPI.setResponses([ stubTD3230PatternData ])
+    let ptvAPI = new PTVAPI(stubAPI)
+
+    stubDate('2025-06-12T09:13:00.000Z')
+
+    let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('3230')
+
+    expect(stoppingPattern.runData.destination).to.equal('Flinders Street')
+
+    expect(stoppingPattern.stops[0].stationName).to.equal('Lilydale')
+    expect(stoppingPattern.stops[0].delay).to.equal(0)
+
+    let rmd = stoppingPattern.stops.find(stop => stop.stationName === 'Richmond')
+    expect(rmd.delay).to.equal(14)
+    expect(dateLikeToISO(rmd.estimatedDeparture)).to.equal('2025-06-12T09:13:50.000Z')
+
+    let fss = stoppingPattern.stops.find(stop => stop.stationName === 'Flinders Street')
+    expect(fss.delay).to.equal(0)
+    expect(dateLikeToISO(fss.estimatedDeparture)).to.equal('2025-06-12T09:29:00.000Z')
 
     unstubDate()
   })
