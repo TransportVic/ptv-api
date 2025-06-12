@@ -6,6 +6,7 @@ import stubCBEPatternData from './metro-mock-data/metro-pattern-cbe.json' with {
 import stubRCEPatternData from './metro-mock-data/metro-pattern-rce.json' with { type: 'json' }
 import stubBadPatternData from './metro-mock-data/metro-bad-pattern.json' with { type: 'json' }
 import stubTD4439PatternData from './metro-mock-data/tdn-4439-pattern.json' with { type: 'json' }
+import stubTD4439BadPatternData from './metro-mock-data/tdn-4439-pattern-bad-day.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 import { dateLikeToISO, stubDate, unstubDate } from '../lib/date-utils.mjs'
 
@@ -231,6 +232,16 @@ describe('The MetroStoppingPattern class', () => {
     let pattern = await ptvAPI.metro.getStoppingPatternFromTDN('4439')
     expect(dateLikeToISO(pattern.stops[0].scheduledDeparture)).to.equal('2025-06-09T09:39:00.000Z')
     expect(dateLikeToISO(pattern.formedByStops[pattern.formedByStops.length - 1].scheduledDeparture)).to.equal('2025-06-09T09:34:00.000Z')
+  })
+
+  it('Should remove duplicated Flinders Street and Southern Cross that span across 2 days stops on Cross City trips', async () => {
+    let stubAPI = new StubAPI()
+    stubAPI.setResponses([ stubTD4439BadPatternData ])
+    let ptvAPI = new PTVAPI(stubAPI)
+
+    let pattern = await ptvAPI.metro.getStoppingPatternFromTDN('4439')
+    expect(pattern.runData.operationDay).to.equal('20250611')
+    expect(dateLikeToISO(pattern.stops[0].scheduledDeparture)).to.equal('2025-06-11T04:57:00.000Z')
   })
 
   it('Should return null for an invalid response', async () => {
