@@ -10,7 +10,8 @@ async function main() {
   if (!tdn) return console.error('Please provide a TDN!')
 
   let trip = await ptvAPI.metro.getStoppingPatternFromTDN(tdn, {
-    includeForming: true
+    includeForming: true,
+    date: new Date()
   })
 
   inspect(trip)
