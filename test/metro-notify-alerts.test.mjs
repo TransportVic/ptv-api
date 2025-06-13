@@ -116,5 +116,21 @@ describe('The MetroNotifyAlerts class', () => {
       expect(general.text).to.equal('The 8:46am Flinders Street to Epping service is currently running up to 10 minutes late.')
       expect(general.runID).to.equal('1653')
     })
+
+    it('Should ensure return TDNs are in uppercase', async () => {
+      let stubAPI = new StubAPI()
+      let response = clone(stubServiceAlert)
+      response[87].alerts[0].trip_id = 'c054'
+      stubAPI.setResponses([ response ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let alerts = await ptvAPI.metroSite.getNotifyData()
+      let general = alerts.find(alert => alert.rawID === '647069')
+      expect(general.lineNames).to.have.members(['Mernda'])
+      expect(general.runID).to.equal('C054')
+    })
   })
 })
