@@ -2,6 +2,7 @@ import { StubAPI } from '../stub-api.mjs'
 import { expect } from 'chai'
 import stubDepartureData from './metro-site-mock-data/departures.json' with { type: 'json' }
 import stubBadDepartureData from './metro-site-mock-data/bad-departures.json' with { type: 'json' }
+import stubCCLDepartureData from './metro-site-mock-data/ccl-departures.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 import { dateLikeToISO } from '../lib/date-utils.mjs'
 
@@ -89,6 +90,64 @@ describe('The MetroSiteDeparture class', () => {
       expect(dateLikeToISO(td1054Stops[0].scheduledDeparture)).to.equal('2025-06-10T00:47:00.000Z')
       expect(td1054Stops[0].estimatedArrival).to.be.null
       expect(dateLikeToISO(td1054Stops[0].estimatedDeparture)).to.equal('2025-06-10T00:47:00.000Z')
+    })
+
+    it('Should discard bad estimated times at Flinders Street on City Circle services', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubCCLDepartureData ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let departures = await ptvAPI.metroSite.getDepartures()
+
+      let td0735 = departures.find(trip => trip.tdn === '0735')
+      expect(td0735).to.exist
+      expect(dateLikeToISO(td0735.operationalDateMoment)).to.equal('2025-06-13T14:00:00.000Z')
+      expect(td0735.operationalDate).to.equal('20250614')
+
+      let td0735Stops = td0735.stops
+      expect(td0735Stops[0].stationName).to.equal('Southern Cross')
+      expect(td0735Stops[0].platform).to.equal('9')
+      expect(dateLikeToISO(td0735Stops[0].scheduledDeparture)).to.equal('2025-06-14T00:56:00.000Z')
+      expect(dateLikeToISO(td0735Stops[0].estimatedArrival)).to.equal('2025-06-14T00:57:00.000Z')
+      expect(dateLikeToISO(td0735Stops[0].estimatedDeparture)).to.equal('2025-06-14T00:58:00.000Z')
+
+      expect(td0735Stops[4].stationName).to.equal('Flinders Street')
+      expect(td0735Stops[4].platform).to.equal('3') // TODO: Check correctness
+      expect(dateLikeToISO(td0735Stops[4].scheduledDeparture)).to.equal('2025-06-14T01:05:00.000Z')
+      expect(td0735Stops[4].estimatedArrival).to.not.exist
+      expect(td0735Stops[4].estimatedDeparture).to.not.exist
+    })
+
+    it('Should keep good estimated times at Flinders Street on City Circle services', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubCCLDepartureData ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let departures = await ptvAPI.metroSite.getDepartures()
+
+      let td0737 = departures.find(trip => trip.tdn === '0737')
+      expect(td0737).to.exist
+      expect(dateLikeToISO(td0737.operationalDateMoment)).to.equal('2025-06-13T14:00:00.000Z')
+      expect(td0737.operationalDate).to.equal('20250614')
+
+      let td0737Stops = td0737.stops
+      expect(td0737Stops[0].stationName).to.equal('Flinders Street')
+      expect(td0737Stops[0].platform).to.equal('2')
+      expect(dateLikeToISO(td0737Stops[0].scheduledDeparture)).to.equal('2025-06-14T01:13:00.000Z')
+      expect(dateLikeToISO(td0737Stops[0].estimatedArrival)).to.equal('2025-06-14T01:06:00.000Z')
+      expect(dateLikeToISO(td0737Stops[0].estimatedDeparture)).to.equal('2025-06-14T01:14:00.000Z')
+
+      expect(td0737Stops[5].stationName).to.equal('Flinders Street')
+      expect(td0737Stops[5].platform).to.equal('2')
+      expect(dateLikeToISO(td0737Stops[5].scheduledDeparture)).to.equal('2025-06-14T01:25:00.000Z')
+      expect(td0737Stops[5].estimatedArrival).to.not.exist
+      expect(td0737Stops[5].estimatedDeparture).to.not.exist
     })
   })
 })
