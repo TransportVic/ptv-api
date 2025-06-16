@@ -87,4 +87,12 @@ export class StubVLineAPI extends VLineAPIInterface {
 
     return responseData.replace(/(<\/?)a:/g, '$1V')
   }
+
+  async performWebsiteFetch(url, requestOptions) {    
+    let fullURL = this.VLINE_WEBSITE + url
+    this.calls.push({path: fullURL, requestOptions})
+    let responseData = this.responses.shift()
+
+    return responseData
+  }
 }
