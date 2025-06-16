@@ -44,6 +44,9 @@ describe('The GetLiveDisruptionsDetailsAPI class', () => {
     ptvAPI.addVLine(stubAPI)
 
     let disruptions = await ptvAPI.vline.getLiveDisruptionsDetails()
-    expect(true).to.be.false
+    expect(disruptions.getAlteredServices()).to.have.members([
+      'The 12:54 Bairnsdale - Southern Cross service will terminate at East Pakenham and no longer run to Southern Cross.',
+      'The 15:21 Traralgon - Southern Cross service will not run today.'
+    ])
   })
 })
