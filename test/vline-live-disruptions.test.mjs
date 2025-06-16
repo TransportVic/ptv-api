@@ -19,7 +19,7 @@ describe('The GetLiveDisruptionsDetailsAPI class', () => {
       stubAPI.setResponses([ stubServiceChangesPage ])
       let method = new GetLiveDisruptionsDetailsAPI()
       await method.fetch(stubAPI)
-      expect(method.getDisruptionModals()).to.have.members('3589EasternGippsland')
+      expect(method.getDisruptionModals()).to.have.members(['3589EasternGippsland'])
     })
   })
 
