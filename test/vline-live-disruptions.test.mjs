@@ -11,6 +11,7 @@ const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const stubServiceChangesPage = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'service-changes-page.html'))).toString()
+const stubServiceChangesPage_ul_li = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'service-changes-page-ul_li.html'))).toString()
 
 describe('The GetLiveDisruptionsDetailsAPI class', () => {
   describe('The getModals function', () => {
@@ -40,6 +41,19 @@ describe('The GetLiveDisruptionsDetailsAPI class', () => {
   it('Should return a list of altered services', async () => {
     let stubAPI = new StubVLineAPI()
     stubAPI.setResponses([ stubServiceChangesPage ])
+    let ptvAPI = new PTVAPI(stubAPI)
+    ptvAPI.addVLine(stubAPI)
+
+    let disruptions = await ptvAPI.vline.getLiveDisruptionsDetails()
+    expect(disruptions.getAlteredServices()).to.have.members([
+      'The 12:54 Bairnsdale - Southern Cross service will terminate at East Pakenham and no longer run to Southern Cross.',
+      'The 15:21 Traralgon - Southern Cross service will not run today.'
+    ])
+  })
+
+  it('Should read through unordered lists', async () => {
+    let stubAPI = new StubVLineAPI()
+    stubAPI.setResponses([ stubServiceChangesPage_ul_li ])
     let ptvAPI = new PTVAPI(stubAPI)
     ptvAPI.addVLine(stubAPI)
 
