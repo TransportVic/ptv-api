@@ -19,7 +19,21 @@ describe('The GetLiveDisruptionsDetailsAPI class', () => {
       stubAPI.setResponses([ stubServiceChangesPage ])
       let method = new GetLiveDisruptionsDetailsAPI()
       await method.fetch(stubAPI)
-      expect(method.getDisruptionModals()).to.have.members(['3589EasternGippsland'])
+      expect(method.getDisruptionModals()).to.have.members(['#3589EasternGippsland'])
+    })
+  })
+
+  describe('The getDisruptionModalContent function', () => {
+    it('Should return the disruption data within each modal', async () => {
+      let stubAPI = new StubVLineAPI()
+      stubAPI.setResponses([ stubServiceChangesPage ])
+      let method = new GetLiveDisruptionsDetailsAPI()
+      await method.fetch(stubAPI)
+      let modal = method.getDisruptionModalContent()[0]
+      expect(modal).to.include('<h4>16/06/2025 - Eastern Line Suspension </h4>')
+      expect(modal).to.include('Line suspension - Gippsland line')
+      expect(modal).to.include('The 12:54 Bairnsdale - Southern Cross service will terminate at East Pakenham and no longer run to Southern Cross.')
+      expect(modal).to.include('The 15:21 Traralgon - Southern Cross service will not run today.')
     })
   })
 
