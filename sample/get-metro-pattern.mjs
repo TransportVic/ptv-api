@@ -11,7 +11,8 @@ async function main() {
 
   let trip = await ptvAPI.metro.getStoppingPatternFromTDN(tdn, {
     includeForming: true,
-    date: new Date()
+    date: new Date(),
+    expand: ['VehicleDescriptor', 'VehiclePosition']
   })
 
   inspect(trip)
