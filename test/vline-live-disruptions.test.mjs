@@ -11,6 +11,7 @@ const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const stubServiceChangesPage = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'service-changes-page.html'))).toString()
+const stubSeymourServiceChangesPage = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'service-changes-page-seymour.html'))).toString()
 const stubServiceChangesPage_ul_li = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'service-changes-page-ul_li.html'))).toString()
 
 describe('The GetLiveDisruptionsDetailsAPI class', () => {
@@ -61,6 +62,22 @@ describe('The GetLiveDisruptionsDetailsAPI class', () => {
     expect(disruptions.getAlteredServices()).to.have.members([
       'The 12:54 Bairnsdale - Southern Cross service will terminate at East Pakenham and no longer run to Southern Cross.',
       'The 15:21 Traralgon - Southern Cross service will not run today.'
+    ])
+  })
+
+  it('Should work on Seymour data', async () => {
+    let stubAPI = new StubVLineAPI()
+    stubAPI.setResponses([ stubSeymourServiceChangesPage ])
+    let ptvAPI = new PTVAPI(stubAPI)
+    ptvAPI.addVLine(stubAPI)
+
+    let disruptions = await ptvAPI.vline.getLiveDisruptionsDetails()
+    expect(disruptions.getAlteredServices()).to.have.members([
+      'The 14:36 Southern Cross - Seymour service terminated at Craigieburn.',
+      'The 15:33 Southern Cross - Seymour service will now run through to Seymour.',
+      'The 12:51 Albury - Southern Cross service will run through to Southern Cross.',
+      'The 16:00 Shepparton - Southern Cross service will run thorugh to Southern Cross.',
+      'The 15:45 Seymour - Southern Cross service will not run today. Passengers are to board replacement coaches.'
     ])
   })
 })
