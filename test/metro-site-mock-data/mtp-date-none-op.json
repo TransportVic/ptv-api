@@ -1,0 +1,9 @@
+[
+  {"timetable_num": "20251", "day_type": "1", "to_city": "0", "station": "Town Hall", "time_seconds": "18240", "time_str": "5:04 AM", "is_arrival": "0", "trip_id": "Z001", "platform": "1", "forms_trip_id": "0", "status": "S", "is_opr": true, "date": "None"},
+  {"timetable_num": "20251", "day_type": "1", "to_city": "0", "station": "State Library", "time_seconds": "18360", "time_str": "5:06 AM", "is_arrival": "0", "trip_id": "Z001", "platform": "1", "forms_trip_id": "0", "status": "S", "is_opr": true, "date": "None"},
+  {"timetable_num": "20251", "day_type": "1", "to_city": "0", "station": "Parkville", "time_seconds": "18540", "time_str": "5:09 AM", "is_arrival": "0", "trip_id": "Z001", "platform": "1", "forms_trip_id": "0", "status": "S", "is_opr": true, "date": "None"},
+  {"timetable_num": "20251", "day_type": "1", "to_city": "0", "station": "Arden", "time_seconds": "18660", "time_str": "5:11 AM", "is_arrival": "0", "trip_id": "Z001", "platform": "1", "forms_trip_id": "0", "status": "S", "is_opr": true, "date": "None"},
+
+  {"timetable_num": "0", "day_type": "3", "to_city": "0", "station": "Diggers Rest", "time_seconds": "90780", "time_str": "1:13 AM", "is_arrival": "0", "trip_id": "6667", "platform": "2", "forms_trip_id": "0", "status": "S", "is_opr": true, "date": "2025-06-19"},
+  {"timetable_num": "0", "day_type": "3", "to_city": "0", "station": "Sunbury", "time_seconds": "91140", "time_str": "1:19 AM", "is_arrival": "1", "trip_id": "6667", "platform": "1", "forms_trip_id": "0", "status": "S", "is_opr": true, "date": "2025-06-19"}
+]

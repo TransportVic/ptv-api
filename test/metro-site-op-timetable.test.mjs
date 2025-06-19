@@ -1,6 +1,7 @@
 import { StubAPI } from '../stub-api.mjs'
 import { expect } from 'chai'
 import stubWILOpData from './metro-site-mock-data/williamstown-op.json' with { type: 'json' }
+import stubNoDateData from './metro-site-mock-data/mtp-date-none-op.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 import { dateLikeToISO } from '../lib/date-utils.mjs'
 
@@ -63,6 +64,19 @@ describe('The MetroSiteOpTimetable class', () => {
 
       opTimetable = await ptvAPI.metroSite.getOperationalTimetable(ptvAPI.metroSite.lines.SHOWGROUNDS_NOTIFY)
       expect(opTimetable.length).to.equal(0)
+    })
+
+    it('Should not return trips with the date set to None', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubNoDateData ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let opTimetable = await ptvAPI.metroSite.getOperationalTimetable(ptvAPI.metroSite.lines.SUNBURY)
+      expect(opTimetable.length).to.equal(1)
+      expect(opTimetable[0].tdn).to.equal('6667')
     })
   })
 })
