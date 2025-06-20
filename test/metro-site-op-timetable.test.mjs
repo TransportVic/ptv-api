@@ -81,8 +81,15 @@ describe('The MetroSiteOpTimetable class', () => {
 
     it('Should set forming data across different lines', async () => {
       let stubAPI = new StubAPI()
-      let response1 = [{"timetable_num": "0", "day_type": "0", "to_city": "1", "station": "Williamstown", "time_seconds": "17760", "time_str": "4:56 AM", "is_arrival": "0", "trip_id": "6300", "platform": "1", "forms_trip_id": "X123", "status": "S", "is_opr": true, "date": "2025-02-14"}]
-      let response2 = [{"timetable_num": "0", "day_type": "0", "to_city": "1", "station": "Werribee", "time_seconds": "17760", "time_str": "4:56 AM", "is_arrival": "0", "trip_id": "X123", "platform": "1", "forms_trip_id": "4309", "status": "S", "is_opr": true, "date": "2025-02-14"}]
+      let response1 = [
+        {"timetable_num": "0", "day_type": "0", "to_city": "1", "station": "Williamstown", "time_seconds": "17760", "time_str": "4:56 AM", "is_arrival": "0", "trip_id": "6300", "platform": "1", "forms_trip_id": "X123", "status": "S", "is_opr": true, "date": "2025-02-14"},
+        {"timetable_num": "0", "day_type": "0", "to_city": "1", "station": "Williamstown", "time_seconds": "17760", "time_str": "4:56 AM", "is_arrival": "0", "trip_id": "6300", "platform": "1", "forms_trip_id": "X123", "status": "S", "is_opr": true, "date": "2025-02-15"}
+      ]
+      let response2 = [
+        {"timetable_num": "0", "day_type": "0", "to_city": "1", "station": "Werribee", "time_seconds": "17760", "time_str": "4:56 AM", "is_arrival": "0", "trip_id": "X123", "platform": "1", "forms_trip_id": "4309", "status": "S", "is_opr": true, "date": "2025-02-14"},
+        {"timetable_num": "0", "day_type": "0", "to_city": "1", "station": "Werribee", "time_seconds": "17760", "time_str": "4:56 AM", "is_arrival": "0", "trip_id": "X123", "platform": "1", "forms_trip_id": "4309", "status": "S", "is_opr": true, "date": "2025-02-15"}
+      ]
+
       stubAPI.setResponses([ response1, response2 ])
       stubAPI.skipErrors()
 
@@ -90,14 +97,21 @@ describe('The MetroSiteOpTimetable class', () => {
       ptvAPI.addMetroSite(stubAPI)
 
       let opTimetable = await ptvAPI.metroSite.getOperationalTimetable([ ptvAPI.metroSite.lines.WILLIAMSTOWN, ptvAPI.metroSite.lines.WERRIBEE ])
-      expect(opTimetable.length).to.equal(2)
-      expect(opTimetable[0].tdn).to.equal('6300')
-      expect(opTimetable[0].runData.forming).to.deep.equal({ tdn: 'X123' })
-      expect(opTimetable[0].runData.formedBy).to.be.null
+      expect(opTimetable.length).to.equal(4)
 
-      expect(opTimetable[1].tdn).to.equal('X123')
-      expect(opTimetable[1].runData.forming).to.deep.equal({ tdn: '4309' })
-      expect(opTimetable[1].runData.formedBy).to.deep.equal({ tdn: '6300' })
+      let td6300s = opTimetable.filter(trip => trip.tdn === '6300')
+      for (let trip of td6300s) {
+        expect(trip.tdn).to.equal('6300')
+        expect(trip.runData.forming).to.deep.equal({ tdn: 'X123' })
+        expect(trip.runData.formedBy).to.be.null
+      }
+      
+      let tdX123 = opTimetable.filter(trip => trip.tdn === 'X123')
+      for (let trip of tdX123) {
+        expect(trip.tdn).to.equal('X123')
+        expect(trip.runData.forming).to.deep.equal({ tdn: '4309' })
+        expect(trip.runData.formedBy).to.deep.equal({ tdn: '6300' })
+      }
     })
   })
 })
