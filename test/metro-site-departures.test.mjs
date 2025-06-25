@@ -115,7 +115,7 @@ describe('The MetroSiteDeparture class', () => {
       expect(dateLikeToISO(td0735Stops[0].estimatedDeparture)).to.equal('2025-06-14T00:58:00.000Z')
 
       expect(td0735Stops[4].stationName).to.equal('Flinders Street')
-      expect(td0735Stops[4].platform).to.equal('3') // TODO: Check correctness
+      expect(td0735Stops[4].platform).to.equal('2')
       expect(dateLikeToISO(td0735Stops[4].scheduledDeparture)).to.equal('2025-06-14T01:05:00.000Z')
       expect(td0735Stops[4].estimatedArrival).to.not.exist
       expect(td0735Stops[4].estimatedDeparture).to.not.exist
@@ -148,6 +148,22 @@ describe('The MetroSiteDeparture class', () => {
       expect(dateLikeToISO(td0737Stops[5].scheduledDeparture)).to.equal('2025-06-14T01:25:00.000Z')
       expect(td0737Stops[5].estimatedArrival).to.not.exist
       expect(td0737Stops[5].estimatedDeparture).to.not.exist
+
+      let td0821 = departures.find(trip => trip.tdn === '0821')
+      expect(td0821).to.exist
+
+      let td0821Stops = td0821.stops
+      expect(td0821Stops[0].stationName).to.equal('Flinders Street')
+      expect(td0821Stops[0].platform).to.equal('4')
+      expect(dateLikeToISO(td0821Stops[0].scheduledDeparture)).to.equal('2025-06-14T11:51:00.000Z')
+      expect(dateLikeToISO(td0821Stops[0].estimatedArrival)).to.equal('2025-06-14T11:51:00.000Z')
+      expect(dateLikeToISO(td0821Stops[0].estimatedDeparture)).to.equal('2025-06-14T11:53:00.000Z')
+
+      expect(td0821Stops[5].stationName).to.equal('Flinders Street')
+      expect(td0821Stops[5].platform).to.equal('2')
+      expect(dateLikeToISO(td0821Stops[5].scheduledDeparture)).to.equal('2025-06-14T12:03:00.000Z')
+      expect(td0821Stops[5].estimatedArrival).to.not.exist
+      expect(td0821Stops[5].estimatedDeparture).to.not.exist
     })
   })
 })
