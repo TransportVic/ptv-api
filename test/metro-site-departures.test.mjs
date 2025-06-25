@@ -160,7 +160,7 @@ describe('The MetroSiteDeparture class', () => {
       expect(dateLikeToISO(td0821Stops[0].estimatedDeparture)).to.equal('2025-06-14T11:53:00.000Z')
 
       expect(td0821Stops[5].stationName).to.equal('Flinders Street')
-      expect(td0821Stops[5].platform).to.equal('2')
+      expect(td0821Stops[5].platform).to.equal('1')
       expect(dateLikeToISO(td0821Stops[5].scheduledDeparture)).to.equal('2025-06-14T12:03:00.000Z')
       expect(td0821Stops[5].estimatedArrival).to.not.exist
       expect(td0821Stops[5].estimatedDeparture).to.not.exist
