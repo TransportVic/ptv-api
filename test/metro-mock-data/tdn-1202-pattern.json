@@ -1,0 +1,613 @@
+{
+  "disruptions": [],
+  "departures": [
+    {
+      "skipped_stops": [],
+      "stop_id": 1093,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298,
+        338148
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:15:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "2",
+      "flags": "",
+      "departure_sequence": 1,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1056,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:17:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 2,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1101,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:19:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 3,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1050,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:20:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 4,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1004,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:22:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 5,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1065,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:24:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 6,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1053,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:26:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 7,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1209,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:27:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 8,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1041,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:30:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 9,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1201,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:32:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 10,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1043,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:33:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 11,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1145,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:35:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 12,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1207,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:36:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "",
+      "departure_sequence": 13,
+      "departure_note": ""
+    },
+    {
+      "skipped_stops": [],
+      "stop_id": 1104,
+      "route_id": 8,
+      "run_id": 949202,
+      "run_ref": "949202",
+      "direction_id": 1,
+      "disruption_ids": [
+        339298
+      ],
+      "scheduled_departure_utc": "2025-07-14T19:38:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": "1",
+      "flags": "E",
+      "departure_sequence": 14,
+      "departure_note": ""
+    }
+  ],
+  "stops": {
+    "1004": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Alphington",
+      "stop_name": "Alphington",
+      "stop_id": 1004,
+      "route_type": 0,
+      "stop_latitude": -37.7783966,
+      "stop_longitude": 145.03125,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1041": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": true,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Clifton Hill",
+      "stop_name": "Clifton Hill",
+      "stop_id": 1041,
+      "route_type": 0,
+      "stop_latitude": -37.7886543,
+      "stop_longitude": 144.995422,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1043": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Abbotsford",
+      "stop_name": "Collingwood",
+      "stop_id": 1043,
+      "route_type": 0,
+      "stop_latitude": -37.8045235,
+      "stop_longitude": 144.993744,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1050": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Ivanhoe",
+      "stop_name": "Darebin",
+      "stop_id": 1050,
+      "route_type": 0,
+      "stop_latitude": -37.7749634,
+      "stop_longitude": 145.038483,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1053": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Northcote",
+      "stop_name": "Dennis",
+      "stop_id": 1053,
+      "route_type": 0,
+      "stop_latitude": -37.7791824,
+      "stop_longitude": 145.00824,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1056": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1,Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1,
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Eaglemont",
+      "stop_name": "Eaglemont",
+      "stop_id": 1056,
+      "route_type": 0,
+      "stop_latitude": -37.7635841,
+      "stop_longitude": 145.05394,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1065": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Fairfield",
+      "stop_name": "Fairfield",
+      "stop_id": 1065,
+      "route_type": 0,
+      "stop_latitude": -37.7791748,
+      "stop_longitude": 145.0169,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1093": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1,Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1,
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Heidelberg",
+      "stop_name": "Heidelberg",
+      "stop_id": 1093,
+      "route_type": 0,
+      "stop_latitude": -37.7570763,
+      "stop_longitude": 145.060684,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1101": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1,Zone 2",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1,
+          2
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Ivanhoe",
+      "stop_name": "Ivanhoe",
+      "stop_id": 1101,
+      "route_type": 0,
+      "stop_latitude": -37.768898,
+      "stop_longitude": 145.045425,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1104": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": false,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "East Melbourne",
+      "stop_name": "Jolimont-MCG",
+      "stop_id": 1104,
+      "route_type": 0,
+      "stop_latitude": -37.81653,
+      "stop_longitude": 144.9841,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1145": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Richmond",
+      "stop_name": "North Richmond",
+      "stop_id": 1145,
+      "route_type": 0,
+      "stop_latitude": -37.8103943,
+      "stop_longitude": 144.9925,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1201": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Abbotsford",
+      "stop_name": "Victoria Park",
+      "stop_id": 1201,
+      "route_type": 0,
+      "stop_latitude": -37.7991562,
+      "stop_longitude": 144.994446,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1207": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Richmond",
+      "stop_name": "West Richmond",
+      "stop_id": 1207,
+      "route_type": 0,
+      "stop_latitude": -37.8149452,
+      "stop_longitude": 144.991425,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    },
+    "1209": {
+      "stop_ticket": {
+        "ticket_type": "",
+        "zone": "Zone 1",
+        "is_free_fare_zone": false,
+        "ticket_machine": true,
+        "ticket_checks": false,
+        "vline_reservation": false,
+        "ticket_zones": [
+          1
+        ]
+      },
+      "stop_distance": 0.0,
+      "stop_suburb": "Northcote",
+      "stop_name": "Westgarth",
+      "stop_id": 1209,
+      "route_type": 0,
+      "stop_latitude": -37.7806168,
+      "stop_longitude": 144.999237,
+      "stop_landmark": "",
+      "stop_sequence": 0
+    }
+  },
+  "routes": {
+    "8": {
+      "route_type": 0,
+      "route_id": 8,
+      "route_name": "Hurstbridge",
+      "route_number": "",
+      "route_gtfs_id": "2-HBE",
+      "geopath": []
+    }
+  },
+  "runs": {
+    "949202": {
+      "run_id": 949202,
+      "run_ref": "949202",
+      "route_id": 8,
+      "route_type": 0,
+      "final_stop_id": 1104,
+      "destination_name": "Jolimont-MCG",
+      "status": "cancelled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null,
+      "geopath": [],
+      "interchange": null,
+      "run_note": "",
+      "externalService": null
+    }
+  },
+  "directions": {
+    "1": {
+      "direction_id": 1,
+      "direction_name": "City",
+      "route_id": 8,
+      "route_type": 0
+    }
+  },
+  "status": {
+    "version": "3.0",
+    "health": 1
+  }
+}

@@ -9,6 +9,7 @@ import stubTD4439PatternData from './metro-mock-data/tdn-4439-pattern.json' with
 import stubTD3230PatternData from './metro-mock-data/tdn-3230-pattern.json' with { type: 'json' }
 import stubTD4439BadPatternData from './metro-mock-data/tdn-4439-pattern-bad-day.json' with { type: 'json' }
 import stubTDC842PatternData from './metro-mock-data/tdn-c842-pattern.json' with { type: 'json' }
+import stubTD1202PatternData from './metro-mock-data/tdn-1202-pattern.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 import { dateLikeToISO, stubDate, unstubDate } from '../lib/date-utils.mjs'
 
@@ -288,5 +289,15 @@ describe('The MetroStoppingPattern class', () => {
     let pattern = await ptvAPI.metro.getStoppingPatternFromTDN('C842')
     expect(pattern).to.exist
     expect(pattern.stops[0].stationName).to.equal('Richmond')
+  })
+
+  it('Corrects the destination as well', async () => {
+    let stubAPI = new StubAPI()
+    stubAPI.setResponses([ stubTD1202PatternData ])
+    let ptvAPI = new PTVAPI(stubAPI)
+
+    let pattern = await ptvAPI.metro.getStoppingPatternFromTDN('1202')
+    expect(pattern).to.exist
+    expect(pattern.stops[0].stationName).to.equal('Heidelberg')
   })
 })
