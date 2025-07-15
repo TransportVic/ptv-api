@@ -298,6 +298,7 @@ describe('The MetroStoppingPattern class', () => {
 
     let pattern = await ptvAPI.metro.getStoppingPatternFromTDN('1202')
     expect(pattern).to.exist
+    expect(pattern.runData.destination).to.equal('Jolimont')
     expect(pattern.stops[0].stationName).to.equal('Heidelberg')
   })
 })
