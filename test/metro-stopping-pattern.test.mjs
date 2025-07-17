@@ -10,6 +10,7 @@ import stubTD3230PatternData from './metro-mock-data/tdn-3230-pattern.json' with
 import stubTD4439BadPatternData from './metro-mock-data/tdn-4439-pattern-bad-day.json' with { type: 'json' }
 import stubTDC842PatternData from './metro-mock-data/tdn-c842-pattern.json' with { type: 'json' }
 import stubTD1202PatternData from './metro-mock-data/tdn-1202-pattern.json' with { type: 'json' }
+import parliamentOnlyPattern from './metro-mock-data/parliament-only.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 import { dateLikeToISO, stubDate, unstubDate } from '../lib/date-utils.mjs'
 
@@ -300,5 +301,17 @@ describe('The MetroStoppingPattern class', () => {
     expect(pattern).to.exist
     expect(pattern.runData.destination).to.equal('Jolimont')
     expect(pattern.stops[0].stationName).to.equal('Heidelberg')
+  })
+
+  it('Does not break a half city circle PAR-FSS service', async () => {
+    let stubAPI = new StubAPI()
+    stubAPI.setResponses([ parliamentOnlyPattern ])
+    let ptvAPI = new PTVAPI(stubAPI)
+
+    let pattern = await ptvAPI.metro.getStoppingPatternFromTDN('0806')
+    expect(pattern).to.exist
+    expect(pattern.runData.destination).to.equal('Flinders Street')
+    expect(pattern.stops[0].stationName).to.equal('Parliament')
+    expect(pattern.stops[1].stationName).to.equal('Flinders Street')
   })
 })
