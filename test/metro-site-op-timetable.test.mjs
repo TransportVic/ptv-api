@@ -4,6 +4,10 @@ import stubWILOpData from './metro-site-mock-data/williamstown-op.json' with { t
 import stubNoDateData from './metro-site-mock-data/mtp-date-none-op.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 import { dateLikeToISO } from '../lib/date-utils.mjs'
+import belgraveDSTStart from './metro-site-mock-data/belgrave-dst-start.mjs'
+import lilydaleDSTEnd from './metro-site-mock-data/lilydale-dst-end.json' with { type: 'json' }
+
+const clone = o => JSON.parse(JSON.stringify(o))
 
 describe('The MetroSiteOpTimetable class', () => {
   describe('The fetch function', () => {
@@ -112,6 +116,130 @@ describe('The MetroSiteOpTimetable class', () => {
         expect(trip.runData.forming).to.deep.equal({ tdn: '4309' })
         expect(trip.runData.formedBy).to.deep.equal({ tdn: '6300' })
       }
+    })
+  })
+
+  describe('DST handling', () => {
+    it('Handles the extra 2am on Sunday from Saturday TT trips when DST ends', async () => {
+      let stubAPI = new StubAPI()
+
+      stubAPI.setResponses([ lilydaleDSTEnd ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let opTimetable = await ptvAPI.metroSite.getOperationalTimetable([ ptvAPI.metroSite.lines.LILYDALE ])
+
+      let td3326 = opTimetable.find(trip => trip.tdn === '3326')
+
+      expect(td3326.stops[0].stationName).to.equal('Lilydale')
+      expect(dateLikeToISO(td3326.stops[0].scheduledDeparture)).to.equal('2025-04-05T15:48:00.000Z') // 02:48 (first)
+
+      expect(td3326.stops[2].stationName).to.equal('Croydon')
+      expect(dateLikeToISO(td3326.stops[2].scheduledDeparture)).to.equal('2025-04-05T15:57:00.000Z') // 02:58 (first)
+
+      expect(td3326.stops[3].stationName).to.equal('Ringwood East')
+      expect(dateLikeToISO(td3326.stops[3].scheduledDeparture)).to.equal('2025-04-05T16:01:00.000Z') // 02:01 (second)
+
+      expect(td3326.stops[4].stationName).to.equal('Ringwood')
+      expect(dateLikeToISO(td3326.stops[4].scheduledDeparture)).to.equal('2025-04-05T16:04:00.000Z') // 02:01 (second)
+
+      let td3298 = opTimetable.find(trip => trip.tdn === '3298')
+
+      expect(td3298.stops[0].stationName).to.equal('Lilydale')
+      expect(dateLikeToISO(td3298.stops[0].scheduledDeparture)).to.equal('2025-04-05T16:50:00.000Z') // 02:50 (second)
+
+      expect(td3298.stops[2].stationName).to.equal('Croydon')
+      expect(dateLikeToISO(td3298.stops[2].scheduledDeparture)).to.equal('2025-04-05T16:59:00.000Z') // 02:59 (second)
+
+      expect(td3298.stops[3].stationName).to.equal('Ringwood East')
+      expect(dateLikeToISO(td3298.stops[3].scheduledDeparture)).to.equal('2025-04-05T17:03:00.000Z') // 03:03
+
+      expect(td3298.stops[4].stationName).to.equal('Ringwood')
+      expect(dateLikeToISO(td3298.stops[4].scheduledDeparture)).to.equal('2025-04-05T17:06:00.000Z') // 03:06
+    })
+
+    it('Handles the extra 2am on Sunday from Sunday TT trips when DST ends', async () => {
+      let stubAPI = new StubAPI()
+
+      // 03:50 LIL-FSS on Sunday morning
+      const td3292Raw = clone(lilydaleDSTEnd.filter(t => t.trip_id === '3292')).map(s => ({ ...s, date: '2025-04-06' }))
+
+      stubAPI.setResponses([ td3292Raw ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let opTimetable = await ptvAPI.metroSite.getOperationalTimetable([ ptvAPI.metroSite.lines.LILYDALE ])
+
+      let td3292 = opTimetable.find(trip => trip.tdn === '3292')
+
+      expect(td3292.stops[0].stationName).to.equal('Lilydale')
+      expect(dateLikeToISO(td3292.stops[0].scheduledDeparture)).to.equal('2025-04-05T17:50:00.000Z') // 03:50
+
+      expect(td3292.stops[2].stationName).to.equal('Croydon')
+      expect(dateLikeToISO(td3292.stops[2].scheduledDeparture)).to.equal('2025-04-05T17:59:00.000Z') // 03:59
+
+      expect(td3292.stops[3].stationName).to.equal('Ringwood East')
+      expect(dateLikeToISO(td3292.stops[3].scheduledDeparture)).to.equal('2025-04-05T18:03:00.000Z') // 04:03
+
+      expect(td3292.stops[4].stationName).to.equal('Ringwood')
+      expect(dateLikeToISO(td3292.stops[4].scheduledDeparture)).to.equal('2025-04-05T18:06:00.000Z') // 04:06
+    })
+
+
+    it('Handles the missing 2am on Sunday from Saturday TT trips when DST starts', async () => {
+      let stubAPI = new StubAPI()
+
+      stubAPI.setResponses([ belgraveDSTStart ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let opTimetable = await ptvAPI.metroSite.getOperationalTimetable([ ptvAPI.metroSite.lines.BELGRAVE ])
+
+      let td3152 = opTimetable.find(trip => trip.tdn === '3152')
+
+      expect(td3152.stops[0].stationName).to.equal('Belgrave')
+      expect(dateLikeToISO(td3152.stops[0].scheduledDeparture)).to.equal('2025-10-04T15:36:00.000Z') // 01:36
+
+      expect(td3152.stops[6].stationName).to.equal('Bayswater')
+      expect(dateLikeToISO(td3152.stops[6].scheduledDeparture)).to.equal('2025-10-04T15:57:00.000Z') // 01:57
+
+      expect(td3152.stops[7].stationName).to.equal('Heathmont')
+      expect(dateLikeToISO(td3152.stops[7].scheduledDeparture)).to.equal('2025-10-04T16:01:00.000Z') // 03:01 (skip 2am)
+
+      expect(td3152.stops[8].stationName).to.equal('Ringwood')
+      expect(dateLikeToISO(td3152.stops[8].scheduledDeparture)).to.equal('2025-10-04T16:04:00.000Z') // 03:04
+    })
+
+    it('Handles the missing 2am on Sunday from Sunday TT trips when DST starts', async () => {
+      let stubAPI = new StubAPI()
+
+      stubAPI.setResponses([ belgraveDSTStart ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let opTimetable = await ptvAPI.metroSite.getOperationalTimetable([ ptvAPI.metroSite.lines.BELGRAVE ])
+
+      let td3154 = opTimetable.find(trip => trip.tdn === '3154')
+
+      expect(td3154.stops[0].stationName).to.equal('Belgrave')
+      expect(dateLikeToISO(td3154.stops[0].scheduledDeparture)).to.equal('2025-10-04T16:40:00.000Z') // 03:40
+
+      expect(td3154.stops[6].stationName).to.equal('Bayswater')
+      expect(dateLikeToISO(td3154.stops[6].scheduledDeparture)).to.equal('2025-10-04T16:57:00.000Z') // 03:57
+
+      expect(td3154.stops[7].stationName).to.equal('Heathmont')
+      expect(dateLikeToISO(td3154.stops[7].scheduledDeparture)).to.equal('2025-10-04T17:01:00.000Z') // 04:01
+
+      expect(td3154.stops[8].stationName).to.equal('Ringwood')
+      expect(dateLikeToISO(td3154.stops[8].scheduledDeparture)).to.equal('2025-10-04T17:04:00.000Z') // 04:04
     })
   })
 })
