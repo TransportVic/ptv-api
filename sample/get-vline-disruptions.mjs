@@ -13,7 +13,18 @@ let vlineAPIInterface = new VLineAPIInterface(
 ptvAPI.addVLine(vlineAPIInterface)
 
 async function main() {
-  console.log(await ptvAPI.vline.getLiveDisruptions(VLineDisruptions.BALLARAT))
+  const allDisruptions = [
+    ...(await Promise.all(
+      Object.values(VLineDisruptions)
+        .map(async line => await ptvAPI.vline.getLiveDisruptions(line))
+    )),
+    ...(await Promise.all(
+      Object.values(VLineDisruptions)
+        .map(async line => await ptvAPI.vline.getPlannedDisruptions(line))
+    )),
+  ].flatMap(i => i)
+
+  console.log(allDisruptions)
 }
 
 main()

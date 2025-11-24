@@ -21,7 +21,7 @@ describe('The MTM Rail Bus data', () => {
         145.05781999999999, -37.88590000000000
       ]
     })
-    expect(trips[0].stopTimings[0].stopGTFSID).to.equal('RAIL_CNE_Down')
+    expect(trips[0].stopTimings[0].stopGTFSID).to.equal('CNE_Down')
     expect(dateLikeToISO(trips[0].stopTimings[0].estimatedArrivalTime)).to.equal('2025-07-08T06:07:24.000Z')
   })
 })
