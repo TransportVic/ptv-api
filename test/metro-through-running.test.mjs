@@ -1,6 +1,7 @@
 import { StubAPI } from '../stub-api.mjs'
 import { expect } from 'chai'
 import stubFKNDepartureData from './metro-mock-data/metro-departures-fkn.json' with { type: 'json' }
+import stubEPHDepartureData from './metro-mock-data/metro-departures-eph.json' with { type: 'json' }
 import stubFKNPatternData from './metro-mock-data/metro-pattern-fkn-lav.json' with { type: 'json' }
 import stubEPHPatternData from './metro-mock-data/tdn-C100-Z601-pattern.json' with { type: 'json' }
 
@@ -18,6 +19,20 @@ describe('The MetroDepartures class', () => {
       expect(metro[0].runData.destination).to.equal('Flinders Street')
       expect(metro[0].runData.forming.tdn).to.equal('6283')
       expect(metro[0].runData.forming.destination).to.equal('Laverton')
+    })
+  })
+
+  describe('When handling EPH -> SUY through running', () => {
+    it('Reflect the true run destination, with the next trip provided in the forming data', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubEPHDepartureData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let metro = await ptvAPI.metro.getDepartures(26507)
+
+      expect(metro[0].runData.destination).to.equal('Town Hall')
+      expect(metro[0].runData.forming.tdn).to.equal('Z601')
+      expect(metro[0].runData.forming.destination).to.equal('West Footscray')
     })
   })
 })
