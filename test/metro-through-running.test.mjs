@@ -7,6 +7,7 @@ import stubEPHPatternData from './metro-mock-data/tdn-C100-Z601-pattern.json' wi
 import stubEPHLivePatternData from './metro-mock-data/tdn-C100-Z601-live.json' with { type: 'json' }
 
 import PTVAPI from '../lib/ptv-api.mjs'
+import { dateLikeToISO } from '../lib/date-utils.mjs'
 
 describe('The MetroDepartures class', () => {
   describe('When handling FKN -> NPT through running', () => {
@@ -110,7 +111,7 @@ describe('The MetroStoppingPattern class', () => {
 
       expect(stoppingPattern.stops[0].stationName).to.equal('Town Hall')
       expect(stoppingPattern.stops[0].estimatedDeparture).to.exist
-      expect(stoppingPattern.stops[0].estimatedDeparture.toISOString()).to.equal('2025-11-29T23:18:00Z')
+      expect(dateLikeToISO(stoppingPattern.stops[0].estimatedDeparture)).to.equal('2025-11-29T23:18:00.000Z')
     })
   })
 })
