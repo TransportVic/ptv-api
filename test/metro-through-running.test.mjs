@@ -2,6 +2,7 @@ import { StubAPI } from '../stub-api.mjs'
 import { expect } from 'chai'
 import stubFKNDepartureData from './metro-mock-data/metro-departures-fkn.json' with { type: 'json' }
 import stubFKNPatternData from './metro-mock-data/metro-pattern-fkn-lav.json' with { type: 'json' }
+import stubEPHPatternData from './metro-mock-data/tdn-C100-Z601-pattern.json' with { type: 'json' }
 
 import PTVAPI from '../lib/ptv-api.mjs'
 
@@ -48,7 +49,7 @@ describe('The MetroStoppingPattern class', () => {
       expect(runData.forming.advertised).to.be.true
     })
 
-    it('It should only contain stops from FKN to FSS as part of the main trip', async () => {
+    it('Contains stops from FSS to LAV as part of the forming trip', async () => {
       let stubAPI = new StubAPI()
       stubAPI.setResponses([ stubFKNPatternData ])
       let ptvAPI = new PTVAPI(stubAPI)
@@ -58,6 +59,30 @@ describe('The MetroStoppingPattern class', () => {
       expect(stoppingPattern.formingStops[0].stationName).to.equal('Southern Cross')
       expect(stoppingPattern.formingStops.slice(-1)[0].stationName).to.equal('Laverton')
       expect(stoppingPattern.formingStops.length).to.equal(12)
+    })
+  })
+
+  describe('When handling EPH -> SUY through running', () => {
+    it('Contains only stops from EPH to THL as part of the main trip', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubEPHPatternData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C100')
+
+      expect(stoppingPattern.stops[0].stationName).to.equal('East Pakenham')
+      expect(stoppingPattern.stops.slice(-1)[0].stationName).to.equal('Town Hall')
+    })
+
+    it('Contains stops from THL to SUY as part of the forming trip', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubEPHPatternData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C100')
+
+      expect(stoppingPattern.formingStops[0].stationName).to.equal('State Library')
+      expect(stoppingPattern.formingStops.slice(-1)[0].stationName).to.equal('West Footscray')
     })
   })
 })
