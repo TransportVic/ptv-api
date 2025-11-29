@@ -4,6 +4,7 @@ import stubFKNDepartureData from './metro-mock-data/metro-departures-fkn.json' w
 import stubEPHDepartureData from './metro-mock-data/metro-departures-eph.json' with { type: 'json' }
 import stubFKNPatternData from './metro-mock-data/metro-pattern-fkn-lav.json' with { type: 'json' }
 import stubEPHPatternData from './metro-mock-data/tdn-C100-Z601-pattern.json' with { type: 'json' }
+import stubEPHLivePatternData from './metro-mock-data/tdn-C100-Z601-live.json' with { type: 'json' }
 
 import PTVAPI from '../lib/ptv-api.mjs'
 
@@ -98,6 +99,18 @@ describe('The MetroStoppingPattern class', () => {
 
       expect(stoppingPattern.formingStops[0].stationName).to.equal('State Library')
       expect(stoppingPattern.formingStops.slice(-1)[0].stationName).to.equal('West Footscray')
+    })
+
+    it('Picks the copy of Town Hall with live timings on the down trip', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ stubEPHLivePatternData ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('Z601')
+
+      expect(stoppingPattern.stops[0].stationName).to.equal('Town Hall')
+      expect(stoppingPattern.stops[0].estimatedDeparture).to.exist
+      expect(stoppingPattern.stops[0].estimatedDeparture.toISOString()).to.equal('2025-11-29T23:18:00Z')
     })
   })
 })
