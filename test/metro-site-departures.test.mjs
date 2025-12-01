@@ -5,6 +5,7 @@ import stubBadDepartureData from './metro-site-mock-data/bad-departures.json' wi
 import stubCCLDepartureData from './metro-site-mock-data/ccl-departures.json' with { type: 'json' }
 import PTVAPI from '../lib/ptv-api.mjs'
 import { dateLikeToISO } from '../lib/date-utils.mjs'
+import departuresZ614 from './metro-site-mock-data/departures-Z614.mjs'
 
 describe('The MetroSiteDeparture class', () => {
   describe('The fetch function', () => {
@@ -164,6 +165,56 @@ describe('The MetroSiteDeparture class', () => {
       expect(dateLikeToISO(td0821Stops[5].scheduledDeparture)).to.equal('2025-06-14T12:03:00.000Z')
       expect(td0821Stops[5].estimatedArrival).to.not.exist
       expect(td0821Stops[5].estimatedDeparture).to.not.exist
+    })
+
+    it('Trims up departures to terminate at Town Hall', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ departuresZ614 ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let departures = await ptvAPI.metroSite.getDepartures()
+
+      let td1054 = departures.find(trip => trip.tdn === 'Z614')
+      expect(td1054).to.exist
+      expect(dateLikeToISO(td1054.operationalDateMoment)).to.equal('2025-11-30T13:00:00.000Z')
+      expect(td1054.operationalDate).to.equal('20251201')
+
+      let td1054Stops = td1054.stops
+      expect(td1054Stops[0].stationName).to.equal('West Footscray')
+      expect(td1054Stops[1].stationName).to.equal('Middle Footscray')
+      expect(td1054Stops[2].stationName).to.equal('Footscray')
+      expect(td1054Stops[3].stationName).to.equal('Arden')
+      expect(td1054Stops[4].stationName).to.equal('Parkville')
+      expect(td1054Stops[5].stationName).to.equal('State Library')
+      expect(td1054Stops[6].stationName).to.equal('Town Hall')
+      expect(td1054Stops[7]).to.not.exist
+    })
+
+    it('Trims down departures to originate from Town Hall', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ departuresZ614 ])
+      stubAPI.skipErrors()
+
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      let departures = await ptvAPI.metroSite.getDepartures()
+
+      let td1054 = departures.find(trip => trip.tdn === 'C985')
+      expect(td1054).to.exist
+      expect(dateLikeToISO(td1054.operationalDateMoment)).to.equal('2025-11-30T13:00:00.000Z')
+      expect(td1054.operationalDate).to.equal('20251201')
+
+      let td1054Stops = td1054.stops
+      expect(td1054Stops[0].stationName).to.equal('Town Hall')
+      expect(td1054Stops[1].stationName).to.equal('Anzac')
+      expect(td1054Stops[2].stationName).to.equal('Malvern')
+      expect(td1054Stops[3].stationName).to.equal('Caulfield')
+      expect(td1054Stops[9].stationName).to.equal('Clayton')
+      expect(td1054Stops[10]).to.not.exist
     })
   })
 })
