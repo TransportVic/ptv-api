@@ -6,6 +6,8 @@ import PTVAPI from '../lib/ptv-api.mjs'
 import { dateLikeToISO } from '../lib/date-utils.mjs'
 import belgraveDSTStart from './metro-site-mock-data/belgrave-dst-start.mjs'
 import lilydaleDSTEnd from './metro-site-mock-data/lilydale-dst-end.json' with { type: 'json' }
+import mtpTimetableSUY from './metro-site-mock-data/mtp-timetable-suy.mjs'
+import mtpTimetablePKM from './metro-site-mock-data/mtp-timetable-pkm.mjs'
 
 const clone = o => JSON.parse(JSON.stringify(o))
 
@@ -116,6 +118,82 @@ describe('The MetroSiteOpTimetable class', () => {
         expect(trip.runData.forming).to.deep.equal({ tdn: '4309' })
         expect(trip.runData.formedBy).to.deep.equal({ tdn: '6300' })
       }
+    })
+  })
+
+  describe('MTP handling', () => {
+    it('Removes stops before THL on MTP Down Sunbury trips', async () => {
+      const stubAPI = new StubAPI()
+      stubAPI.setResponses([ mtpTimetableSUY ])
+      stubAPI.skipErrors()
+
+      const ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      const willamstown = await ptvAPI.metroSite.getOperationalTimetable(ptvAPI.metroSite.lines.SUNBURY)
+
+      const tdZ625 = willamstown.find(trip => trip.tdn === 'Z625')
+      expect(tdZ625).to.exist
+      expect(tdZ625.routeName).to.equal('Sunbury')
+
+      const stops = tdZ625.stops
+      expect(stops[0].stationName).to.equal('Town Hall')
+      expect(stops[0].platform).to.equal('1')
+      expect(dateLikeToISO(stops[0].scheduledDeparture)).to.equal('2025-12-04T03:31:00.000Z')
+
+      expect(stops[1].stationName).to.equal('State Library')
+      expect(stops[1].platform).to.equal('1')
+      expect(dateLikeToISO(stops[1].scheduledDeparture)).to.equal('2025-12-04T03:33:00.000Z')
+    })
+
+    it('Removes stops before THL on MTP Down Dandenong trips', async () => {
+      const stubAPI = new StubAPI()
+      stubAPI.setResponses([ mtpTimetablePKM ])
+      stubAPI.skipErrors()
+
+      const ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      const willamstown = await ptvAPI.metroSite.getOperationalTimetable(ptvAPI.metroSite.lines.PAKENHAM)
+
+      const tdC977 = willamstown.find(trip => trip.tdn === 'C977')
+      expect(tdC977).to.exist
+      expect(tdC977.routeName).to.equal('Pakenham')
+
+      const stops = tdC977.stops
+      expect(stops[0].stationName).to.equal('Town Hall')
+      expect(stops[0].platform).to.equal('2')
+      expect(dateLikeToISO(stops[0].scheduledDeparture)).to.equal('2025-12-04T00:18:00.000Z')
+
+      expect(stops[1].stationName).to.equal('Malvern')
+      expect(stops[1].platform).to.equal('4')
+      expect(dateLikeToISO(stops[1].scheduledDeparture)).to.equal('2025-12-04T00:29:00.000Z')
+    })
+
+    it('Removes stops after THL on MTP Up Sunbury trips', async () => {
+      const stubAPI = new StubAPI()
+      stubAPI.setResponses([ mtpTimetableSUY ])
+      stubAPI.skipErrors()
+
+      const ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addMetroSite(stubAPI)
+
+      const willamstown = await ptvAPI.metroSite.getOperationalTimetable(ptvAPI.metroSite.lines.SUNBURY)
+
+      const tdZ600 = willamstown.find(trip => trip.tdn === 'Z600')
+      expect(tdZ600).to.exist
+      expect(tdZ600.routeName).to.equal('Sunbury')
+
+      const stops = tdZ600.stops
+      expect(stops[0].stationName).to.equal('West Footscray')
+      expect(stops[0].platform).to.equal('2')
+      expect(dateLikeToISO(stops[0].scheduledDeparture)).to.equal('2025-12-03T23:01:00.000Z')
+
+      expect(stops[6].stationName).to.equal('Town Hall')
+      expect(stops[6].platform).to.equal('2')
+      expect(dateLikeToISO(stops[6].scheduledDeparture)).to.equal('2025-12-03T23:18:00.000Z')
+
+      expect(stops[7]).to.not.exist
     })
   })
 
