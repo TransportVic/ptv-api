@@ -58,6 +58,8 @@ describe('The GetPlatformServicesAPI class', () => {
 
       expect(departures[0].estStationArrivalTime).to.be.null
       expect(departures[0].estArrivalTime).to.be.null
+
+      expect(departures[0].consistSize).to.equal(2)
     })
   })
 
