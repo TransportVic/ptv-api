@@ -59,7 +59,12 @@ describe('The GetPlatformServicesAPI class', () => {
       expect(departures[0].estStationArrivalTime).to.be.null
       expect(departures[0].estArrivalTime).to.be.null
 
-      expect(departures[0].consistSize).to.equal(2)
+      // VLocity should multiply the size by 3
+      expect(departures[0].consist).to.deep.equal({
+        consist: [],
+        size: 6,
+        type: 'VLocity'
+      })
     })
   })
 
