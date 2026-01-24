@@ -6,6 +6,7 @@ import stubFKNPatternData from './metro-mock-data/metro-pattern-fkn-lav.json' wi
 import stubEPHPatternData from './metro-mock-data/tdn-C100-Z601-pattern.json' with { type: 'json' }
 import stubEPHLivePatternData from './metro-mock-data/tdn-C100-Z601-live.json' with { type: 'json' }
 import stubEPHTHLPatternData from './metro-mock-data/tdn-C109-live.json' with { type: 'json' }
+import td6573 from './metro-mock-data/tdn-6573-pattern.json' with { type: 'json' }
 
 import PTVAPI from '../lib/ptv-api.mjs'
 import { dateLikeToISO } from '../lib/date-utils.mjs'
@@ -77,6 +78,17 @@ describe('The MetroStoppingPattern class', () => {
       expect(stoppingPattern.formingStops[0].stationName).to.equal('Southern Cross')
       expect(stoppingPattern.formingStops.slice(-1)[0].stationName).to.equal('Laverton')
       expect(stoppingPattern.formingStops.length).to.equal(12)
+    })
+
+    it('Accounts for Southern Cross being skipped on Night Network to set the correct FSS departure time', async () => {
+      let stubAPI = new StubAPI()
+      stubAPI.setResponses([ td6573 ])
+      let ptvAPI = new PTVAPI(stubAPI)
+
+      let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN(6573)
+
+      expect(stoppingPattern.stops[0].stationName).to.equal('Flinders Street')
+      expect(dateLikeToISO(stoppingPattern.stops[0].scheduledDeparture)).to.equal('2026-01-24T18:07:00.000Z')
     })
   })
 
