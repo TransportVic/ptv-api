@@ -11,6 +11,7 @@ const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const stubPlatformDepartures = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'platform-departures.xml'))).toString()
+const stubPlatformDepartures_NoConsist = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'platform-departures-noconsist.xml'))).toString()
 const stubPlatformArrivals = (await fs.readFile(path.join(__dirname, 'vline-mock-data', 'platform-arrivals.xml'))).toString()
 const stubJourneyStops = (await fs.readFile(path.join(__dirname, 'vline-mock-data', '8156-journey-stops.xml'))).toString()
 
@@ -65,6 +66,24 @@ describe('The GetPlatformServicesAPI class', () => {
         size: 6,
         type: 'VLocity'
       })
+    })
+
+    it('Does not set the consist if it is unavailable', async () => {
+      let stubAPI = new StubVLineAPI()
+      stubAPI.setResponses([ stubPlatformDepartures_NoConsist ])
+      let ptvAPI = new PTVAPI(stubAPI)
+      ptvAPI.addVLine(stubAPI)
+
+      let departures = await ptvAPI.vline.getDepartures('Melbourne, Southern Cross', TestPlatformServices.DOWN, 30)
+
+      expect(departures).to.be.instanceOf(VLinePlatformServices)
+      expect(departures[0]).to.be.instanceOf(VLinePlatformService)
+
+      expect(departures[0].origin).to.equal('Melbourne, Southern Cross')
+      expect(departures[0].destination).to.equal('Waurn Ponds Station')
+
+      expect(departures[0].tdn).to.equal('8819')
+      expect(departures[0].consist).to.not.exist
     })
   })
 
