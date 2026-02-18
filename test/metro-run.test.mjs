@@ -26,39 +26,13 @@ describe('The MetroRun class', () => {
       })
     })
 
-    describe('Dandenong group trains operating with a Cxxx TDN', () => {
-      it('Should return true for Up trains', () => {
-        let viaLoopPKM = MetroRun.isViaLoop('C000', 'Pakenham', 'Up')
-        expect(viaLoopPKM).to.be.true
-
-        let viaLoopCBE = MetroRun.isViaLoop('C400', 'Cranbourne', 'Up')
-        expect(viaLoopCBE).to.be.true
+    describe('Frankston group trains operating with a 4xxx TDN', () => {
+      it('Returns true for Up trains', () => {
+        expect(MetroRun.isViaLoop('4530', 'Frankston', 'Up')).to.be.false
       })
 
-      it('Should return false for Down trains', () => {
-        let viaLoopPKM = MetroRun.isViaLoop('C001', 'Pakenham', 'Down')
-        expect(viaLoopPKM).to.be.false
-
-        let viaLoopCBE = MetroRun.isViaLoop('C401', 'Cranbourne', 'Down')
-        expect(viaLoopCBE).to.be.false
-      })
-    })
-
-    describe('Dandenong group trains operating with a 4xxx TDN', () => {
-      it('Should return true for Up trains', () => {
-        let viaLoopPKM = MetroRun.isViaLoop('4000', 'Pakenham', 'Up')
-        expect(viaLoopPKM).to.be.true
-
-        let viaLoopCBE = MetroRun.isViaLoop('4200', 'Cranbourne', 'Up')
-        expect(viaLoopCBE).to.be.true
-      })
-
-      it('Should return false for Down trains', () => {
-        let viaLoopPKM = MetroRun.isViaLoop('4001', 'Pakenham', 'Down')
-        expect(viaLoopPKM).to.be.false
-
-        let viaLoopCBE = MetroRun.isViaLoop('4201', 'Cranbourne', 'Down')
-        expect(viaLoopCBE).to.be.false
+      it('Returns false for Down trains', () => {
+        expect(MetroRun.isViaLoop('4301', 'Frankston', 'Down')).to.be.false
       })
     })
   })

@@ -1,5 +1,6 @@
 import { StubAPI } from '../stub-api.mjs'
 import { expect } from 'chai'
+import stubFKNPatternData from './metro-mock-data/metro-pattern-fkn.json' with { type: 'json' }
 import stubPKMPatternData from './metro-mock-data/metro-pattern-pkm.json' with { type: 'json' }
 import stubHBEPatternData from './metro-mock-data/metro-pattern-hbe.json' with { type: 'json' }
 import stubCBEPatternData from './metro-mock-data/metro-pattern-cbe.json' with { type: 'json' }
@@ -36,13 +37,13 @@ describe('The MetroStoppingPattern class', () => {
 
   it('Should extract the run data from the API response', async () => {
     let stubAPI = new StubAPI()
-    stubAPI.setResponses([ stubPKMPatternData ])
+    stubAPI.setResponses([ stubFKNPatternData ])
     let ptvAPI = new PTVAPI(stubAPI)
-    let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('C104')
+    let stoppingPattern = await ptvAPI.metro.getStoppingPatternFromTDN('4530')
 
     let runData = stoppingPattern.runData
 
-    expect(runData.tdn).to.equal('C104')
+    expect(runData.tdn).to.equal('4530')
     expect(runData.direction.railDirection).to.equal('Up')
     expect(runData.destination).to.equal('Flinders Street')
     expect(runData.viaCityLoop).to.be.true

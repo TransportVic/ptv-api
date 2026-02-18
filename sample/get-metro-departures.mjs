@@ -13,8 +13,10 @@ async function main() {
 
   let departures = await ptvAPI.metro.getDepartures(stopGTFSID, {
     gtfs: true,
-    maxResults: 2,
-    expand: ['VehicleDescriptor', 'VehiclePosition']
+    maxResults: 3,
+    expand: ['VehicleDescriptor', 'VehiclePosition'],
+    includeCancelled: true,
+    backwards: true
   })
 
   inspect(departures)
