@@ -46,7 +46,7 @@ describe('The MetroStoppingPattern class', () => {
     expect(runData.tdn).to.equal('4530')
     expect(runData.direction.railDirection).to.equal('Up')
     expect(runData.destination).to.equal('Flinders Street')
-    expect(runData.viaCityLoop).to.be.true
+    expect(runData.viaCityLoop).to.be.false
   })
 
   it('Should extract the stop data from the API response', async () => {
